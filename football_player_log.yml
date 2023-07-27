@@ -1,0 +1,174 @@
+kind: Event
+metadata:
+  name: unet_football_player_log
+spec:
+  description: |-
+    足球模式结算记录
+
+    回合结算时上报，总结算时也上报
+
+    V44/2022-09-21加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: e.g., 1556163351
+    name: war_start_time
+    title: 战场开始时间(时间戳)
+    type: long
+  - description: e.g., 1556163351
+    name: end_time
+    title: 战场结束时间(时间戳)
+    type: long
+  - description: |-
+      玩家在该回合里面的游戏时长，如果是最后的结算，则记整局的游戏时长
+
+      e.g., 500
+    name: online_time
+    title: 游戏时长
+    type: long
+  - description: |-
+      没有主动退出默认记0
+
+      e.g., 1556163351
+    name: out_time
+    title: 玩家主动退出的时间(时间戳)
+    type: long
+  - description: |-
+      总结算时记0
+
+      e.g., 1，2，3，4
+    name: round
+    title: 回合数
+    type: long
+  - description: e.g., 1-红方，2-蓝方
+    name: camp
+    title: 阵营
+    type: long
+  - description: |-
+      记录玩家每回合的出生点位置
+
+      e.g., 1，2，3，4
+    name: born_point
+    title: 玩家出生点
+    type: long
+  - description: e.g., 0-未进球，1-进球
+    name: is_goal
+    title: 是否进球
+    type: long
+  - description: e.g., 1-射门，2-带球
+    name: goal_type
+    title: 进球方式
+    type: long
+  - description: |-
+      玩家传球总数量
+
+      e.g., 8
+    name: pass
+    title: 传球数
+    type: long
+  - description: |-
+      玩家铲球总数量
+
+      e.g., 8
+    name: tackle
+    title: 铲球数
+    type: long
+  - description: |-
+      玩家被铲总数量
+
+      e.g., 8
+    name: be_tackle
+    title: 被铲数
+    type: long
+  - description: |-
+      玩家带球时被铲总数量
+
+      e.g., 8
+    name: be_ball_tackle
+    title: 带球被铲数
+    type: long
+  - description: |-
+      玩家球场加速带机关使用次数
+
+      e.g., 8
+    name: speed_use
+    title: 加速带使用次数
+    type: long
+  - description: |-
+      玩家球场弹跳带机关使用次数
+
+      e.g., 8
+    name: bound_use
+    title: 弹跳带使用次数
+    type: long
+  - description: |-
+      记录玩家截止到本回合的累计进球得分（乌龙球不计入）
+
+      e.g., 5
+    name: score
+    title: 累计进球得分
+    type: long
+  - description: e.g., 0-失败，1-胜利
+    name: stat
+    title: 本回合战斗结果
+    type: long
+  - description: |-
+      记录本回合触发的事件
+
+      e.g., -1-无事件，0-大大球，1-小小球，2-弹弹球，3-黏黏球，4-大力出奇迹，5-疯狂时刻，6-大大肠，7-小小肠，8-双倍时刻，9-大大门，10-小小门，11-高高门，12-宽宽门
+    name: situation
+    title: 触发事件
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_out
+    title: 玩家是否中途退出
+    type: long
+  - description: e.g., 12345678
+    name: quit_time
+    title: 玩家主动按下退出按钮的时间戳
+    type: long
+  - description: |-
+      记录玩家截止到本回合的累计进球得分（进球、助攻、铲球的累计积分）
+
+      e.g., 20
+    name: grade_score
+    title: 累计积分
+    type: long
+  name: football_player_log
+  source: unet
+  title: 足球模式结算记录

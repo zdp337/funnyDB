@@ -1,0 +1,43 @@
+kind: Event
+metadata:
+  name: unet_unet_error
+spec:
+  description: |
+    unetserver错误日志
+
+    记录unetserver的错误日志
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., Error
+    name: log_type
+    title: 日志类型
+    type: string
+  - description: e.g., {"log_type":"error", ...}
+    name: condition
+    title: 状态条件
+    type: string
+  - description: e.g., System.Collections.Generic.List ...
+    name: stack_trace
+    title: 堆栈内容
+    type: string
+  - description: e.g., 0.18.4-r2-763
+    name: version
+    title: 版本号
+    type: string
+  - description: e.g., 20190531115551-f4f05991e6
+    name: git_commit_id
+    title: git commit id
+    type: string
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1
+    name: room_id
+    title: 房间ID
+    type: long
+  name: unet_error
+  source: unet
+  title: unet服务器上的错误日志

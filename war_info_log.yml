@@ -1,0 +1,155 @@
+kind: Event
+metadata:
+  name: unet_war_info_log
+spec:
+  description: |
+    战场信息统计
+
+    飞机起飞时，上报信息。 用于获取房间信息，真人填充情况，以及玩家的进入在线情况
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1
+    name: room_id
+    title: 房间ID
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 106.15.177.96
+    name: host
+    title: 房间 host
+    type: string
+  - description: e.g., 40002
+    name: port
+    title: 房间端口
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_ai
+    title: 是否AI局
+    type: long
+  - description: e.g., 1, 2, 3, 4
+    name: ai_level
+    title: AI等级
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: room_level
+    title: 房间等级
+    type: long
+  - description: |-
+      在开发时，可能出现 player_num = 0 的情况，当只有一个玩家进出生岛，在起飞前退出，到了起飞的时候，这个房间内是没有真人玩家的。
+
+      e.g., 80
+    name: player_num
+    title: 进入战场的玩家数量
+    type: long
+  - description: e.g., 20
+    name: ai_num
+    title: AI 数量
+    type: long
+  - description: e.g., 100
+    name: max_player_num
+    title: 最大人数
+    type: long
+  - description: e.g., 1556163351
+    name: war_start_time
+    title: 战场开始时间(时间戳)
+    type: long
+  - description: 参加的真人信息
+    items:
+      fields:
+      - description: e.g., 9871361
+        name: pid
+        title: 玩家pid
+        type: long
+      - description: e.g., 1559275002
+        name: create_time
+        title: 玩家创建时间(时间戳)
+        type: long
+      - description: e.g., 10
+        name: war_num
+        title: 玩家总共战斗次数
+        type: long
+      - description: |-
+          目前和客户端事件中的deviceid公共字段一致
+
+          S28/2020-06-29加入
+
+          e.g., a0730302f02da0e4b01f97568a74e8e4
+        name: deviceid
+        title: 设备id
+        type: string
+      type: struct
+    name: players
+    title: 参加的真人信息
+    type: array
+  - description: |-
+      S20/2019-08-05加入
+
+      e.g., 1, 2, 3, 4, 5
+    name: score_room_level
+    title: 段位竞技场等级
+    type: long
+  - description: |-
+      S20/2019-08-27加入
+
+      e.g., 0-手机，1-模拟器
+    name: client_type
+    title: 房间类型
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      S21/2019-08-29加入
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: |-
+      V30/2020-09-01加入
+
+      e.g., 30,60
+    name: born_use_time
+    title: 出生岛使用时长,单位秒
+    type: long
+  - description: |-
+      玩家可能在进入出生岛后就退了，需要看进入战场的转化情况
+
+      V32/2020-12-03加入
+
+      e.g., 80
+    name: born_player_num
+    title: 进入出生岛的玩家数量
+    type: long
+  - description: |-
+      V34/2021-01-29加入
+
+      e.g., abc
+    name: room_key
+    title: 房间密钥
+    type: string
+  name: war_info_log
+  source: unet
+  title: unet开始战场信息统计

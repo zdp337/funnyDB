@@ -1,0 +1,144 @@
+kind: Event
+metadata:
+  name: unet_player_little_sausage_state
+spec:
+  description: |
+    玩家小肠肠状态日志
+
+    玩家小肠肠状态结束时触发
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 1
+    name: level
+    title: 玩家等级
+    type: long
+  - description: e.g., 0-男，1-女，2-未知
+    name: sex
+    title: 玩家性别
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏类别
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: |-
+      小肠肠幻象状态过程结束也要记录
+
+      e.g., 直接死亡，武器击杀，流血而亡，被扶起，真身被击杀，持续时间结束
+    name: end_type
+    title: 小肠肠结束状态类型
+    type: string
+  - description: |-
+      指是否收到其他玩家攻击
+
+      e.g., 0-否，1-是
+    name: is_attacked
+    title: 是否受到攻击
+    type: long
+  - description: |-
+      不包含被抱起的移动距离
+
+      e.g., 100
+    name: move_distance
+    title: 小肠肠状态下移动距离
+    type: long
+  - description: e.g., 1559525993
+    name: start_time
+    title: 小肠肠状态开始时间(时间戳)
+    type: long
+  - description: e.g., 1559526039
+    name: end_time
+    title: 小肠肠状态结束时间(时间戳)
+    type: long
+  - description: |-
+      被多个队友抱起过需要对pid进行拼接，以逗号隔开，没有被抱起过，则该字段置空
+
+      S25/2020-01-19加入
+
+      e.g., 9871361
+    name: liftup_team_pids
+    title: 抱起小肠肠的队友列表
+    type: string
+  - description: |-
+      被多个敌友抱起过需要对pid进行拼接，以逗号隔开，没有被抱起过，则该字段置空
+
+      S25/2020-01-19加入
+
+      e.g., 9871361
+    name: liftup_enemy_pids
+    title: 抱起小肠肠的敌友列表
+    type: string
+  - description: |-
+      没装备全息战斗服的记0
+
+      S25/2020-01-19加入
+
+      e.g., 1
+    name: vision_id
+    title: 战场内全息战斗服唯一id
+    type: long
+  - description: |-
+      记录第几次触发了当前的全息战斗服，没装备全息战斗服的记0
+
+      S25/2020-01-19加入
+
+      e.g., 1
+    name: vision_trigger_count
+    title: 全息战斗服触发次数
+    type: long
+  - description: |-
+      S25/2020-01-19加入
+
+      e.g., 0-否，1-是
+    name: is_vision
+    title: 是否是全息战斗服产生的幻象
+    type: long
+  - description: |-
+      如果小肠肠是被击杀的，需要记录该字段，和player_bekill日志中dead_type记录内容一样，否则置空
+
+      S25/2020-01-19加入
+
+      e.g., 车、毒、枪、近、拳 ...
+    name: dead_type
+    title: 被击倒类型
+    type: string
+  - description: |-
+      如果小肠肠是被击杀的，需要记录该字段，和player_bekill日志中dead_detail记录内容一样，否则置空
+
+      S25/2020-01-19加入
+
+      e.g., m416、叉子、吉普车 ...
+    name: dead_detail
+    title: 具体被击倒原因
+    type: string
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  name: player_little_sausage_state
+  source: unet
+  title: unet玩家小肠肠状态日志

@@ -1,0 +1,517 @@
+kind: Event
+metadata:
+  name: unet_player_log
+spec:
+  description: |
+    玩家状态统计
+
+    单个玩家一局上报一条记录，用于分析玩家状态.
+    玩家单次战斗被击杀并且没有机会复活或吃鸡时记录
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_ai
+    title: 是否AI局
+    type: long
+  - description: e.g., 1, 2, 3, 4
+    name: ai_level
+    title: AI等级
+    type: long
+  - description: e.g., 1
+    name: room_id
+    title: 房间ID
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: room_level
+    title: 房间等级
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_ai_kill
+    title: 是否被AI击杀
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1559525993
+    name: war_start_time
+    title: 战场开始时间(时间戳)
+    type: long
+  - description: |-
+      包括观战时间
+
+      e.g., 1559526039
+    name: end_time
+    title: 玩家战斗结束时间(时间戳)
+    type: long
+  - description: e.g., 1, -1
+    name: air_line
+    title: 航线
+    type: string
+  - description: e.g., 20
+    name: join_num
+    title: 参与人数
+    type: long
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 585
+    name: parachute_x
+    title: 跳伞落地点x轴
+    type: long
+  - description: e.g., 569
+    name: parachute_z
+    title: 跳伞落地点z轴
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_get_weapon
+    title: 是否有拾取武器
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_traffic
+    title: 是否乘坐过载具
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_move
+    title: 是否移动
+    type: long
+  - description: e.g., 0
+    name: damage_num
+    title: 总伤害值
+    type: long
+  - description: e.g., 1
+    name: kill_num
+    title: 击杀数
+    type: long
+  - description: e.g., 100
+    name: killed_distance
+    title: 被击杀距离
+    type: long
+  - description: |-
+      玩家吃鸡时记空字符串
+
+      e.g., 车、毒、枪、近、拳 ...
+    name: dead_type
+    title: 死亡类型
+    type: string
+  - description: |-
+      玩家吃鸡时记空字符串
+
+      e.g., m416、叉子、吉普车 ...
+    name: dead_detail
+    title: 具体死亡原因
+    type: string
+  - description: 玩家交战记录, 击中其他玩家判定为交战, 冷却时间2分钟
+    items:
+      fields:
+      - description: e.g., 1000
+        name: hit_second
+        title: 游戏开始时间第几秒
+        type: long
+      type: struct
+    name: battles
+    title: 玩家交战记录, 击中其他玩家判定为交战, 冷却时间2分钟
+    type: array
+  - description: e.g., fbae675bfb22d61ab37387dd82c7c96b
+    name: team_id
+    title: 队伍ID
+    type: string
+  - description: e.g., 0-没有，1-有
+    name: has_shield
+    title: 是否有护盾
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_shield_broken
+    title: 护盾是否被打破
+    type: long
+  - description: |-
+      单位秒(s)
+
+      e.g., 10
+    name: down2dead_time
+    title: 倒地后被淘汰的时长
+    type: long
+  - description: 主动使用的物品列表
+    items:
+      fields:
+      - description: e.g., 196
+        name: item_id
+        title: 物品id
+        type: long
+      - description: e.g., 医疗箱
+        name: item_name
+        title: 物品名称
+        type: string
+      - description: e.g., 1
+        name: item_num
+        title: 物品数量
+        type: long
+      type: struct
+    name: use_items
+    title: 主动使用的物品列表
+    type: array
+  - description: e.g., 2
+    name: real_kill_num
+    title: 真人击杀数
+    type: long
+  - description: |-
+      根据场上剩余人数计算排名，比如说剩余人数是23是玩家被击杀，那么该玩家的排名为23。
+
+      在组队时，如果队伍吃鸡了，并且该玩家存活，那么该玩家的排名为1
+
+      e.g., 1
+    name: rank
+    title: 本场生存排名（个人排名）
+    type: long
+  - description: e.g., 0-手机，1-模拟器
+    name: client_type
+    title: 房间类型
+    type: long
+  - description: e.g., 10
+    name: knockout_num
+    title: 击倒数
+    type: long
+  - description: e.g., 10
+    name: hit_bullets_num
+    title: 命中子弹数
+    type: long
+  - description: e.g., 100
+    name: total_bullets
+    title: 射击子弹总数
+    type: long
+  - description: e.g., 1
+    name: save_num
+    title: 扶起队友次数
+    type: long
+  - description: e.g., 1
+    name: revive_num
+    title: 复活队友次数
+    type: long
+  - description: e.g., 1
+    name: assist_num
+    title: 助攻次数
+    type: long
+  - description: e.g., 100
+    name: move_distance
+    title: 移动距离（含载具）
+    type: long
+  - description: e.g., 1
+    name: resurrected_num
+    title: 被复活次数
+    type: long
+  - description: e.g., 1
+    name: knockout_by_num
+    title: 被击倒次数
+    type: long
+  - description: e.g., 100
+    name: bear_damage
+    title: 承受伤害总额
+    type: long
+  - description: |-
+      这个值实际上是一个整数，如果玩家一个人进入游戏，那么这个值会是一个负数，如果玩家组队进入游戏，那么这个值是一个正数，表示玩家所在的队伍的ID。
+
+      e.g., 729089, -9216003
+    name: matching_team_id
+    title: 主动匹配队伍ID
+    type: string
+  - description: e.g., 1100
+    name: matching_score
+    title: 匹配分
+    type: long
+  - description: |-
+      可以通过客户端与 unet 的心跳来判断
+
+      e.g., 500
+    name: online_time
+    title: 玩家在战场内在线时间
+    type: long
+  - description: e.g., 1, 2, 3, 4 ...
+    name: score_lv
+    title: 玩家的段位
+    type: long
+  - description: eg., 1,2,3...
+    name: rate
+    title: 结算评级
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_e_mtp
+    title: 是否是mtp
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_e_android
+    title: 是否是android
+    type: long
+  - description: |-
+      模拟器检测结果
+
+      e.g., 0-否，1-是，2-数据不足，3-外设
+    name: is_e_battle_btn
+    title: 是否是battle_btn
+    type: long
+  - description: |-
+      S20/2019-08-05加入
+
+      e.g., 1, 2, 3, 4, 5
+    name: score_room_level
+    title: 段位竞技场等级
+    type: long
+  - description: |-
+      如果跳伞位置不是关卡，则记空字符串
+
+      S21/2019-08-28加入
+
+      e.g., 海盗船
+    name: parachute_location
+    title: 跳伞关卡名称
+    type: string
+  - description: |-
+      从出生到被打死时经过的时间，单位秒
+
+      e.g., 60
+    name: survive_time
+    title: 存活时间
+    type: long
+  - description: |-
+      S24/2020-01-03加入
+
+      e.g., 1100
+    name: grade_score
+    title: 段位分数
+    type: long
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: |-
+      只记录运营相关的活动物品，比如必胜客披萨
+
+      S26/2020-04-21加入
+    items:
+      fields:
+      - description: |-
+          S26/2020-04-21加入
+
+          e.g., 335544328
+        name: item_id
+        title: 物品ID
+        type: long
+      - description: |-
+          S26/2020-04-21加入
+
+          e.g., 医疗箱、急救包、绷带、9mm、12号霰弹等等
+        name: item_name
+        title: 物品名称
+        type: string
+      - description: |-
+          S26/2020-04-21加入
+
+          e.g., 10
+        name: item_num
+        title: 物品数量
+        type: long
+      type: struct
+    name: activity_items
+    title: 活动物品拾取列表
+    type: array
+  - description: |-
+      S27/2020-05-09加入
+
+      e.g., 0-否，1-是
+    name: is_aboard_alien_ship
+    title: 是否登陆过Y星人飞船
+    type: long
+  - description: |-
+      由于经典模式unet服务器没有踢人机制，服务器并不知道玩家是否有退出了，所以采用玩家是否有超过2分钟未进行连接的行为作为判断
+
+      S28/2020-06-16加入
+
+      e.g., 0-否，1-是
+    name: is_out
+    title: 玩家是否中途退出
+    type: long
+  - description: |-
+      S28/2020-06-16加入
+
+      e.g., 0-否，1-是
+    name: is_dead_out
+    title: 玩家中途退出时是否死亡
+    type: long
+  - description: |-
+      不能进行组队标签匹配的模式设置默认值0
+
+      S28/2020-06-19加入
+
+      e.g., 1-随心所欲，2-热点钢枪，3-野点发育
+    name: match_tag_id
+    title: 组队匹配标签id
+    type: long
+  - description: |-
+      目前和客户端事件中的deviceid公共字段一致
+
+      S28/2020-06-29加入
+
+      e.g., a0730302f02da0e4b01f97568a74e8e4
+    name: deviceid
+    title: 设备id
+    type: string
+  - description: |-
+      目前只统计经典模式，装备了枪械但是没有进行发射的情况不用上报
+
+      S28/2020-06-30加入
+    items:
+      fields:
+      - description: e.g., 243
+        name: item_id
+        title: 枪械物品id
+        type: long
+      - description: e.g., S686
+        name: item_name
+        title: 枪械物品名称
+        type: string
+      - description: e.g., 10
+        name: hit_bullet_num
+        title: 命中子弹数
+        type: long
+      - description: e.g., 10
+        name: fire_bullet_num
+        title: 发射子弹数
+        type: long
+      - description: 没有等级的物品为1
+        name: item_level
+        title: 物品等级
+        type: long
+      type: struct
+    name: fire_guns
+    title: 玩家使用枪械命中情况集合
+    type: array
+  - description: |-
+      目前只统计经典模式，装备了枪械但是没有进行发射的情况不用上报
+
+      S29/2020-07-28加入
+    items:
+      fields:
+      - description: e.g., shenwangjianglin
+        name: skill_id
+        title: 技能id
+        type: string
+      - description: e.g., 神王降临
+        name: skill_name
+        title: 技能名称
+        type: string
+      - description: e.g., 10
+        name: hit_num
+        title: 技能命中数
+        type: long
+      - description: e.g., 10
+        name: fire_num
+        title: 技能释放次数
+        type: long
+      type: struct
+    name: use_skills
+    title: 玩家使用技能命中情况集合
+    type: array
+  - description: |-
+      V31/2020-10-12加入
+
+      e.g., 10
+    name: no_op_time
+    title: 未进行操作总时长
+    type: long
+  - description: |-
+      V31/2020-10-12加入
+
+      e.g., 12345678
+    name: quit_time
+    title: 玩家主动按下退出按钮的时间戳
+    type: long
+  - description: |-
+      V31/2020-10-12加入
+
+      e.g., 100
+    name: credit
+    title: 玩家当前信誉值
+    type: long
+  - description: |-
+      V32/2020-10-30加入
+
+      e.g., 1
+    name: resurrection_coin_produce
+    title: 玩家复活币产出次数
+    type: long
+  - description: |-
+      V32/2020-10-30加入
+
+      e.g., 1
+    name: resurrection_coin_pick
+    title: 玩家拾取复活币次数
+    type: long
+  - description: |-
+      V35/2021-04-01加入
+
+      e.g., 银河战舰; 海盗船
+    name: air_level_type
+    title: 空中关卡类型
+    type: string
+  - description: |-
+      V39/2021-10-08 加入
+
+      e.g., 0 代表玩家没有进行过重连
+    name: disconnect_elapsed_time
+    title: '玩家掉线耗时, 单位秒. 定义: 无论玩家以什么方式下线, 在他网络对象丢失的时候记录一个时间, 他在上线的时候用当前时间减去上个时间点,
+      计算出掉线时间.'
+    type: long
+  - description: V39/2021-10-13 加入
+    name: disconnect_times
+    title: '玩家掉线次数. 定义: 无论玩家以什么方式下线, 在他网络对象丢失的时候记录一个时间, 他在上线的时候用当前时间减去上个时间点, 计算出掉线时间.'
+    type: long
+  - description: V42/20221-05-23 加入
+    name: rand_level_type
+    title: 随机地点关卡类型
+    type: string
+  - description: |-
+      V45/2023-01-11 加入
+
+      e.g., 100
+    name: self_treat
+    title: 玩家本局自身治疗量
+    type: long
+  - description: V42/20221-05-23 加入
+    name: hero_chose
+    title: 携带英雄卡
+    type: string
+  - description: V42/20221-05-23 加入
+    name: hero_value
+    title: 携带英雄卡熟练度
+    type: long
+  name: player_log
+  source: unet
+  title: unet玩家战场结算日志

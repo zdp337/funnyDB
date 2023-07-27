@@ -1,0 +1,66 @@
+kind: Event
+metadata:
+  name: unet_gun_log
+spec:
+  description: |
+    每次缩圈枪械持有统计
+
+    在每次缩圈时, 统计一次每一种枪械的持有情况, 每一种枪械上报一条(还需要统计无武器的数量)
+    请使用批量上传接口, 以提高效率
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1, -1
+    name: air_line
+    title: 航线
+    type: string
+  - description: e.g., 1
+    name: circle
+    title: 第几圈
+    type: long
+  - description: e.g., 狙击枪，散弹枪，突击步枪，精确射手步枪，轻机枪，冲锋枪，空（玩家前二个格子出现无武器时为空）
+    name: item_type
+    title: 物品类型
+    type: string
+  - description: e.g., 主武器，瞄准镜(红点、全息、2倍、3倍、4倍、6倍、8倍、15倍等)，投掷物（手雷，烟雾，污污蛋），近战武器（平底锅等），护盾
+    name: item_name
+    title: 物品名称
+    type: string
+  - description: |-
+      没有等级的物品为1
+
+      e.g., 1
+    name: item_level
+    title: 物品等级
+    type: long
+  - description: e.g., 1
+    name: item_num
+    title: 数量统计
+    type: long
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  name: gun_log
+  source: unet
+  title: unet每圈枪械持有情况

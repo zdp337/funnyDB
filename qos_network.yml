@@ -1,0 +1,123 @@
+kind: Event
+metadata:
+  name: unet_qos_network
+spec:
+  description: 网络时延数据上报, 用于网络质量监控. 单个玩家每 3s 上报一条数据, mirror 服务端每 3s 一次网络监测
+  dont_save_to_table: false
+  fields:
+  - description: 带有业务逻辑的网络时延 ping 值
+    name: ping
+    title: 带有业务逻辑的网络时延 ping 值
+    type: long
+  - description: 相邻带有业务逻辑的网络时延 ping 差值的绝对值
+    name: ping_delta
+    title: 相邻带有业务逻辑的网络时延 ping 差值的绝对值
+    type: long
+  - description: 玩家来源网络 ip (ipv4)
+    name: sourceip
+    title: 玩家来源网络 ip (ipv4)
+    type: string
+  - description: 战场房间网络 ip (ipv4)
+    name: dstip
+    title: 战场房间网络 ip (ipv4)
+    type: string
+  - description: 3s 内总流入网络流量, 单位为 bit. 用于计算流入吞吐量
+    name: network_in
+    title: 3s 内总流入网络流量, 单位为 bit. 用于计算流入吞吐量
+    type: long
+  - description: 3s 内总流出网络流量, 单位为 bit. 用于计算流出吞吐量
+    name: network_out
+    title: 3s 内总流出网络流量, 单位为 bit. 用于计算流出吞吐量
+    type: long
+  - description: 玩家唯一 id
+    name: pid
+    title: 玩家唯一 id
+    type: long
+  - description: 战场唯一 id
+    name: war_id
+    title: 战场唯一 id
+    type: string
+  - description: 物理线路的网络时延 ping 值
+    name: physical_ping
+    title: 物理线路的网络时延 ping 值
+    type: long
+  - description: 相邻物理线路的网络时延 ping 差值的绝对值
+    name: physical_ping_delta
+    title: 相邻物理线路的网络时延 ping 差值的绝对值
+    type: long
+  - description: e.g., wifi、4G
+    name: nw
+    title: 网络类型
+    type: string
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: sourceip_city
+    title: ip对应的城市
+    type: string
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: sourceip_city_geo_name_id
+    title: ip对应的城市地理名称ID
+    type: long
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: sourceip_country
+    title: ip对应的国家
+    type: string
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: sourceip_country_geo_name_id
+    title: ip对应的国家地理名称ID
+    type: long
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: sourceip_country_iso
+    title: ip对应的国家标识码
+    type: string
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: sourceip_subdivision
+    title: ip对应的省份
+    type: string
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: sourceip_subdivision_geo_name_id
+    title: ip对应的省份地理名称ID
+    type: long
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: dstip_city
+    title: ip对应的城市
+    type: string
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: dstip_city_geo_name_id
+    title: ip对应的城市地理名称ID
+    type: long
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: dstip_country
+    title: ip对应的国家
+    type: string
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: dstip_country_geo_name_id
+    title: ip对应的国家地理名称ID
+    type: long
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: dstip_country_iso
+    title: ip对应的国家标识码
+    type: string
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: dstip_subdivision
+    title: ip对应的省份
+    type: string
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: dstip_subdivision_geo_name_id
+    title: ip对应的省份地理名称ID
+    type: long
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: sourceip_isp
+    title: ip对应的网络运营商
+    type: string
+  - description: 这个属性由服务端自动收集，不需要上报
+    name: dstip_isp
+    title: ip对应的网络运营商
+    type: string
+  name: qos_network
+  source: unet
+  title: ' 网络质量'

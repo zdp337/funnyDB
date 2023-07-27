@@ -1,0 +1,62 @@
+kind: Event
+metadata:
+  name: unet_new_player_guide
+spec:
+  description: |-
+    新手引导参与记录
+
+    V34/2020-04-21加入
+  dont_save_to_table: true
+  fields:
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: 新手引导记录
+    items:
+      fields:
+      - description: e.g., 1，2
+        name: step_id
+        title: 新手教程节点id
+        type: long
+      - description: 新手教程节点名称
+        name: step_name
+        title: 新手教程节点名称
+        type: string
+      - description: |-
+          出生岛触发时经过的时间，单位秒
+
+          e.g., 500
+        name: stat_time
+        title: 触发时间
+        type: long
+      type: struct
+    name: step_list
+    title: 新手引导记录
+    type: array
+  - description: |-
+      上飞机后的生存时长
+
+      e.g., 100
+    name: online_time
+    title: 游戏时长
+    type: long
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  name: new_player_guide
+  source: unet
+  title: 新手引导
