@@ -1,0 +1,80 @@
+kind: Event
+metadata:
+  name: unet_skill_stop_log
+spec:
+  description: |-
+    战场技能中断情况
+
+    V33/2020-12-10加入
+  dont_save_to_table: true
+  fields:
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1, -1
+    name: air_line
+    title: 航线
+    type: string
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: score_room_level
+    title: 段位竞技场等级
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: room_level
+    title: 房间等级
+    type: long
+  - description: e.g., fbae675bfb22d61ab37387dd82c7c96b
+    name: team_id
+    title: 队伍ID
+    type: string
+  - description: e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: 技能被打断详情
+    items:
+      fields:
+      - description: e.g., 1
+        name: circle
+        title: 第几圈
+        type: long
+      - description: e.g., shenwangjianglin
+        name: skill_id
+        title: 技能id
+        type: string
+      - description: e.g., 神王降临
+        name: skill_name
+        title: 技能名称
+        type: string
+      - description: e.g., 1-主动取消， 2-被动打断
+        name: stop_type
+        title: 中断类型
+        type: long
+      type: struct
+    name: skill_stop_detail
+    title: 技能被打断详情
+    type: array
+  name: skill_stop_log
+  source: unet
+  title: 技能中断

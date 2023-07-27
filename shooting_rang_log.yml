@@ -1,0 +1,94 @@
+kind: Event
+metadata:
+  name: unet_shooting_rang_log
+spec:
+  description: |-
+    目前包含多人靶场
+
+    由于多人靶场会被记录到player_log，废弃事件定义
+
+    S26/2020-03-26加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: |-
+      -1 代表单人靶场
+
+      e.g., -1-单人靶场，1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: |-
+      -1 代表单人靶场
+
+      e.g., -1-单人靶场，1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: |-
+      单人靶场的组队模式为1
+
+      e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: |-
+      单人靶场没有战场id，置为空字符串
+
+      e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: |-
+      这个值实际上是一个整数，如果玩家一个人进入游戏，那么这个值会是一个负数，如果玩家组队进入游戏，那么这个值是一个正数，表示玩家所在的队伍的ID，
+
+      单人靶场没有战场id，置为空字符串
+
+      e.g., 729089, -9216003
+    name: matching_team_id
+    title: 主动匹配队伍ID
+    type: string
+  - description: e.g., 1559525993
+    name: war_start_time
+    title: 战场开始时间(时间戳)
+    type: long
+  - description: |-
+      如果玩家不是中途加入的，加入时间和战场开始时间差不多，如果玩家是中途加入的，那么加入时间
+
+      就是它进入战场时的时间点
+
+      e.g., 1563853896
+    name: join_time
+    title: 玩家加入的时间(时间戳)
+    type: long
+  - description: |-
+      包括观战时间
+
+      e.g., 1559526039
+    name: end_time
+    title: 玩家战斗结束时间(时间戳)
+    type: long
+  - description: |-
+      可以通过客户端与 unet 的心跳来判断
+
+      e.g., 500
+    name: online_time
+    title: 玩家在战场内在线时间
+    type: long
+  - description: |-
+      现在服务端的逻辑是除了第一个进入的玩家，其他都算是中途加入
+
+      e.g., 0-否，1-是
+    name: is_add
+    title: 玩家是否是中途加入
+    type: long
+  name: shooting_rang_log
+  source: unet
+  title: 靶场使用日志

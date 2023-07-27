@@ -1,0 +1,125 @@
+kind: Event
+metadata:
+  name: unet_war_log
+spec:
+  description: |
+    战场日志
+
+    单局上报一次，用于分析玩家状态
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_ai
+    title: 是否AI局
+    type: long
+  - description: e.g., 1, 2, 3, 4
+    name: ai_level
+    title: AI等级
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: room_level
+    title: 房间等级
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1556163351
+    name: war_start_time
+    title: 战场开始时间(时间戳)
+    type: long
+  - description: e.g., 1556163351
+    name: end_time
+    title: 战场结束时间(时间戳)
+    type: long
+  - description: e.g., 1, -1
+    name: air_line
+    title: 航线
+    type: string
+  - description: e.g., 10
+    name: join_num
+    title: 参与人数
+    type: long
+  - description: e.g., 10
+    name: kill_num
+    title: 总击杀数
+    type: long
+  - description: e.g., 10
+    name: headshot_num
+    title: 总爆头数
+    type: long
+  - description: e.g., 10
+    name: kbht
+    title: 爆头击倒且击杀
+    type: long
+  - description: e.g., 1
+    name: watcher_num
+    title: 结束时的观战人数
+    type: long
+  - description: 圈内生存玩家数
+    items:
+      fields:
+      - description: e.g., 1
+        name: circle
+        title: 圈数
+        type: long
+      - description: e.g., 10
+        name: live_num
+        title: 存活玩家
+        type: long
+      - description: e.g., 10
+        name: live_real_num
+        title: 存活真人玩家
+        type: long
+      type: struct
+    name: circles
+    title: 圈内生存玩家数
+    type: array
+  - description: |-
+      S20/2019-08-05加入
+
+      e.g., 1, 2, 3, 4, 5
+    name: score_room_level
+    title: 段位竞技场等级
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      S21/2019-08-29加入
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: 整场战斗总流入网络流量, 单位为 bit. 用于计算单局流入吞吐量
+    name: network_in
+    title: 整场战斗总流入网络流量, 单位为 bit. 用于计算单局流入吞吐量
+    type: long
+  - description: 整场战斗总流出网络流量, 单位为 bit. 用于计算单局流出吞吐量
+    name: network_out
+    title: 整场战斗总流出网络流量, 单位为 bit. 用于计算单局流出吞吐量
+    type: long
+  name: war_log
+  source: unet
+  title: unet战场日志

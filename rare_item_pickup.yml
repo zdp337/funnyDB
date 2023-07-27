@@ -1,0 +1,61 @@
+kind: Event
+metadata:
+  name: unet_rare_item_pickup
+spec:
+  description: |-
+    目前只记录空投枪，只记录没被捡过的物品的第一次拾取情况，假设每场有5个空投枪且都被玩家捡到，需要记录5次
+
+    V30/2020-09-02加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: e.g., 335544328
+    name: item_id
+    title: 物品ID
+    type: long
+  - description: e.g., 4倍瞄准镜
+    name: item_name
+    title: 物品名称
+    type: string
+  - description: |-
+      不包含出生岛时间
+
+      e.g., 1559275002
+    name: generate_time
+    title: 物品生成时间(时间戳)
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      V33/2021-01-25加入
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  name: rare_item_pickup
+  source: unet
+  title: 稀有物资拾取情况

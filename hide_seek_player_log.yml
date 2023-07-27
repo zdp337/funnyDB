@@ -1,0 +1,151 @@
+kind: Event
+metadata:
+  name: unet_hide_seek_player_log
+spec:
+  description: |-
+    躲猫猫模式战斗结算记录
+
+    每回合结束时记录，总结算也要记录
+
+    S24/2019-12-11加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: room_level
+    title: 房间等级
+    type: long
+  - description: e.g., 0-手机，1-模拟器
+    name: client_type
+    title: 房间类型
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: e.g., 1, 2
+    name: team_id
+    title: 队伍id
+    type: string
+  - description: |-
+      总结算时记0
+
+      e.g., 1, 2
+    name: round
+    title: 回合数
+    type: long
+  - description: |-
+      总结算时记0
+
+      e.g., 1-猎人，2-猫猫
+    name: role
+    title: 游戏角色
+    type: long
+  - description: e.g., 1563853896
+    name: war_start_time
+    title: 战场开始时间
+    type: long
+  - description: |-
+      包括观战时间，还没有结束的就记0
+
+      e.g., 1559526039
+    name: end_time
+    title: 玩家战斗结束时间(时间戳)
+    type: long
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: |-
+      玩家在该回合里面的游戏时长，如果是最后的结算，则记整局的游戏时长
+
+      e.g., 500
+    name: online_time
+    title: 游戏时长
+    type: long
+  - description: |-
+      记录该回合开始到被打死的时长，如果是最后的结算，则记整局的存活时间，单位秒
+
+      e.g., 60
+    name: survive_time
+    title: 存活时间
+    type: long
+  - description: |-
+      只有猎人身份下才有击杀数
+
+      e.g., 1
+    name: kill_num
+    title: 击杀数
+    type: long
+  - description: e.g., 1
+    name: dead_num
+    title: 死亡数
+    type: long
+  - description: |-
+      没有主动退出，默认记0
+
+      e.g., 1563853896
+    name: out_time
+    title: 玩家主动退出的时间，时间戳
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_dead_out
+    title: 玩家主动退出时是否死亡
+    type: long
+  - description: e.g., 10
+    name: score
+    title: 本回合积分
+    type: long
+  - description: |-
+      游戏中中途退出的玩家不会有最终的结算，但日志会记录其最终结算数据
+
+      e.g., 0-失败，1-胜利，2-平局，3-中途退出
+    name: stat
+    title: 本回合战斗结果
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_add
+    title: 玩家是否是中途加入
+    type: long
+  - description: |-
+      如果玩家不是中途加入的，加入时间和战场开始时间差不多，如果玩家是中途加入的，那么加入时间
+
+      就是它进入战场时的时间点
+
+      e.g., 1563853896
+    name: join_time
+    title: 玩家加入的时间，时间戳
+    type: long
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  name: hide_seek_player_log
+  source: unet
+  title: unet躲猫猫战斗结算记录

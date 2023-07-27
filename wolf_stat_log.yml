@@ -1,0 +1,152 @@
+kind: Event
+metadata:
+  name: unet_wolf_stat_log
+spec:
+  description: |-
+    狼人派对各状态结算日志
+
+    回合结算时上报，总结算时也上报
+
+    V40/2021-12-07加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: |-
+      总结算时记0
+
+      e.g., 1, 2
+    name: round
+    title: 回合数
+    type: long
+  - description: e.g., 1-普通肠，2-狼王，3-狼人，4-猎魔肠
+    name: stat
+    title: 身份状态
+    type: long
+  - description: e.g., 10
+    name: damage_num
+    title: 伤害量
+    type: long
+  - description: e.g., 1559275002
+    name: infect_time
+    title: 被感染时间(时间戳)，若一开始就是狼王就记0
+    type: long
+  - description: e.g., 10
+    name: infect_num
+    title: 感染数
+    type: long
+  - description: e.g., 10
+    name: kill_num
+    title: 击杀数
+    type: long
+  - description: 击倒数
+    name: knockout_num
+    title: 击倒数
+    type: long
+  - description: 被击倒数
+    name: knockout_by_num
+    title: 被击倒数
+    type: long
+  - description: 助攻次数
+    name: assist_num
+    title: 助攻次数
+    type: long
+  - description: 死亡坐标x轴
+    name: dead_location_x
+    title: 死亡坐标x轴
+    type: long
+  - description: 死亡坐标z轴
+    name: dead_location_z
+    title: 死亡坐标z轴
+    type: long
+  - description: 被感染做标x轴
+    name: infect_location_x
+    title: 被感染做标x轴
+    type: long
+  - description: 被感染坐标z轴
+    name: infect_location_z
+    title: 被感染坐标z轴
+    type: long
+  - description: e.g.，0-未被感染，1-视野盲区，2-奔跑，3-拾取空投
+    name: infect_reason
+    title: 感染情况，
+    type: string
+  - description: e.g., 10
+    name: stat_time
+    title: 该状态下持续时长
+    type: long
+  - description: e.g., 10
+    name: bear_damage
+    title: 每个身份状态下的承受伤害量
+    type: long
+  - description: e.g., 1556163351
+    name: war_start_time
+    title: 战场开始时间(时间戳)
+    type: long
+  - description: e.g., 1556163351
+    name: end_time
+    title: 战场结束时间(时间戳)
+    type: long
+  - description: e.g., 1556163351
+    name: bullet_less_time_30
+    title: 备弹少于30%时间（时间戳），排除狙击枪和手枪
+    type: long
+  - description: e.g., 1556163351
+    name: bullet_less_time_20
+    title: 备弹少于20%时间（时间戳），排除狙击枪和手枪
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: 被击倒坐标
+    items:
+      fields:
+      - description: 被击倒坐标x
+        name: knockout_location_x
+        title: 被击倒坐标x
+        type: long
+      - description: 被击倒坐标z
+        name: knockout_location_z
+        title: 被击倒坐标z
+        type: long
+      type: struct
+    name: knockout_location
+    title: 被击倒坐标
+    type: array
+  - description: e.g., 0-生存，1-死亡
+    name: is_dead
+    title: 是否死亡
+    type: long
+  name: wolf_stat_log
+  source: unet
+  title: 狼人派对各状态结算日志
