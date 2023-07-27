@@ -1,0 +1,33 @@
+kind: Event
+metadata:
+  name: client_warloading_steps
+spec:
+  description: "1.networkconnection           网络连接中\n2.roleloading                 角色加载\n3.init_car
+    \                      汽车初始化\n4.specialeffectsloading         特效加载\n5.groundloading
+    \                 地面加载\n6.spectator character          获取观战角色 \n7.highpolysceneloading
+    \      高模场景加载"
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场id
+    type: string
+  - description: e.g. 1-正常登录 2-从战场返回 3-发生错误重新进入战场 4-切换账号 5-累计游戏时间过久
+    name: start_type
+    title: 登录类型
+    type: long
+  - description: e.g. 3643b8aa363de16b
+    name: device_id
+    title: 设备id
+    type: string
+  - description: e.g. ，1,2,3,4,5,
+    name: o
+    title: 排序id
+    type: long
+  - description: 'networkconnection  '
+    name: e
+    title: 节点事件
+    type: string
+  name: warloading_steps
+  source: client
+  title: 战场登录步骤

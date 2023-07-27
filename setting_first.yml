@@ -1,0 +1,24 @@
+kind: Event
+metadata:
+  name: client_setting_first
+spec:
+  description: |-
+    记录玩家部分默认设置
+    用于分机型的性能分析
+  dont_save_to_table: false
+  fields:
+  - description: ""
+    name: war_frame_type
+    title: ' 玩家默认帧率设置'
+    type: long
+  - description: e.g. 1-低端机，2中端机，3-高端机
+    name: level_model
+    title: ' 机型'
+    type: long
+  - description: e.g., 1-流畅、2-均衡、3-精致、4-高清、5-超高清、6-极致
+    name: war_quality_type
+    title: 玩家默认战场画质类型
+    type: long
+  name: setting_first
+  source: client
+  title: 玩家默认设置记录

@@ -1,0 +1,24 @@
+kind: Event
+metadata:
+  name: client_pack_loss_timeout
+spec:
+  description: |-
+    上报超时丢包的网络协议：客户端在和服务端进行网络协议请求的过程中，如果出现了超时丢包，想把丢包的协议信息上报个日志，这样后面可以给服务端去分析接口性能之类的问题
+    v44，2022/10/27加入
+  dont_save_to_table: false
+  fields:
+  - description: ""
+    name: protocol_name
+    title: 协议信息
+    type: string
+  - description: ""
+    name: port_name
+    title: 接口名
+    type: string
+  - description: ""
+    name: out_time
+    title: 超时时间
+    type: long
+  name: pack_loss_timeout
+  source: client
+  title: 超时丢包协议日志

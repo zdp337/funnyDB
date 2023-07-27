@@ -1,0 +1,61 @@
+kind: Event
+metadata:
+  name: client_check_appearance_info
+spec:
+  description: |-
+    外围客户端进入房间之前装备信息检查统计
+
+    外围客户端进入房间之前会去检测装扮，表情，动作，恶作剧装备信息是否完全，用来验证匹配流程
+
+    目前只针对经典模式和街机模式
+
+    S23/2019-11-08加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., dev-game-info.biubiubiu.io:20001
+    name: unet_addr
+    title: unet服务器地址
+    type: string
+  - description: e.g., SZ
+    name: unet_area
+    title: unet服务器机房地区
+    type: string
+  - description: e.g., 0-否，1-是
+    name: has_expression
+    title: 是否装备表情气泡
+    type: long
+  - description: e.g., 0-否，1-是
+    name: has_action
+    title: 是否装备动作
+    type: long
+  - description: e.g., 0-否，1-是
+    name: has_joker_item
+    title: 是否装备恶作具
+    type: long
+  - description: e.g., 0-否，1-是
+    name: has_other_select
+    title: 是否装备其他装扮
+    type: long
+  - description: e.g., 0-否，1-是
+    name: has_mod_open_info
+    title: 是否有大厅地图信息
+    type: long
+  name: check_appearance_info
+  source: client
+  title: 客户端进房间装备检查

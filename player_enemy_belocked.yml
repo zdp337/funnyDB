@@ -1,0 +1,111 @@
+kind: Event
+metadata:
+  name: client_player_enemy_belocked
+spec:
+  description: |-
+    UI准心进入敌人（真人）范围时记录，记录玩家准心跟随、锁定敌人时间
+
+    上报时机：战局结束时上报
+
+    V35/2021-4-20 加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: eg., 500.000
+    name: live_time
+    title: 玩家在战场的实际生存时间（精度：保留三位小数点）
+    type: float
+  - description: 准心锁定敌人
+    items:
+      fields:
+      - description: eg., 10.200
+        name: lock_time
+        title: 准心锁定敌人时间总和（精度：保留三位小数点）
+        type: long
+      - description: eg., 0.200
+        name: miss_time
+        title: 准心丢失时间总和（精度：保留三位小数点）
+        type: long
+      - description: |-
+          准心进入敌人范围内时记录
+
+          eg., 100
+        name: lock_distance
+        title: 距敌人距离
+        type: long
+      - description: |-
+          被锁定时间内敌人的移动距离
+
+          e.g., 100
+        name: enemy_move_distance
+        title: 敌人移动距离
+        type: long
+      - description: |-
+          准心持续跟踪敌人时间内且准心在敌人范围内时，玩家总射击次数
+
+          e.g., 200
+        name: lock_fire_num
+        title: 准心在敌人范围内时，玩家射击的次数
+        type: long
+      - description: |-
+          准心持续跟踪敌人时间内，玩家总射击次数
+
+          e.g., 200
+        name: fire_num
+        title: 玩家射击次数
+        type: long
+      - description: e.g., 20
+        name: lock_num
+        title: 准心锁定敌人次数
+        type: long
+      - description: |-
+          准心进入敌人范围内时记录
+
+          e.g., M16A4
+        name: item_name
+        title: 枪械名称，没有持有枪械为空
+        type: string
+      - description: |-
+          精度：保留三位小数点; 以逗号分隔
+
+          e.g., 0.01,0.01,0.02
+        name: miss_time_array
+        title: 准心丢失时间原始数据
+        type: string
+      - description: e.g., 9871361
+        name: be_pid
+        title: 被锁定的玩家
+        type: long
+      type: struct
+    name: locks
+    title: 准心锁定敌人
+    type: array
+  - description: 0 - IOS，1 - Android，2 - 模拟器
+    name: login_platform
+    title: 登录平台
+    type: long
+  name: player_enemy_belocked
+  source: client
+  title: 准心锁定敌人

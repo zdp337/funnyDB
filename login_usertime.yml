@@ -1,0 +1,63 @@
+kind: Event
+metadata:
+  name: client_login_usertime
+spec:
+  description: |-
+    玩家登录节点耗时统计
+
+    该步骤比login_steps更详细
+
+    2022-11-09加入
+  dont_save_to_table: false
+  fields:
+  - description: ' e.g. 1,2,3,4,5,6'
+    name: o
+    title: '排序id '
+    type: long
+  - description: |2-
+
+      e.g.networkconnection
+    name: e
+    title: 节点事件
+    type: string
+  - description: 单位，秒
+    name: use_time
+    title: 步骤耗时
+    type: long
+  - description: e.g. 1-正常进入战场 2-从战场返回 3-发生错误重新进入战场 4-切换账号 5-累计游戏时间过久
+    name: start_type
+    title: 登录类型
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_new
+    title: 是否初次登录
+    type: long
+  - description: e.g. 3643b8aa363de16b
+    name: device_id
+    title: 设备id
+    type: string
+  - description: e.g., 0-否，1-是
+    name: guest
+    title: 是否游客
+    type: long
+  - description: |2-
+       传过来的值经过 MD5 计算
+      e.g., 3643b8aa363de16b，苹果设备为空
+    name: android_id
+    title: 安卓设备的ID,
+    type: string
+  - description: |-
+      传过来的值经过 MD5 计算
+      e.g., 38400000-8cf0-11bd-b23e-10b96e40000d，苹果设备为空
+    name: advertising_id
+    title: 安卓设备的广告ID
+    type: string
+  - description: |2-
+       传过来的值经过 MD5 计算
+      e.g., 9C287922-EE26-4501-94B5-DDE6F83E1475，安卓设备为空
+    name: ios_idfa
+    title: 苹果设备的广告ID
+    type: string
+  name: login_usertime
+  source: client
+  title: 登录节点步骤耗时记录

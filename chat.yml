@@ -1,0 +1,27 @@
+kind: Event
+metadata:
+  name: client_chat
+spec:
+  description: |-
+    每个玩家每种类型的聊天需要按天进行缓存，为了减少日志量，每天只需要上报一次
+
+    需要过滤被禁言玩家的无效发言
+
+    S28/2020-06-28加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 0-好友聊天，1-组队聊天，2-世界聊天，3-房间内聊天，4-战场内聊天，5-战队内聊天
+    name: type
+    title: 聊天类型
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_voice
+    title: 是否是语音
+    type: long
+  name: chat
+  source: client
+  title: 聊天日志

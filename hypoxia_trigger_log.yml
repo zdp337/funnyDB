@@ -1,0 +1,80 @@
+kind: Event
+metadata:
+  name: client_hypoxia_trigger_log
+spec:
+  description: |-
+    触发缺氧事件时记录
+
+    V37/2021-07-12加入
+  dont_save_to_table: true
+  fields:
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1559525993
+    name: war_start_time
+    title: 战场开始时间(时间戳)
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: 缺氧情况详情
+    items:
+      fields:
+      - description: e.g., 585
+        name: trigger_location_x
+        title: 触发缺氧坐标x轴
+        type: long
+      - description: e.g., 585
+        name: trigger_location_y
+        title: 触发缺氧坐标y轴
+        type: long
+      - description: e.g., 585
+        name: trigger_location_z
+        title: 触发缺氧坐标z轴
+        type: long
+      - description: e.g., 0-高度触发, 1-布点触发
+        name: trigger_type
+        title: 缺氧类型
+        type: long
+      - description: e.g., 10
+        name: hypoxia_time
+        title: 缺氧状态时长
+        type: long
+      - description: e.g., 1-是, 0-否
+        name: is_dead
+        title: 是否因缺氧死亡
+        type: long
+      type: struct
+    name: hypoxia_detail
+    title: 缺氧情况详情
+    type: array
+  name: hypoxia_trigger_log
+  source: client
+  title: 触发缺氧状态日志

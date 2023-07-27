@@ -1,0 +1,65 @@
+kind: Event
+metadata:
+  name: client_mark
+spec:
+  description: |
+    标记事件
+
+    玩家标记事物时上报
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., fbae675bfb22d61ab37387dd82c7c96b
+    name: team_id
+    title: 队伍ID
+    type: string
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: |-
+      e.g.,
+
+      - 标记地点
+
+      - 同意标记地点
+
+      - 标记敌人
+
+      - 标记物品
+
+      - 需要标记物品
+
+      - 取消标记物品
+
+      - 准备救援
+    name: mark_type
+    title: 标记行为
+    type: string
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  name: mark
+  source: client
+  title: unet玩家标记

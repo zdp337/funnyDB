@@ -1,0 +1,28 @@
+kind: Event
+metadata:
+  name: client_ping_unet_area
+spec:
+  description: |
+    unet地区选择统计
+
+    分析玩家按照机房来进入房间，验证是否提升服务质量
+    在选择最优 unet 地区线路后，上报这个线路的信息
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., SZ
+    name: unet_area
+    title: unet服务器机房地区
+    type: string
+  - description: e.g., 47.96.234.8
+    name: usp
+    title: unet机房的ping服务器地址
+    type: string
+  - description: e.g., 120
+    name: ping
+    title: 选择的unet area的ping值
+    type: long
+  name: ping_unet_area
+  source: client
+  title: unet地区选择

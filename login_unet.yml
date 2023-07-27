@@ -1,0 +1,57 @@
+kind: Event
+metadata:
+  name: client_login_unet
+spec:
+  description: |-
+    用户辅助验证玩家进入战场是否正常
+
+    V30/2020-09-22加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., abc
+    name: token
+    title: Token
+    type: string
+  - description: e.g., 1559275002
+    name: token_time
+    title: Token时间
+    type: long
+  - description: e.g., 1
+    name: team_id
+    title: 队伍id
+    type: string
+  - description: e.g., 0-玩家，1-解说，2-观战，3-裁判
+    name: identity
+    title: 玩家身份
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_reconnect
+    title: 是否重连
+    type: long
+  - description: e.g., 0-正常登录，1-重连登录，2-正常观战，3-战报观战
+    name: state
+    title: 登录状态
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_empty_data
+    title: Unet数据是否为空
+    type: long
+  name: login_unet
+  source: client
+  title: unet登录日志

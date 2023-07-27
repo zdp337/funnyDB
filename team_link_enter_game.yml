@@ -1,0 +1,67 @@
+kind: Event
+metadata:
+  name: client_team_link_enter_game
+spec:
+  description: |
+    通过世界频道组队链接加入队伍并且进入游戏统计
+
+    统计快速组队的使用情况, 以及成功率
+
+    玩家通过世界频道的组队链接加入队伍, 并且进入游戏时上报一条该事件, 上报时带上组队链接的ID.
+    队长不需要上报该事件, 如果不是通过世界频道的组队链接加入的队伍, 也不需要上报
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      玩家从世界频道加入队伍时点击的那个链接的ID
+
+      e.g., 19824671554382912
+    name: team_link_id
+    title: 组队链接ID
+    type: string
+  - description: e.g., 青铜V
+    name: s_level
+    title: 玩家段位
+    type: string
+  - description: e.g., 1
+    name: level
+    title: 玩家等级
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 0-随机地图，1-战斗岛，2-快速派对，3-彩虹岛
+    name: pre_mmod
+    title: 地图
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 2
+    name: player_num
+    title: 目前队伍的人数
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_auto_match
+    title: (队员)自动匹配是否开启
+    type: long
+  - description: |-
+      S27/2020-06-05加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: |-
+      S28/2020-06-30加入
+
+      e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  name: team_link_enter_game
+  source: client
+  title: 客户端玩家通过世界频道组队

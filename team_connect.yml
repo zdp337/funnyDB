@@ -1,0 +1,36 @@
+kind: Event
+metadata:
+  name: client_team_connect
+spec:
+  description: |
+    玩家通过链接进入队伍统计
+
+    玩家通过链接打开游戏进入队伍时记录
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: |-
+      e.g.,
+
+      1-QQ链接
+
+      2-QQ二维码
+
+      3-微信链接
+
+      4-微信二维码
+    name: con_way
+    title: 操作途径
+    type: long
+  - description: e.g., fbae675bfb22d61ab37387dd82c7c96b
+    name: team_id
+    title: 队伍ID
+    type: string
+  name: team_connect
+  source: client
+  title: 客户端玩家通过链接组队

@@ -1,0 +1,65 @@
+kind: Event
+metadata:
+  name: client_ping_histogram
+spec:
+  description: |
+    ping 直方图, 记录每个区间内ping值的次数
+
+    客户端每3秒测量一次 ping, 将 ping 值累计到直方图中相应的区间, 结果在结算、被击杀、或者玩家主动退出游戏时上报
+
+    区间定义如下:
+
+    [3000,+)
+    [500,3000)
+    [300,500)
+    [240,300)
+    [180,240)
+    [150,180)
+    [120,150)
+    [100,120)
+    [90,100)
+    [80,90)
+    [70,80)
+    [60,70)
+    [30,60)
+    [0,30)
+
+
+    S22/2019-10-21加入
+  dont_save_to_table: true
+  fields:
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: 直方图数据
+    items:
+      fields:
+      - description: ping 区间, 记录区间的下界, 比如说, 区间 [30,60), bucket 记 30
+        name: bucket
+        title: ping 区间, 记录区间的下界, 比如说, 区间 [30,60), bucket 记 30
+        type: long
+      - description: 区间计数, 记录在该区间内的 ping 次数
+        name: count
+        title: 区间计数, 记录在该区间内的 ping 次数
+        type: long
+      type: struct
+    name: histogram
+    title: 直方图数据
+    type: array
+  name: ping_histogram
+  source: client
+  title: unet ping 直方图

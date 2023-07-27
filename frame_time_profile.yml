@@ -1,0 +1,39 @@
+kind: Event
+metadata:
+  name: client_frame_time_profile
+spec:
+  description: |
+    每帧时间, 记录整场游戏的每帧时间
+
+    由于数据量会比较大, 客户端会先从服务端获取采样规则(包括设备型号的采样率, pid), 判断一场游戏是否需要记录
+
+    客户端每一分钟上报一次数据, 上报过去一分钟的每一帧生成时间
+
+    S22/2019-10-22加入
+
+    V33/2020-01-20 不上报数据, 客户端老魏提出
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 16,16,12,20,20,16
+    name: series
+    title: 每帧生成时间的时间序列, 单位毫秒, 去掉小数部分, 结果以逗号分隔编码
+    type: string
+  name: frame_time_profile
+  source: client
+  title: unet每帧时间

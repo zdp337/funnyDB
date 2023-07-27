@@ -1,0 +1,68 @@
+kind: Event
+metadata:
+  name: client_login_node
+spec:
+  description: |-
+    玩家登录节点统计
+
+    玩家每进入一个登录节点后触发（除了第一个节点0）
+
+    1 Start 第一个节点触发前
+    2 StartLua
+    3 CreateLoadUI
+    4 EnterLoginUI
+    5 CheckXDProtocol
+    6 GetGameInfo
+    7 InitXDSDK
+    9 GetXDAccessToken
+    11 GetLoginInfo
+    12 ConnectServer
+    13 LoginServer
+    14 FirstLogin
+    15 GetPlayerInfo
+    16 EnterGameHall
+    17 TapDBSetUser
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1, 2, 3...
+    name: o
+    title: 排序id
+    type: long
+  - description: e.g., CreateLoadUI
+    name: e
+    title: 节点事件
+    type: string
+  - description: e.g., 0-否，1-是
+    name: is_new
+    title: 是否初次登录
+    type: long
+  - description: e.g., 1-正常登录，2-从战场返回，3-发生错误重新登录，4-切换账号，5-累计游戏时间过久
+    name: start_type
+    title: 登录类型
+    type: long
+  - description: |-
+      V35/2021-04-01加入
+
+      e.g., 3643b8aa363de16b，苹果设备为空
+    name: android_id
+    title: 安卓设备的ID, 传过来的值经过 MD5 计算
+    type: string
+  - description: |-
+      V35/2021-04-01加入
+
+      e.g., 38400000-8cf0-11bd-b23e-10b96e40000d，苹果设备为空
+    name: advertising_id
+    title: 安卓设备的广告ID, 传过来的值经过 MD5 计算
+    type: string
+  - description: |-
+      V35/2021-04-01加入
+
+      e.g., 9C287922-EE26-4501-94B5-DDE6F83E1475，安卓设备为空
+    name: ios_idfa
+    title: 苹果设备的广告ID, 传过来的值经过 MD5 计算
+    type: string
+  name: login_node
+  source: client
+  title: 客户端登录节点统计

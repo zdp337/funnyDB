@@ -1,0 +1,34 @@
+kind: Event
+metadata:
+  name: client_team_invitation
+spec:
+  description: |-
+    记录玩家对组队邀请的接受状态记录
+
+    在玩家对组队邀请的接受反馈时上报
+
+    V46/2023-01-31加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 6871361
+    name: be_pid
+    title: 被邀请玩家ID
+    type: long
+  - description: e.g.,0-拒绝， 1-接受
+    name: stat
+    title: 邀请接受状态
+    type: long
+  - description: e.g.,0-好友邀请， 1-陌生人邀请...
+    name: link_type
+    title: 组队邀请方式
+    type: long
+  - description: |-
+      确保这个ID是全局唯一的, 比如说 {pid}+{unixtime}
+
+      e.g., 19824671554382912
+    name: team_link_id
+    title: 组队链接ID
+    type: string
+  name: team_invitation
+  source: client
+  title: 玩家组队邀请记录

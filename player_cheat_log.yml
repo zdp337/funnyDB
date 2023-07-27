@@ -1,0 +1,37 @@
+kind: Event
+metadata:
+  name: client_player_cheat_log
+spec:
+  description: |-
+    战场外外挂主动检测日志
+
+    v36/2021-05-17 加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 驭风者骷髅
+    name: nick
+    title: 玩家昵称
+    type: string
+  - description: e.g., ios, android
+    name: device_platform
+    title: 设备平台
+    type: string
+  - description: e.g., FlyJumpSpeed
+    name: cheat_type
+    title: 外挂类型
+    type: string
+  - description: e.g., FlyJumpSpeed
+    name: cheat_sub_type
+    title: 外挂子类型
+    type: string
+  - description: e.g., check MTP State value error或者自定义code
+    name: cheat_info
+    title: 外挂具体信息
+    type: string
+  - description: 'e.g., errorBomb: 338.8972'
+    name: cheat_value
+    title: 异常数值
+    type: string
+  name: player_cheat_log
+  source: client
+  title: client 外挂主动检测日志

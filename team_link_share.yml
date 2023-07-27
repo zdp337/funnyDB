@@ -1,0 +1,87 @@
+kind: Event
+metadata:
+  name: client_team_link_share
+spec:
+  description: |
+    世界频道发起快速组队统计
+
+    统计快速组队的使用情况, 以及成功率
+
+    玩家在世界频道发起快速组队时上报
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      确保这个ID是全局唯一的, 比如说 {pid}+{unixtime}
+
+      e.g., 19824671554382912
+    name: team_link_id
+    title: 组队链接ID
+    type: string
+  - description: e.g., 青铜V
+    name: s_level
+    title: 玩家段位
+    type: string
+  - description: e.g., 1
+    name: level
+    title: 玩家等级
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: |-
+      地图选择情况需要通过game_selection_id字段判断，目前都会传-1值
+
+      e.g., 0-随机地图，1-战斗岛，2-快速派对，3-彩虹岛
+    name: pre_mmod
+    title: 地图
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 2
+    name: player_num
+    title: 目前队伍的人数
+    type: long
+  - description: |-
+      S27/2020-05-28加入
+
+      e.g., 704643072-随机地图，704643073-战斗岛, ...
+    name: game_selection_id
+    title: 游戏选项ID
+    type: long
+  - description: e.g.,0-无限制， 1-青铜V
+    name: min_level
+    title: 玩家设置的房间最低段位，包含无限制
+    type: long
+  - description: e.g., 1-青铜V
+    name: s_level_new
+    title: 玩家段位
+    type: long
+  - description: eg. 1-世界频道组队，2-战队频道组队，3-战队pk
+    name: link_type
+    title: 区分快捷组队链接类型
+    type: long
+  - description: e.g., 19824671554382912
+    name: club_id
+    title: 战队id，来自世界频道则记为0
+    type: long
+  - description: |-
+      V38/2021-08-03加入
+
+      e.g., 1-大厅邀请组队，2-快速组队
+    name: organize_type
+    title: 标记玩家使用大厅组队或快速组队
+    type: long
+  - description: |-
+      V40/2021-12-20加入
+      e.g., '1,2,3'
+    name: label_choose
+    title: 组队标签id选择
+    type: string
+  name: team_link_share
+  source: client
+  title: 客户端玩家在世界频道发起快速组队

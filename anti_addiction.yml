@@ -1,0 +1,27 @@
+kind: Event
+metadata:
+  name: client_anti_addiction
+spec:
+  description: |-
+    防沉迷记录
+
+    当玩家被进行防沉迷操作的时候记录
+
+    S24/2019-12-30加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 0-未实名，1-已实名，8岁以下，2-已实名，8岁-15岁，3-已实名，16-17岁，4-已实名，已成年
+    name: adult_type
+    title: 玩家实名状态
+    type: long
+  - description: e.g., 1-值>50，2-充值>100，3-当月累计>200，4-当月累计>400，5-游戏时长>90，6-游戏时长>180（节假日），7-宵禁，8-未实名账号时长>60
+    name: stat
+    title: 防沉迷原因
+    type: long
+  name: anti_addiction
+  source: client
+  title: 客户端防沉迷记录

@@ -1,0 +1,22 @@
+kind: Event
+metadata:
+  name: client_newplayer_difficulty_choose
+spec:
+  description: ''
+  dont_save_to_table: false
+  fields:
+  - description: e.g. 1.新手，2.大师
+    name: difficulty
+    title: 首局难度选择
+    type: long
+  - description: e.g. 1-经典模式战斗岛
+    name: mmod
+    title: 首局模式选择
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  name: newplayer_difficulty_choose
+  source: client
+  title: 新玩家难度选择

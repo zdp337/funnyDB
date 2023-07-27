@@ -1,0 +1,46 @@
+kind: Event
+metadata:
+  name: client_shop_click
+spec:
+  description: |-
+    玩家点击道具进行预览/查看时记录
+
+    S19/2019-06-03加入
+
+    S19/2019-06-27移除。策划认为这个从点击到购买的转化率并不重要，随着商店界面改版，这个事件不再上报数据
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 1-1
+    name: place
+    title: 商品在商店的位置(行-列）
+    type: string
+  - description: e.g., 282
+    name: item_id
+    title: 道具ID
+    type: long
+  - description: e.g., WuKongBuJiXiang
+    name: item_name
+    title: 道具名称
+    type: string
+  - description: e.g., 1-付费宝箱，2-通行证，3-付费甜甜圈宝箱，4-限时直购，5-付费货币礼盒，6-缤纷补给箱，8-大宝箱，14-点券商店，15-占卜商城
+    name: shop_type_id
+    title: 商品类型id
+    type: long
+  - description: |-
+      购买对象是商品的情况需要填入该字段
+
+      e.g., 4000
+    name: product_id
+    title: 商品id
+    type: string
+  - description: e.g., 鬼忍套装
+    name: product_name
+    title: 商品名称
+    type: string
+  name: shop_click
+  source: client
+  title: 玩家道具预览统计

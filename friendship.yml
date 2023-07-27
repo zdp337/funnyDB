@@ -1,0 +1,146 @@
+kind: Event
+metadata:
+  name: client_friendship
+spec:
+  description: |
+    玩家好友状态变更统计
+
+    玩家好友状态发生变更时记录
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: |-
+      e.g.,
+
+      1-QQ链接
+
+      3-微信链接
+
+      4-二维码
+
+      5-拉黑
+
+      6-取消关注
+
+      7-通过昵称
+
+      8-通过ID
+
+      9-最近组队过的
+
+      10-结算界面
+
+      11-多人靶场
+
+      12-排行榜
+
+      13-组队邀请弹窗
+
+      14-聊天
+
+      15-好友-找朋友-最近匹配
+
+      16-好友-关系-粉丝
+
+      17-个人空间
+
+      18-个人空间-历史战绩
+
+      19-大厅组队
+
+      20-个人空间-历史战绩-自定义房间
+
+      21-观战界面
+
+      22-taptap动态
+
+      23-关注其他战队成员
+
+      24-关注相同战队成员
+
+      25-陌生人聊天Tips回关
+
+      26-陌生人聊天界面回关
+
+      27-个人空间回关
+
+      28-通过好友推荐关注
+
+      29-世界聊天关注
+
+      30-组队聊天关注
+
+      31-战队聊天关注
+
+      32-出生岛关注
+    name: con_way
+    title: 操作途径
+    type: long
+  - description: e.g., 1-单向关注，2-互为关注
+    name: stat
+    title: 关系状态
+    type: long
+  - description: e.g., 9871361
+    name: be_pid
+    title: 操作对象pid
+    type: long
+  - description: |-
+      S20/2019-07-23加入
+
+      不是通过结算界面进行关注的，记0
+
+      e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: |-
+      S25/2020-01-20加入
+
+      e.g., 1
+    name: focus_count
+    title: 关注数量
+    type: long
+  - description: |-
+      S25/2020-01-20加入
+
+      e.g., 1
+    name: fan_count
+    title: 粉丝数量
+    type: long
+  - description: |-
+      S25/2020-01-20加入
+
+      e.g., 1
+    name: blacklist_count
+    title: 黑名单数量
+    type: long
+  - description: |-
+      S25/2020-01-20加入
+
+      e.g., 1
+    name: friend_count
+    title: 互相关注数量
+    type: long
+  - description: |-
+      不是通过结算界面进行关注的，记0
+
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: |-
+      e.g., 5c63486fbd08f80062c13ed15829d049
+      2023/5/30加入
+    name: war_id
+    title: 战场ID
+    type: string
+  name: friendship
+  source: client
+  title: 客户端好友状态变更

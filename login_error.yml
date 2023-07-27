@@ -1,0 +1,39 @@
+kind: Event
+metadata:
+  name: client_login_error
+spec:
+  description: |
+    客户端登录错误
+
+    记录客户端在登录的时候产生错误的那一步event 只有在错误的时候才推送该接口
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1920x1080
+    name: r
+    title: 分辨率
+    type: string
+  - description: e.g., 1, 2, 3...
+    name: o
+    title: 排序id
+    type: long
+  - description: e.g., stack traceback ...
+    name: msg
+    title: 错误信息
+    type: string
+  - description: e.g., CreateLoadUI, GetPlayerInfo, ConnectServer
+    name: e
+    title: 事件名称
+    type: string
+  - description: e.g., 0-否，1-是
+    name: is_new
+    title: 是否初次登录
+    type: long
+  - description: e.g., 1-正常登录，2-从战场返回，3-发生错误重新登录，4-切换账号，5-累计游戏时间过久
+    name: start_type
+    title: 登录类型
+    type: long
+  name: login_error
+  source: client
+  title: 客户端登录错误

@@ -1,0 +1,77 @@
+kind: Event
+metadata:
+  name: client_obj_click
+spec:
+  description: |
+    客户端按钮点击事件
+
+    玩家点击客户端控件/按钮链接时记录
+
+    S20/2019-07-24以后，该事件只用于外围系统的按钮点击
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      好友操作记值、组队相关操作记0；有目标玩家时记值，无目标玩家时记0
+
+      e.g., 9871361
+    name: be_pid
+    title: 目标玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 1
+    name: level
+    title: 玩家等级
+    type: long
+  - description: e.g., 1-外围系统，2-战斗内
+    name: system_pos
+    title: 界面位置
+    type: long
+  - description: "格式：（事件名称：事件说明）\n\ne.g.,\n\n好友、组队、个人空间相关：\n\n  f_qq:“好友”频道下通过“QQ扫码”加好友\n\n
+      \ f_wx:“好友”频道下通过“微信扫码”加好友\n\n  f_follow:“好友关注”点击\n\n  f_refo:“粉丝”列表中“添加关注”控件点击\n\n
+      \ f_watch:观战\n\n  f_cover:拉黑\n\n  f_invit:邀请组队\n\n  f_apply:申请加入\n\n  f_info:查看好友信息\n\n
+      \ f_fast:快速组队\n\n  f_team_act：大厅组队-主动\n\n  f_team_def：大厅组队-默认\n\n  t_nscreen:组队频道-当面扫码组队（扫别人）\n\n
+      \ t_nsend:组队频道-当面扫码组队（给二维码）\n\n  t_wx:组队频道-远程组队-微信\n\n  t_qq:组队频道-远程组队-QQ\n\n
+      \ t_hall_friend:大厅内邀请好友组队\n\n  p_visit_visitor_zone:查看访客个人空间(通过个人空间的访客进入)\n\n
+      \ p_visit_zone:查看个人空间(通过其他方式进入)\n\n  p_visit_self_zone: 查看自己的个人空间\n\n  p_start_share_zone:个人空间分享点击(进入个人空间截图生成页面)\n\n
+      \ p_share_zone:个人空间开始分享(发到微信好友，朋友圈，QQ好友，QQ空间)\n\n  p_save_sign:个人空间签名点击保存\n\n
+      \ a_pizza_coupon: 必胜客点餐页面\n\n  a_pizza_reward: 必胜客cdk兑换\n\n  p_share_tap：个人空间分享至
+      taptap\n\n  achievement_share：成就达成分享\n\n  achievement_share_tap：成就达成分享至 taptap\n\n
+      \ p_visit_visitor_season:  通过访客查看季票数据\n\n  p_visit_other_season：通过其他方式查看季票数据（相对于访客方式来说）\n\n
+      \ p_visit_visitor_history:  通过访客查看历史战绩\n\n  p_visit_other_history：通过其他方式查看历史战绩（相对于访客方式来说）\n\n
+      \ p_visit_visitor_achievement:  通过访客查看成就\n\n  p_visit_other_achievement：通过其他方式查看成就（相对于访客方式来说）\n\n
+      \ p_visit_visitor_intimacy：通过访客查看亲密关系\n\n  p_visit_other_intimacy：通过其他方式查看亲密关系（相对于访客方式来说）\n\n
+      \ p_visit_visitor_mark：通过访客使用备注\n\n  b_dress_immediately：立即装扮\n\n大厅上的按钮：\n\n
+      \ 商店：商店入口\n\n  仓库：仓库入口\n\n  数据：数据入口\n\n  战斗模式切换\n\n  准备\n\n  活跃宝箱\n\n  聊天框\n\n
+      \ 活动\n\n  图鉴\n\n  菜单\n\n  设置\n\n  手册\n\n  邮件\n\n  客服\n\n  糖果\n\n  段位成长线\n\n
+      \ 社交\n\n  香肠TV\n\ntap头像\n\n  \n\n  h_dynamic: 动态\n\n  ad_nonactivated: 广告界面的
+      开通免广告\n\n  photo_hall:大厅内拍照\n\n  photo_hall_share:大厅内拍照分享\n\n仓库内的按钮：\n\n  random_dress：随机装扮\n\n模式选择的按钮：\n\nfight_guide
+      ：肠岛攻略战入口\n\n战斗内的按钮：\n\n  小地图\n\n  小地图-放大缩小\n\n  小地图-标记位置\n\n  小地图-取消标记\n\n  小地图-标记自身\n\n
+      \ 射击姿势-左\n\n  射击姿势-右\n\n  射击姿势-下：把枪举过头顶射击\n\n  狙击\n\n  屏息\n\n  背包\n\n  使用消耗品\n\n
+      \ 选择枪械\n\n  装备子弹\n\n  w_report_share：战报结算分享\n\n  w_report_share_tap：战报结算分享至
+      taptap\n\n  photo_war:战场内拍照\n\n  photo_war_share:战场内拍照分享\n\n云端相关:\n\n  cloud_upload:
+      云端上传\n\n  cloud_download: 云端下载\n\n活动相关：\n\n  查看分享结果\n\n  上新小季票视频首次关闭<=5s\n  上新小季票视频首次关闭<=10s\n
+      \ 上新小季票视频首次关闭<=20s\n  上新小季票视频首次关闭>20s\n\n  点击小季票视频关闭<=5s\n  点击小季票视频关闭<=10s\n
+      \ 点击小季票视频关闭<=20s\n  点击小季票视频关闭>20s\n\n访客相关\nchat_to_zone：聊天跳转\nrecord_details_to_zone：自定义房间跳转\nclub_to_zone：战队跳转\nfriend_to_zone：好友挑战\nhistory_war_to_zone：历史战绩跳转\nintimacy_war_to_zone：亲密关系跳转\nlobby_war_to_zone：大厅跳转\nrank_war_to_zone：排行榜跳转\nvisitor_war_to_zone：缩略访客跳转\nactivity_war_to_zone：活动跳转\npersonal_space_war_to_zone：访客列表跳转\nteam_dropdown_menu
+      \ 组队后下拉菜单按钮\nshared_wardrobe  共享衣柜\nred_button   红点提示 （共享衣柜有剩余次数时）\nmode_choose
+      \ 入口点击操作事件\n\nV48新增：\n气泡\n战场气泡\n动作\n战场动作\n战场恶作剧\n拍照\n发起亲密双人动作\n接受亲密双人动作\n橙色动作使用\n橙色动作交互\n出生岛关注添加\n冲拳\n摆头\n爬行"
+    name: obj_name
+    title: 操作事件名称
+    type: string
+  - description: "\be.g., 0否(返回结果失败)1是(返回结果成功)"
+    name: stat
+    title: "按钮点击\b结果返回\b"
+    type: long
+  - description: |-
+      e.g., 5c63486fbd08f80062c13ed15829d049
+      2023/5/30加入
+    name: war_id
+    title: ' 战场ID'
+    type: string
+  name: obj_click
+  source: client
+  title: 客户端大厅按钮点击

@@ -1,0 +1,29 @@
+kind: Event
+metadata:
+  name: client_charge
+spec:
+  description: |-
+    充值日志
+
+    V40/2021-12-06加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., com.xd.sausage.price.6
+    name: product_id
+    title: 商品id
+    type: string
+  - description: e.g., 6
+    name: price
+    title: 充值金额
+    type: long
+  - description: e.g., 35222509
+    name: shoparg
+    title: 订单信息
+    type: string
+  - description: e.g., 1-糖果直充，2-特惠礼包，3-限时特惠，4-每日精选，5-好友赠送，6-活动糖果
+    name: type
+    title: 充值入口
+    type: long
+  name: charge
+  source: client
+  title: 客户端充值

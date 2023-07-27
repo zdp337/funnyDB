@@ -1,0 +1,33 @@
+kind: Event
+metadata:
+  name: client_partner_stat_change
+spec:
+  description: |-
+    在发起、同意、解除结伴状态时上报数据
+
+    V47/2023-04-07加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: to_pid
+    title: 操作对象pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 1-发起申请；2-同意结伴；3-解除
+    name: stat
+    title: 结伴状态
+    type: long
+  - description: e.g., 0-否；1-是
+    name: is_close
+    title: 是否具备亲密关系
+    type: long
+  - description: e.g., 0-CP，1-拍档，2-基友，3-闺蜜
+    name: close_type
+    title: 亲密关系类型
+    type: long
+  name: partner_stat_change
+  source: client
+  title: 结伴状态变更

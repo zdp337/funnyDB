@@ -1,0 +1,34 @@
+kind: Event
+metadata:
+  name: client_double_show_log
+spec:
+  description: ""
+  dont_save_to_table: false
+  fields:
+  - description: 接受邀请的pid  e.g., 9871361
+    name: to_pid
+    title: '玩家pid '
+    type: long
+  - description: 0-CP，1-拍档，2-基友，3-闺蜜
+    name: close_type
+    title: '亲密关系类型  '
+    type: long
+  - description: 1-点击
+    name: initiate_invitation
+    title: 点击发起邀请气泡按钮
+    type: long
+  - description: 0-拒绝 1-接受 2-其他未接受情况
+    name: agree_invitation
+    title: 点击收到接受邀请
+    type: long
+  - description: -1：同意，0：主动拒绝，1：超时，2：对方不符合条件，3：太远
+    name: fail_invitation_reason
+    title: 邀请失败原因
+    type: long
+  - description: e.g., 1-成功  0-失败
+    name: success_show
+    title: 是否成功展示
+    type: long
+  name: double_show_log
+  source: client
+  title: 出生岛双人动作展示

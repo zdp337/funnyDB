@@ -1,0 +1,26 @@
+kind: Event
+metadata:
+  name: client_startup
+spec:
+  description: |
+    App 启动
+
+    在 App 启动时上报，附带一些基本环境信息
+
+    S19/2019-06-19
+  dont_save_to_table: false
+  fields:
+  - description: 设备搭载的 OpenGL 版本
+    name: opengl_version
+    title: OpenGL 版本
+    type: string
+  - description: |-
+      https://docs.unity3d.com/Manual/GPUInstancing.html
+
+      eg., 0-否，1-是
+    name: gpu_instancing
+    title: 是否支持 GPU Instancing
+    type: long
+  name: startup
+  source: client
+  title: 客户端启动

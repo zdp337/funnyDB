@@ -1,0 +1,14 @@
+kind: Event
+metadata:
+  name: client_astc_match_log
+spec:
+  description: 统计设备是否支持 ASTC 的压缩格式，记录设备支持的贴图类型
+  dont_save_to_table: false
+  fields:
+  - description: e.g. ASTC_RGBA_4x4，ASTC_RGBA_5x5
+    name: match_list
+    title: 可支持的贴图类型列表
+    type: string
+  name: astc_match_log
+  source: client
+  title: 贴图格式支持信息
