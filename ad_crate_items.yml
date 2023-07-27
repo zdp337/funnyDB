@@ -1,0 +1,67 @@
+kind: Event
+metadata:
+  name: gameserver_ad_crate_items
+spec:
+  description: |-
+    由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+    且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+    S26/2020-03-25加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: "超级大奖作为一个单独的类型\n\n \n\ne.g., 0-正常奖励，1-超级大奖，2-累计开箱奖励"
+    name: type
+    title: 广告宝箱类型
+    type: long
+  - description: e.g., 234881104
+    name: item_id
+    title: 物品id
+    type: long
+  - description: e.g., 季票勋章
+    name: item_name
+    title: 物品名称
+    type: string
+  - description: e.g., 5
+    name: item_num
+    title: 物品数量
+    type: long
+  - description: |-
+      默认值为1
+
+      e.g., 1, 2
+    name: multiple
+    title: 暴击倍数
+    type: long
+  - description: |-
+      用来关联整个购买过程
+
+      e.g., 1
+    name: rid
+    title: 关联id
+    type: long
+  - description: |-
+      如果不是进度奖励，传默认值0
+
+      e.g., 1
+    name: period
+    title: 第几轮分配
+    type: long
+  - description: |-
+      如果不是进度奖励，传默认值0
+
+      e.g., 1
+    name: count
+    title: 进度奖励刷新次数
+    type: long
+  name: ad_crate_items
+  source: gameserver
+  title: 广告宝箱物品获得日志

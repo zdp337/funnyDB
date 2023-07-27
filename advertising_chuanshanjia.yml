@@ -1,0 +1,66 @@
+kind: Event
+metadata:
+  name: gameserver_advertising_chuanshanjia
+spec:
+  description: 穿山甲广告元数据
+  dont_save_to_table: false
+  fields:
+  - description: 过后可获取
+    name: ad_slot_id
+    title: 代码位 ID，在头条联盟媒体平台创建代码位，审核通
+    type: long
+  - description: 代码位类型
+    name: ad_slot_type
+    title: 代码位类型
+    type: string
+  - description: 在头条联盟媒体平台创建应用后获取的 appid
+    name: appid
+    title: 在头条联盟媒体平台创建应用后获取的 appid
+    type: long
+  - description: 点击量
+    name: click
+    title: 点击量
+    type: long
+  - description: 点击率
+    name: click_rate
+    title: 点击率
+    type: float
+  - description: 代码位名称
+    name: code_name
+    title: 代码位名称
+    type: string
+  - description: 预估总收入
+    name: cost
+    title: 预估总收入
+    type: float
+  - description: 货币类型
+    name: currency
+    title: 货币类型
+    type: string
+  - description: 前次展现收入
+    name: ecpm
+    title: 前次展现收入
+    type: float
+  - description: 账号名称
+    name: media_name
+    title: 账号名称
+    type: string
+  - description: 编码。目前只有中国，请填写 CN
+    name: region
+    title: 国家或地区代码，同 ISO 3166-1 标准，使用两位字母
+    type: string
+  - description: 展现量
+    name: show
+    title: 展现量
+    type: long
+  - description: 应用名称
+    name: site_name
+    title: 应用名称
+    type: string
+  - description: 本条数据的时间维度
+    name: stat_datetime
+    title: 本条数据的时间维度
+    type: string
+  name: advertising_chuanshanjia
+  source: gameserver
+  title: 穿山甲广告元数据

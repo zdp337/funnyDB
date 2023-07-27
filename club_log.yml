@@ -1,0 +1,50 @@
+kind: Event
+metadata:
+  name: gameserver_club_log
+spec:
+  description: |-
+    战队状态日志
+    记录战队创建与变更状态
+
+    V33/2021-03-29加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: create_pid
+    title: 战队创建者玩家pid
+    type: long
+  - description: e.g., 9871361
+    name: club_id
+    title: 战队ID
+    type: long
+  - description: e.g., 御风者骷髅
+    name: club_name
+    title: 战队名称
+    type: string
+  - description: e.g., 1559275002
+    name: club_create_time
+    title: 战队创建时间(时间戳)
+    type: long
+  - description: e.g., 1
+    name: num
+    title: 战队人数
+    type: long
+  - description: e.g.,0-无限制，1-需要审批，2-拒绝加入
+    name: is_review
+    title: 审批条件选择
+    type: long
+  - description: egg,0-青铜V，1100-青铜IV
+    name: score_limit
+    title: 默认设置青铜V，
+    type: long
+  - description: egg,
+    name: club_notice
+    title: 战队公告，每次编辑时上报
+    type: string
+  - description: egg,Logo_1,LogoColor_2,BottomFrame_1,BottomFrameColor_1
+    name: logo
+    title: 战队logo各部分组合
+    type: string
+  name: club_log
+  source: gameserver
+  title: 战队状态日志

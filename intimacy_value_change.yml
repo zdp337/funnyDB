@@ -1,0 +1,47 @@
+kind: Event
+metadata:
+  name: gameserver_intimacy_value_change
+spec:
+  description: |-
+    亲密度发生变化时记录
+
+    V31 2020-09-25 加入
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      好友双方 pid 较小的那个
+
+      e.g., 9871361
+    name: pid_1
+    title: 玩家pid
+    type: long
+  - description: |-
+      好友双方 pid 较大的那个
+
+      e.g., 9871361
+    name: pid_2
+    title: 玩家pid
+    type: long
+  - description: e.g., 100
+    name: value
+    title: 变化值，拉黑时，变化值为负数
+    type: long
+  - description: e.g., 100
+    name: intimacy
+    title: 变化后的值
+    type: long
+  - description: e.g. 2
+    name: value_level
+    title: '等级变化值 '
+    type: long
+  - description: ' e.g. 3'
+    name: intimacy_level
+    title: 变化后的等级数值
+    type: long
+  - description: ' e.g.100'
+    name: intimacy_days
+    title: '与其他玩家建立亲密关系的历史累计天数，解除关系后重置为0 '
+    type: long
+  name: intimacy_value_change
+  source: gameserver
+  title: 服务端亲密度变化

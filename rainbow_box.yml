@@ -1,0 +1,26 @@
+kind: Event
+metadata:
+  name: gameserver_rainbow_box
+spec:
+  description: ""
+  dont_save_to_table: false
+  fields:
+  - description: ""
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: ""
+    name: box_id
+    title: 魔盒id
+    type: long
+  - description: ""
+    name: box_name
+    title: 魔盒名称
+    type: string
+  - description: ""
+    name: rid
+    title: 关联rid
+    type: long
+  name: rainbow_box
+  source: gameserver
+  title: 彩虹魔盒开启事件

@@ -1,0 +1,53 @@
+kind: Event
+metadata:
+  name: gameserver_dynamic_match_log
+spec:
+  description: |-
+    验证动态匹配机制所需数据
+
+    V34/2021-01-29加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., abc
+    name: room_key
+    title: 房间密钥
+    type: string
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: score_room_level
+    title: 段位竞技场等级
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: room_level
+    title: 房间等级
+    type: long
+  - description: e.g., 0-手机，1-模拟器
+    name: client_type
+    title: 房间类型
+    type: long
+  - description: e.g., 10
+    name: estimate_match_time
+    title: 预计等待时长
+    type: long
+  - description: e.g., 10
+    name: real_match_time
+    title: 实际匹配时长
+    type: long
+  - description: e.g., 100
+    name: match_num
+    title: 匹配人次（前1分钟）
+    type: long
+  name: dynamic_match_log
+  source: gameserver
+  title: 动态匹配验证

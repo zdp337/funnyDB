@@ -1,0 +1,106 @@
+kind: Event
+metadata:
+  name: gameserver_advertising_tradplus
+spec:
+  description: V32/2020-11-24加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1780E88013948B90AA5DBFBF934BCE53
+    name: app_id
+    title: 应用ID
+    type: string
+  - description: e.g., com.sofunny.chickendinnerfirst
+    name: package_name
+    title: 包名
+    type: string
+  - description: e.g., 24554E98174ECEC3F6193F4487270F7A
+    name: placement_id
+    title: 广告位ID
+    type: string
+  - description: e.g., 先行服广告位_Android
+    name: placement_name
+    title: 广告位名字
+    type: string
+  - description: e.g., 5
+    name: ad_format
+    title: 广告位类型
+    type: long
+  - description: e.g., 激励视频
+    name: ad_format_name
+    title: 广告位类型名字
+    type: string
+  - description: e.g., CN
+    name: area
+    title: 国家编码
+    type: string
+  - description: e.g., 17
+    name: network
+    title: 广告网络ID
+    type: long
+  - description: e.g., 945597818
+    name: network_placement_id
+    title: 广告网络的广告位ID信息
+    type: string
+  - description: e.g., Pangle(cn)_90
+    name: network_placement_name
+    title: 广告网络的广告源名称
+    type: string
+  - description: e.g., {\"appId\":\"5036489\",\"placementId\":\"945597818\"}
+    name: network_placement_info
+    title: 广告网络的广告位详细信息
+    type: string
+  - description: e.g.,
+    name: dau
+    title: 日活跃用户数量(app级别)
+    type: long
+  - description: e.g., 46459
+    name: deu
+    title: 每日观看广告的用户数
+    type: long
+  - description: e.g., 0.0004710143646875429
+    name: arpu
+    title: 每用户平均收入
+    type: float
+  - description: e.g., 1000
+    name: request_api
+    title: 三方广告平台的请求数
+    type: long
+  - description: e.g., 50.0
+    name: fillrate_api
+    title: 三方广告平台的填充率
+    type: float
+  - description: e.g.,
+    name: impression_api
+    title: 三方广告平台的展示数
+    type: long
+  - description: e.g., 277
+    name: click_api
+    title: 三方广告平台的点击数
+    type: long
+  - description: e.g., 16.275
+    name: ctr_api
+    title: 三方广告平台的点击率
+    type: float
+  - description: e.g., 12.857142402478587
+    name: ecpm_api
+    title: 三方广告平台的eCPM
+    type: float
+  - description: e.g., 21.882856369018555
+    name: revenue
+    title: 收益
+    type: float
+  - description: e.g., 2020-11-04
+    name: date
+    title: 日期
+    type: string
+  - description: e.g., 1606003200
+    name: date_time_stamp
+    title: 时间戳
+    type: long
+  - description: e.g., Pangle(cn)
+    name: network_name
+    title: 广告网络名字
+    type: string
+  name: advertising_tradplus
+  source: gameserver
+  title: 聚合广告元数据

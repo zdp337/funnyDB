@@ -1,0 +1,36 @@
+kind: Event
+metadata:
+  name: gameserver_player_type_online
+spec:
+  description: |-
+    每5分钟上报一次
+
+    S27/2020-06-02加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-taptap
+    name: cid
+    title: 渠道id
+    type: long
+  - description: e.g., 1
+    name: sid
+    title: 区唯一id
+    type: long
+  - description: e.g., 1000
+    name: count_all
+    title: 在线玩家数
+    type: long
+  - description: e.g., 1-模拟器，2-隔离匹配， 3-作弊标记
+    name: type
+    title: 用户类型
+    type: long
+  - description: |-
+      V30/2020-09-01加入
+
+      e.g., 1, 2, 3, 4
+    name: score_lv
+    title: 玩家的段位
+    type: long
+  name: player_type_online
+  source: gameserver
+  title: 模拟器和隔离匹配的实时在线玩家数统计日志

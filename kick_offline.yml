@@ -1,0 +1,41 @@
+kind: Event
+metadata:
+  name: gameserver_kick_offline
+spec:
+  description: S26/2020-04-22加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家ID
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 6BL
+    name: uid
+    title: 玩家uid
+    type: string
+  - description: e.g., 御风者骷髅
+    name: nick
+    title: 玩家昵称
+    type: string
+  - description: e.g., 设备封禁反馈
+    name: reason
+    title: 被踢下线原因类型
+    type: string
+  - description: e.g., 4f589f4867dbd57e
+    name: card_id
+    title: 加密后身份证号
+    type: string
+  - description: |-
+      目前和客户端事件中的deviceid公共字段一致，不过S26版本未进行md5加密
+
+      e.g., a0730302f02da0e4b01f97568a74e8e4
+    name: deviceid
+    title: 设备id
+    type: string
+  name: kick_offline
+  source: gameserver
+  title: 玩家被踢下线记录

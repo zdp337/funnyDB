@@ -1,0 +1,104 @@
+kind: Event
+metadata:
+  name: gameserver_pc_collect_file
+spec:
+  description: |-
+    启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+    客户端数据经由服务端上报
+
+    V43/2022-08-02加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g. \??\C:\Driver.sys
+    name: path
+    title: 文件路径
+    type: string
+  - description: e.g. DriverName
+    name: file_name
+    title: 文件名称
+    type: string
+  - description: 0 - 驱动，1 - 模块
+    name: type
+    title: 文件类型
+    type: long
+  - description: e.g. baae7b4547925a24940e6b8194d06f2f
+    name: md5
+    title: 文件 md5
+    type: string
+  - description: |-
+      单位：byte
+
+      e.g. 200
+    name: size
+    title: 文件大小
+    type: long
+  - description: e.g. 80991
+    name: check_sum
+    title: 文件校验和
+    type: long
+  - description: e.g. eda274811ddd0c8cce969217fd08145d
+    name: device_id
+    title: 设备 ID
+    type: string
+  - description: e.g. 1656641140
+    name: conn_time
+    title: 会话连接的时间戳
+    type: long
+  - description: e.g. 916809489
+    name: pid
+    title: 玩家 id
+    type: long
+  - description: e.g. fSueg9
+    name: uid
+    title: 玩家 uid
+    type: string
+  - description: e.g. 01271f05b7e401bcef53378fb38a60d3
+    name: dos_h
+    title: IMAGE_DOS_HEADER MD5特征
+    type: string
+  - description: e.g. 9c46fed13da55c94f177048ed0d7834d
+    name: file_h
+    title: IMAGE_FILE_HEADER MD5特征
+    type: string
+  - description: e.g. Sangfor Technologies Inc.
+    name: sign_info
+    title: 数字签名信息
+    type: string
+  - description: e.g. Microsoft Corporation
+    name: sign_ts_info
+    title: 数字签名时间戳信息
+    type: string
+  - description: |-
+      e.g. 2148204800
+
+      弃用，字段类型错误
+
+      v45/2023-01-16加入
+    name: sign_result
+    title: 签名结果
+    type: long
+  - description: |-
+      e.g. 0
+
+      v45/2023-01-16加入
+    name: sign_hr
+    title: 签名结果
+    type: string
+  - description: |-
+      e.g. Microsoft
+
+      v45/2023-01-16加入
+    name: p_name
+    title: 产品名称
+    type: string
+  - description: |-
+      e.g. Microsoft
+
+      v45/2023-01-16加入
+    name: p_copyright
+    title: 版权
+    type: string
+  name: pc_collect_file
+  source: gameserver
+  title: PC 收集文件特征

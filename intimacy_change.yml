@@ -1,0 +1,38 @@
+kind: Event
+metadata:
+  name: gameserver_intimacy_change
+spec:
+  description: |-
+    成功创建或解除关系，确认删除或拉黑好友时记录
+
+    V31/2020-09-25 加入
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      好友双方 pid 较小的那个
+
+      e.g., 9871361
+    name: pid_1
+    title: 玩家pid
+    type: long
+  - description: |-
+      好友双方 pid 较大的那个
+
+      e.g., 9871361
+    name: pid_2
+    title: 玩家pid
+    type: long
+  - description: 0-CP，1-拍档，2-基友，3-闺蜜
+    name: close_type
+    title: 亲密关系类型
+    type: long
+  - description: |-
+      0-创建，1-解除（没有删除好友/拉黑），2-删除好友，3-拉黑
+
+      删除或拉黑好友也会解除亲密关系
+    name: op
+    title: 亲密关系操作
+    type: long
+  name: intimacy_change
+  source: gameserver
+  title: 服务端亲密关系

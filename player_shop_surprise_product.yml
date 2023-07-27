@@ -1,0 +1,78 @@
+kind: Event
+metadata:
+  name: gameserver_player_shop_surprise_product
+spec:
+  description: |-
+    之后改名为 限时特惠
+
+    玩家登录的时候会进行分配
+
+    S27/2020-06-05加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 1
+    name: period
+    title: 期数
+    type: long
+  - description: e.g., 1559275002
+    name: start_time
+    title: 开始时间(时间戳)
+    type: long
+  - description: e.g., 1559275002
+    name: end_time
+    title: 结束时间(时间戳)
+    type: long
+  - description: e.g., 111
+    name: shop_id
+    title: 惊喜特惠商品id
+    type: long
+  - description: e.g., 限时1元特惠
+    name: shop_name
+    title: 惊喜特惠商品名称
+    type: string
+  - description: e.g., 1，2，3
+    name: shop_grade
+    title: 商品档位
+    type: long
+  - description: e.g., 503316481
+    name: pay_label_id
+    title: 付费标签id
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_free
+    title: 是否免费
+    type: long
+  - description: |-
+      用于人民币充值和宝箱等特惠商品
+
+      e.g., com.xd.sausage.DiscountPrice.6
+    name: product_id
+    title: 商品id
+    type: string
+  - description: e.g., 6元人民币特惠
+    name: product_name
+    title: 商品名称
+    type: string
+  - description: e.g., 116-点券，133-糖果，768-钻石糖，891-RMB
+    name: currency_id
+    title: 货币物品id
+    type: long
+  - description: e.g., 285
+    name: price
+    title: 商品折扣价格
+    type: long
+  - description: e.g., 285
+    name: original_price
+    title: 商品原价格
+    type: long
+  name: player_shop_surprise_product
+  source: gameserver
+  title: 玩家惊喜特惠商品分配日志
