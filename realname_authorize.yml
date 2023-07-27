@@ -1,0 +1,23 @@
+kind: Event
+metadata:
+  name: client_realname_authorize
+spec:
+  description: |-
+    玩家实名认证状态
+
+    玩家在进行充值或主动进行实名认证的时候进行记录
+
+    S22/2019-10-16加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-充值渠道进行认证的，2-其他渠道进行认证的
+    name: type
+    title: 认证渠道类型
+    type: long
+  - description: e.g., 0-失败，1-成功
+    name: stat
+    title: 实名认证状态
+    type: long
+  name: realname_authorize
+  source: client
+  title: 客户端实名认证

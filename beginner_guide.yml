@@ -1,0 +1,47 @@
+kind: Event
+metadata:
+  name: client_beginner_guide
+spec:
+  description: |-
+    玩家在点击跳过整个教程，主动退出，完成教程的情况下进行上报
+
+    V30/2020-08-28加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: |-
+      目前包含三个步骤，玩家选择是否进入新手教程的时候记0，玩家获得新手奖励物的时候记999
+
+      e.g., 0, 1, 2, 3...
+    name: step_id
+    title: 排序id
+    type: long
+  - description: |-
+      目前包含三个步骤，为防止后续调整步骤，导致步骤序号对不上的情况，加上步骤名称
+
+      对应关系：start-0，viewpoint-1，move-2，shot-3，finish-999
+
+      e.g., start
+    name: step_name
+    title: 步骤名称
+    type: string
+  - description: |-
+      玩家在第0步和领取奖励的时候记0
+
+      e.g., 10
+    name: use_time
+    title: 某步教程所用时间
+    type: float
+  - description: |-
+      玩家在领取奖励的时候记0
+
+      e.g., 0-否，1-是
+    name: is_quit
+    title: 是否主动退出
+    type: long
+  name: beginner_guide
+  source: client
+  title: 新手教程完成记录

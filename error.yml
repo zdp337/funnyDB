@@ -1,0 +1,23 @@
+kind: Event
+metadata:
+  name: client_error
+spec:
+  description: |
+    客户端错误信息
+
+    客户端上报错误信息日志接口
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1920x1080
+    name: r
+    title: 分辨率
+    type: string
+  - description: e.g., stack traceback ...
+    name: msg
+    title: 错误信息
+    type: string
+  name: error
+  source: client
+  title: 客户端错误信息

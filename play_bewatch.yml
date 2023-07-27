@@ -1,0 +1,47 @@
+kind: Event
+metadata:
+  name: client_play_bewatch
+spec:
+  description: |
+    观战功能使用统计
+
+    统计不同进入类型观战功能使用
+    玩家通过好友界面或邀请组队界面进入观战时记录
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1
+    name: level
+    title: 玩家等级
+    type: long
+  - description: e.g., 青铜V
+    name: s_level
+    title: 玩家段位
+    type: string
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 9871361
+    name: be_pid
+    title: 被观战目标pid
+    type: long
+  - description: e.g., 1-好友界面进入，2-邀请组队进入
+    name: watch_enter_type
+    title: 进入类型
+    type: long
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  name: play_bewatch
+  source: client
+  title: unet观战功能使用

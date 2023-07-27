@@ -1,0 +1,22 @@
+kind: Event
+metadata:
+  name: client_club_pk
+spec:
+  description: ''
+  dont_save_to_table: false
+  fields:
+  - description: pk链接id
+    name: pk_link_id
+    title: pk链接id
+    type: string
+  - description: e.g., 9871361
+    name: club_id
+    title: 战队ID
+    type: long
+  - description: e.g., 0-发起,1-接受
+    name: type
+    title: 发起与接受类型
+    type: long
+  name: club_pk
+  source: client
+  title: 战队PK

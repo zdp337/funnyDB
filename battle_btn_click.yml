@@ -1,0 +1,142 @@
+kind: Event
+metadata:
+  name: client_battle_btn_click
+spec:
+  description: |-
+    客户端批量上传战场按钮点击事件
+
+    请使用批量上传接口, 以提高效率
+
+    S20/2019-07-24加入
+
+    由于该事件数据量巨大，且没什么用，于S26版本停止数据上报。
+
+    V47/2023-03-31 重新启用
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 1
+    name: level
+    title: 玩家等级
+    type: long
+  - description: |-
+      格式：（事件名称：事件说明）
+
+      e.g.,
+
+      战斗内的按钮：
+
+        小地图
+
+        小地图-放大缩小
+
+        小地图-标记位置
+
+        小地图-取消标记
+
+        小地图-标记自身
+
+        射击姿势-左
+
+        射击姿势-右
+
+        射击姿势-下：把枪举过头顶射击
+
+        狙击
+
+        屏息
+
+        背包
+
+        使用消耗品
+
+        选择枪械
+
+        装备子弹
+    name: obj_name
+    title: 操作事件名称
+    type: string
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_ob
+    title: 是否处于OB视角
+    type: long
+  - description: 玩家战场内按钮点击的记录集合
+    items:
+      fields:
+      - description: |-
+          格式：（事件名称：事件说明）
+
+          e.g.,
+
+          战斗内的按钮：
+
+            小地图
+
+            小地图-放大缩小
+
+            小地图-标记位置
+
+            小地图-取消标记
+
+            小地图-标记自身
+
+            射击姿势-左
+
+            射击姿势-右
+
+            射击姿势-下：把枪举过头顶射击
+
+            狙击
+
+            屏息
+
+            背包
+
+            使用消耗品
+
+            选择枪械
+
+            装备子弹
+        name: obj_name
+        title: 操作事件名称
+        type: string
+      - description: e.g., 1563855000
+        name: time
+        title: 按钮点击时间戳
+        type: long
+      - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+        name: mmod
+        title: 匹配模式
+        type: long
+      - description: |-
+          标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+          eg., 1002003
+        name: custom_room_id
+        title: 自定义房间的房间号
+        type: long
+      - description: e.g., 0-否，1-是
+        name: is_ob
+        title: 是否处于OB视角
+        type: long
+      type: struct
+    name: clicks
+    title: 玩家战场内按钮点击的记录集合
+    type: array
+  name: battle_btn_click
+  source: client
+  title: unet按钮点击

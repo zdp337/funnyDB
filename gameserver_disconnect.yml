@@ -1,0 +1,69 @@
+kind: Event
+metadata:
+  name: client_gameserver_disconnect
+spec:
+  description: |
+    gameserver断开连接统计
+
+    分析玩家与 gameserver 断开连接的情况
+
+    在进入出生岛的时候上报一条 stat=0 的记录
+    在游戏过程中如果与 gameserver 断开连接，上报一条 stat=1 的记录
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., dev-game-info.biubiubiu.io:20001
+    name: unet_addr
+    title: unet服务器地址
+    type: string
+  - description: e.g., SZ
+    name: unet_area
+    title: unet服务器机房地区
+    type: string
+  - description: e.g., 120
+    name: ping
+    title: 当时的ping值
+    type: long
+  - description: |-
+      传的值并不能起到要的效果，现在都传0
+
+      e.g., 0
+    name: play_time
+    title: 玩的时间
+    type: long
+  - description: e.g., 0-正常，1-断开
+    name: stat
+    title: 状态
+    type: long
+  - description: e.g., 0-正常，其他为错误编码
+    name: error_code
+    title: 错误编码，默认值为0
+    type: long
+  - description: |-
+      S27/2020-06-05加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  name: gameserver_disconnect
+  source: client
+  title: 服务端断开连接

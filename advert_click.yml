@@ -1,0 +1,69 @@
+kind: Event
+metadata:
+  name: client_advert_click
+spec:
+  description: |-
+    客户端推广广告点击情况
+
+    S23/2019-11-12加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 0-否，1-是
+    name: ispay
+    title: 是否付费玩家
+    type: long
+  - description: |-
+      包含付费糖果和免费糖果
+
+      e.g., 123
+    name: candy_count
+    title: 玩家当前拥有的糖果数
+    type: long
+  - description: e.g., 1-免费，2-黄金季票，3-黄金季票豪华包
+    name: permit_type
+    title: 玩家当前拥有的季票类型
+    type: long
+  - description: |-
+      目前无法获得IOS设备平台的安装回调情况，不用记录
+
+      e.g., 1-点开观看广告，2-加载成功，3-播放成功：对应展现量，4-点击下载：对应点击量，只记录有效点击下载的记录，5-下载安装成功（只有Android才有），6-失败/出错，7-获得奖励，8-关闭广告，9 - 玩家未触发点击下载 但是触发了下载成功，10-玩家提前关闭广告
+    name: stat
+    title: 广告观看状态
+    type: long
+  - description: |-
+      每次玩家观看广告有的唯一id，当前规则 pid-time
+
+      e.g., 9871361-1577980799
+    name: logid
+    title: 玩家观看广告关联id
+    type: string
+  - description: e.g., 3643b8aa363de16b，苹果设备为空
+    name: android_id
+    title: 安卓设备的ID
+    type: string
+  - description: e.g., 38400000-8cf0-11bd-b23e-10b96e40000d，苹果设备为空
+    name: advertising_id
+    title: 安卓设备的广告ID
+    type: string
+  - description: e.g., 9C287922-EE26-4501-94B5-DDE6F83E1475，安卓设备为空
+    name: ios_idfa
+    title: 苹果设备的广告ID
+    type: string
+  - description: e.g., 38400000-8cf0-11bd-b23e-10b96e40000d，取不到值为空字符串，苹果设备为空字符串
+    name: oaid
+    title: 安卓设备的 oaid
+    type: string
+  - description: |-
+      S29/2020-07-30加入
+
+      e.g., 0-穿山甲广告，1-taptap广告，2-聚合广告
+    name: ad_type
+    title: 广告类型
+    type: long
+  name: advert_click
+  source: client
+  title: 客户端广告点击

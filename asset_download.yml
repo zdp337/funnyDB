@@ -1,0 +1,82 @@
+kind: Event
+metadata:
+  name: client_asset_download
+spec:
+  description: "客户端获取完游戏信息后，会检测是否需要进行资源热更，包含以下步骤，\n1\tGetIndexInfo\t 获取 Index 信息\n2\tGetDiffInfo\t获取
+    Diff 信息\n3\tCheckAssetVersion\t资源版本校验\n4\tCheckLocalAsset\t本地资源检查\n5\tGetStorageInfo\t获取可用空间（剩余容量）\n6\tGetNetworkingStatus\t获取网络状态（WIFI\\移动网络）\n7\tStartDownloadPrimary\t开始下载主要资源\n8\tDownloadingAsset\t固定时长上报下载大小（总大小,
+    时长, 大小, 百分比）\n9\tStartDownloadLocalization\t开始下载多语言资源\n10\tAssetDownload\t资源热更下载（总大小,
+    时长）"
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1, 2, 3...
+    name: o
+    title: 排序id
+    type: long
+  - description: e.g., GetIndexInfo
+    name: e
+    title: 节点事件
+    type: string
+  - description: e.g., 0-否，1-是
+    name: is_new
+    title: 是否初次登录
+    type: long
+  - description: e.g., 1-正常登录，2-从战场返回，3-发生错误重新登录，4-切换账号，5-累计游戏时间过久
+    name: start_type
+    title: 登录类型
+    type: long
+  - description: |-
+      安卓设备的ID, 传过来的值经过 MD5 计算
+
+      e.g., 3643b8aa363de16b，苹果设备为空
+    name: android_id
+    title: 安卓设备的ID
+    type: string
+  - description: |-
+      安卓设备的广告ID, 传过来的值经过 MD5 计算
+
+      e.g., 38400000-8cf0-11bd-b23e-10b96e40000d，苹果设备为空
+    name: advertising_id
+    title: 安卓设备的广告ID
+    type: string
+  - description: |-
+      苹果设备的广告ID, 传过来的值经过 MD5 计算
+
+      e.g., 9C287922-EE26-4501-94B5-DDE6F83E1475，安卓设备为空
+    name: ios_idfa
+    title: 苹果设备的广告ID
+    type: string
+  - description: |-
+      更新需要下载的包体容量
+
+      单位为 KB
+    name: download_storage
+    title: 更新需要下载的包体容量
+    type: long
+  - description: |-
+      当前玩家设备剩余容量
+
+      单位为 KB
+    name: device_left_storage
+    title: 设备剩余容量
+    type: long
+  - description: |-
+      已下载的包体容量
+
+      单位为 KB
+    name: downloaded_storage
+    title: 已下载的包体容量
+    type: long
+  - description: |-
+      当前下载时长
+
+      单位为秒
+    name: download_time
+    title: 当前下载时长
+    type: float
+  - description: 资源版本号
+    name: res_code
+    title: 资源版本号
+    type: long
+  name: asset_download
+  source: client
+  title: 资源热更下载情况日志

@@ -1,0 +1,34 @@
+kind: Event
+metadata:
+  name: client_wardrobe_shared_log
+spec:
+  description: ""
+  dont_save_to_table: false
+  fields:
+  - description: 好友双方 pid 较小的那个  e.g., 9871361
+    name: pid_1
+    title: 玩家pid
+    type: long
+  - description: 好友双方 pid 较大的那个  e.g., 9871361
+    name: pid_2
+    title: '玩家pid '
+    type: long
+  - description: 0-CP，1-拍档，2-基友，3-闺蜜
+    name: close_type
+    title: '亲密关系类型  '
+    type: long
+  - description: e.g.  1-点击
+    name: click_clothing_match
+    title: 点击应用对方搭配按钮
+    type: long
+  - description: ' e.g. 0（功能未上线）'
+    name: use_recommend_match
+    title: '点击推荐界面的使用推荐搭配按钮 '
+    type: long
+  - description: ' e.g.1-点击确定 0-点击取消（如果流程未到该步，记录为0）'
+    name: click_is_sure
+    title: 点击确认穿戴
+    type: long
+  name: wardrobe_shared_log
+  source: client
+  title: 共享衣柜使用记录

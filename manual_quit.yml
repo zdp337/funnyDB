@@ -1,0 +1,44 @@
+kind: Event
+metadata:
+  name: client_manual_quit
+spec:
+  description: |-
+    点击游戏内主动退出设置，且成功退出才记录
+
+    S27/2020-05-18加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: |-
+      地图
+
+      e.g., 5-团队竞技1，6-团队竞技2，7-团队竞技3，8-狙击地图1，9-狙击地图2
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: e.g., 1563853896
+    name: war_start_time
+    title: 战场开始时间
+    type: long
+  name: manual_quit
+  source: client
+  title: 玩家主动退出游戏记录

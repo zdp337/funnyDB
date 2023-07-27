@@ -1,0 +1,34 @@
+kind: Event
+metadata:
+  name: client_pk_request
+spec:
+  description: |-
+    好友切磋请求结果日志
+
+    目前只记录请求的结果，对造成结果的原因不进行统计
+
+    V30/2020-08-26加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间
+    type: long
+  - description: e.g., 9871361
+    name: from_pid
+    title: 发起请求玩家 pid
+    type: long
+  - description: |-
+      0-失败（除去 1，2，3 情况，其余为失败）
+
+      1-成功（点击加入按钮）
+
+      2-拒绝（选择拒绝理由并点击发送按钮）
+
+      3-关闭（点击右上角关闭按钮）
+    name: result
+    title: 请求的结果：
+    type: long
+  name: pk_request
+  source: client
+  title: 好友切磋请求

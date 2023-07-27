@@ -1,0 +1,173 @@
+kind: Event
+metadata:
+  name: client_player_bekill
+spec:
+  description: |
+    玩家击杀日志
+
+    玩家每次被击杀时记录，在多人组队的情况下变成小肠肠被击杀也在这个范畴内
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: room_level
+    title: 房间等级
+    type: long
+  - description: e.g., 1
+    name: level
+    title: 玩家等级
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 车、毒、枪、近、拳 ...
+    name: dead_type
+    title: 被击倒类型
+    type: string
+  - description: e.g., m416、叉子、吉普车 ...
+    name: dead_detail
+    title: 具体被击倒原因
+    type: string
+  - description: |-
+      如果没有等级则记1级
+
+      e.g., 1
+    name: dead_detail_level
+    title: 击杀时使用的武器的等级
+    type: long
+  - description: |-
+      如果被击杀的玩家死于毒圈，这个字段记0
+
+      e.g., 9871361
+    name: be_pid
+    title: 玩家pid（开枪者）
+    type: long
+  - description: e.g., 站，蹲，趴，跳
+    name: posture
+    title: 击倒者的姿态
+    type: string
+  - description: e.g., 左探头，右探头，腰射，非洲射击
+    name: shoot_pos
+    title: 击倒者的射击姿态
+    type: string
+  - description: e.g., 0-否，1-是
+    name: is_on_sights
+    title: 是否开启瞄准镜
+    type: long
+  - description: e.g., 机瞄，红点，全息，2倍，4倍等
+    name: sights
+    title: 击倒者所持枪的瞄准镜
+    type: string
+  - description: e.g., 100
+    name: killed_distance
+    title: 被击杀距离
+    type: long
+  - description: e.g., 0-否，1-是
+    name: is_headshot
+    title: 是否爆头
+    type: long
+  - description: |-
+      S20/2019-08-05加入
+
+      e.g., 1, 2, 3, 4, 5
+    name: score_room_level
+    title: 段位竞技场等级
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      S21/2019-08-29加入
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: |-
+      如果是被载具上的玩家击杀，则记录载具名称，否则记空
+
+      S23/2019-11-13加入
+
+      eg., Buggy_8
+    name: be_vehicle
+    title: 击杀者所在载具名称
+    type: string
+  - description: |-
+      如果是在载具上被击杀，则记录载具名称，否则记空
+
+      S23/2019-11-13加入
+
+      eg., Buggy_8
+    name: vehicle
+    title: 被击杀者所在载具名称
+    type: string
+  - description: |-
+      S26/2020-03-26加入
+
+      e.g., 1559525993
+    name: war_start_time
+    title: 战场开始时间(时间戳)
+    type: long
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: |-
+      V36/2021-05-20加入
+
+      e.g., 0 - 未在范围内死亡; 1 - 在范围内死亡
+    name: is_deadin_event
+    title: 玩家是否在地图事件范围内死亡
+    type: long
+  - description: e.g. 轻击，重击
+    name: attack_type
+    title: 武器攻击方式
+    type: string
+  - description: ""
+    name: bekill_location_x
+    title: 被击杀坐标x
+    type: long
+  - description: ""
+    name: bekill_location_z
+    title: 被击杀坐标z
+    type: long
+  - description: |-
+      如果位置不是关卡，则记空字符串
+      e.g., 神仙客栈
+    name: bekill_parachute_location
+    title: 被击杀处的关卡
+    type: string
+  - description: ""
+    name: circle
+    title: 圈数
+    type: long
+  - description: |-
+      e.g. [咸鱼身份卡1技能,咸鱼身份卡2技能,狼王身份卡2技能,。。。]
+      2023/5/3加入
+    name: kill_status
+    title: 击倒者所处状态
+    type: string
+  name: player_bekill
+  source: client
+  title: unet玩家被击杀

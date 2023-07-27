@@ -1,0 +1,28 @@
+kind: Event
+metadata:
+  name: client_login_age
+spec:
+  description: |
+    年龄段调查问卷
+
+    在弹出问卷时上报一条 stat=0 的记录
+    在玩家提交问卷后上报一条 stat=1 的记录
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 0-玩家看到了问卷弹出，1-玩家提交问卷
+    name: stat
+    title: 状态
+    type: long
+  - description: e.g., 23岁以上
+    name: age_group
+    title: 年龄段
+    type: string
+  name: login_age
+  source: client
+  title: 客户端年龄段调查问卷

@@ -1,0 +1,31 @@
+kind: Event
+metadata:
+  name: client_xd_location_request
+spec:
+  description: |-
+    帮助客户端定位从心动获取的区域信息 http 请求是否正常
+
+    客户端每次启动的时候，都会进行该请求
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      和公共字段中的 game_area 一样
+
+      e.g., IN
+    name: country_code
+    title: 国家编码
+    type: string
+  - description: |-
+      如果请求失败，客户端会进行重试，记录当前是第几次请求
+
+      e.g., 1
+    name: request_count
+    title: 当前请求次数
+    type: long
+  - description: 如果发生错误，记录错误信息
+    name: error_str
+    title: 错误信息
+    type: string
+  name: xd_location_request
+  source: client
+  title: 心动区域信息请求

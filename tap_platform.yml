@@ -1,0 +1,25 @@
+kind: Event
+metadata:
+  name: client_tap_platform
+spec:
+  description: |-
+    tapdb登录平台识别日志
+
+    每次登陆成功后，统计登录操作平台
+
+    校验客户端登录平台是否一致
+
+    v38/2021-08-30加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g. 1-移动端，2-PC端
+    name: tap_platform_id
+    title: 玩家该次游戏或登录使用平台
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  name: tap_platform
+  source: client
+  title: tapdb登录平台日志

@@ -1,0 +1,29 @@
+kind: Event
+metadata:
+  name: client_mail_click
+spec:
+  description: |-
+    邮件点击查看日志
+
+    2022-11-25加入
+  dont_save_to_table: false
+  fields:
+  - description: ""
+    name: mail_id
+    title: 邮件id
+    type: long
+  - description: ""
+    name: mail_title
+    title: 邮件标题
+    type: string
+  - description: e.g. 1s
+    name: use_time
+    title: 查看时长，单位秒
+    type: long
+  - description: e.g. 0-未跳转，1-跳转，若该邮件无跳转链接，则全记为0
+    name: click_type
+    title: 查看类型，是否跳转链接
+    type: long
+  name: mail_click
+  source: client
+  title: 邮件查看

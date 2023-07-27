@@ -1,0 +1,51 @@
+kind: Event
+metadata:
+  name: client_player_log
+spec:
+  description: |-
+    有些信息只能在外围客户端上获得
+
+    S27/2019-05-22加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 100
+    name: hit_obstacle_bullets_num
+    title: 击中障碍物字段数量
+    type: long
+  - description: |-
+      V36/2021-05-20加入
+
+      e.g., 0 - 未指向; 1 - 指向过
+    name: is_pointat_event
+    title: 玩家是否准星指向地图事件范围
+    type: long
+  - description: |-
+      V36/2021-05-20加入
+
+      e.g., 0 - 未进入; 1 - 进入过
+    name: is_stayin_event
+    title: 玩家是否进入过地图事件范围
+    type: long
+  name: player_log
+  source: client
+  title: 玩家战场结算日志

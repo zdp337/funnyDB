@@ -1,0 +1,104 @@
+kind: Event
+metadata:
+  name: client_new_player_actions
+spec:
+  description: |-
+    新进用户操作情况统计
+
+    只统计当天新进用户的首场经典模式战斗，战斗结束时记录
+
+    关于降落在城镇，程序无法获取是否降落在城镇，目前通过player_log的跳伞坐标位置展示成热点图查看是否降落在城镇
+
+    S24/2019-12-16加入
+  dont_save_to_table: true
+  fields:
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: |-
+      上飞机后的生存时长
+
+      e.g., 100
+    name: online_time
+    title: 游戏时长
+    type: long
+  - description: 操作动作使用情况列表
+    items:
+      fields:
+      - description: |-
+          目前包含以下操作：
+
+              使用移动
+
+              使用镜头
+
+              使用开镜
+
+              使用攻击、跳、蹲、趴
+
+              主动跳伞
+
+              拾取物资
+
+              使用射击开火
+
+              使用恢复道具
+
+              拾取淘汰玩家物资
+
+              点击小地图查看
+
+          e.g., 使用移动
+        name: action
+        title: 操作动作
+        type: string
+      - description: e.g., 0-否，1-是
+        name: use_on_born
+        title: 出生岛时是否使用该动作
+        type: long
+      - description: e.g., 0-否，1-是
+        name: use_on_air
+        title: 飞机上是否使用该动作
+        type: long
+      - description: e.g., 0-否，1-是
+        name: use_on_land
+        title: 降落后是否使用该动作
+        type: long
+      - description: |-
+          出生岛触发时经过的时间，单位秒
+
+          e.g., 500
+        name: stat_time
+        title: 触发时间
+        type: long
+      type: struct
+    name: actions
+    title: 操作动作使用情况列表
+    type: array
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  name: new_player_actions
+  source: client
+  title: unet新进用户战场操作情况(客户端上报)

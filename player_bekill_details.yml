@@ -1,0 +1,120 @@
+kind: Event
+metadata:
+  name: client_player_bekill_details
+spec:
+  description: |-
+    在玩家被击杀和击倒的时候记录，只记录2分钟内对该玩家有伤害值的玩家，2分钟前的数据不用记录
+
+    S27/2020-05-20加入
+  dont_save_to_table: true
+  fields:
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1, 2, 3, 4, 5
+    name: room_level
+    title: 房间等级
+    type: long
+  - description: e.g., 1, 2, 3, 4, 5
+    name: score_room_level
+    title: 段位竞技场等级
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 1559525993
+    name: war_start_time
+    title: 战场开始时间(时间戳)
+    type: long
+  - description: e.g., 1-击倒，2-击杀
+    name: type
+    title: 交战类型
+    type: long
+  - description: 造成伤害的玩家集合
+    items:
+      fields:
+      - description: e.g., 100
+        name: be_pid
+        title: 击倒玩家id
+        type: long
+      - description: |-
+          被击倒时长，击倒者从开始对被击倒者造成伤害时计时，若时长超过2min，则视为“脱离交战”，不计入玩家A的交战时长.此时，A再对B造成伤害，则重新开始计算时间，
+
+          如果玩家被一枪击倒，那么时长记录为0s
+
+          e.g., 100
+        name: use_time
+        title: 交战时长
+        type: long
+      - description: e.g., 100
+        name: damage_num
+        title: 伤害量
+        type: long
+      - description: e.g., 车、毒、枪、近、拳 ...
+        name: damage_type
+        title: 造成伤害的类型
+        type: string
+      - description: e.g., 100
+        name: damage_distance
+        title: 造成伤害的距离
+        type: long
+      - description: e.g., 站，蹲，趴，跳
+        name: posture
+        title: 击倒者的姿态
+        type: string
+      - description: e.g., 左探头，右探头，腰射，非洲射击
+        name: shoot_pos
+        title: 击倒者的射击姿态
+        type: string
+      - description: e.g., 0-否，1-是
+        name: is_on_sights
+        title: 是否开启瞄准镜
+        type: long
+      - description: e.g., 机瞄，红点，全息，2倍，4倍等
+        name: sights
+        title: 击倒者所持枪的瞄准镜
+        type: string
+      - description: |-
+          被击倒时长，击倒者从开始对被击倒者造成伤害时计时，若时长超过2min，则视为“脱离交战”，不计入玩家A的交战时长.此时，A再对B造成伤害，则重新开始计算时间，
+
+          如果玩家被一枪击倒，那么时长记录为0s
+
+          S29/2020-08-06加入
+
+          e.g., 100
+        name: use_time2
+        title: 交战时长
+        type: float
+      type: struct
+    name: details
+    title: 造成伤害的玩家集合
+    type: array
+  name: player_bekill_details
+  source: client
+  title: 玩家被击杀和被击倒详情

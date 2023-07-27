@@ -1,0 +1,43 @@
+kind: Event
+metadata:
+  name: client_pc_collect_log
+spec:
+  description: |-
+    在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+    V44/2022-10-25 加入
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      连上独立心跳服务器的会话时间戳
+
+      e.g. 1656641140
+    name: conn_time
+    title: 会话连接的时间戳
+    type: long
+  - description: e.g. fsueg9
+    name: uid
+    title: 玩家 UID
+    type: string
+  - description: |-
+      0-driver，1-module
+
+      e.g. 0
+    name: collect_type
+    title: 收集类型
+    type: long
+  - description: e.g. C:\\Windows\\test.sys
+    name: collect_info
+    title: 收集信息
+    type: string
+  - description: e.g. c4ca4238a0b923820dcc509a6f75849b
+    name: collect_value
+    title: ' 收集值'
+    type: string
+  - description: ""
+    name: t
+    title: 产生数据时间戳
+    type: long
+  name: pc_collect_log
+  source: client
+  title: PC 信息收集

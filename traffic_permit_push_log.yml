@@ -1,0 +1,38 @@
+kind: Event
+metadata:
+  name: client_traffic_permit_push_log
+spec:
+  description: ""
+  dont_save_to_table: false
+  fields:
+  - description: ""
+    name: level
+    title: 玩家季票等级
+    type: long
+  - description: ""
+    name: create_time
+    title: 玩家创角时间（时间戳）
+    type: long
+  - description: e.g. 1-黄金季票  2-豪华黄金季票
+    name: push_type
+    title: 玩家被推送的弹窗类型
+    type: long
+  - description: e.g. 0-未点击 1-点击
+    name: is_close
+    title: 玩家是否点击关闭按钮
+    type: long
+  - description: e.g. 0-未勾选 1-勾选
+    name: is_not_push
+    title: 玩家是否勾选不再推送按钮
+    type: long
+  - description: e.g. 0-未点击1-点击
+    name: is_click_activate
+    title: '玩家是否点击立即开通按钮 '
+    type: long
+  - description: e.g. 0-未点击1-点击
+    name: is_pay
+    title: 玩家是否点击确认购买按钮
+    type: long
+  name: traffic_permit_push_log
+  source: client
+  title: 季票推送记录

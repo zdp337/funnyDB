@@ -1,0 +1,23 @@
+kind: Event
+metadata:
+  name: client_check_privacy
+spec:
+  description: |-
+    检查用户隐私和用户政策
+
+    附带pid与点击时间
+
+    2021-08-13加入
+  dont_save_to_table: false
+  fields:
+  - description: egg.
+    name: privacy_version
+    title: 用户隐私和用户政策版本号
+    type: string
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  name: check_privacy
+  source: client
+  title: 检查用户隐私和用户政策日志

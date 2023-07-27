@@ -1,0 +1,88 @@
+kind: Event
+metadata:
+  name: client_storehouse_item_equip
+spec:
+  description: |-
+    玩家仓库道具配置
+
+    以列表形式记录玩家退出仓库时，各项物品类别下的配置情况
+    V42/2022-04-22
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: |
+      记录玩家装扮配置列表，逗号分割
+
+      e.g., 2113929595,2113929596...
+    name: clothes_list
+    title: 装扮配置列表
+    type: string
+  - description: |-
+      记录玩家枪支皮肤配置列表，逗号分割
+
+      e.g., 2113929599,2113929617...
+    name: gun_list
+    title: 枪支配置列表
+    type: string
+  - description: |-
+      记录玩家近战武器皮肤配置列表，逗号分割
+
+      e.g., 2113929422,2113929384...
+    name: minigun_list
+    title: 近战武器配置列表
+    type: string
+  - description: |-
+      记录玩家气泡配置列表，逗号分割，未装配记为-1
+
+      e.g., 2113929439,2113929392...
+    name: bubble_list
+    title: 气泡配置列表
+    type: string
+  - description: |-
+      记录玩家动作配置列表，逗号分割，未装配记为-1
+
+      e.g., 2113929609,2097152149...
+    name: action_list
+    title: 动作配置列表
+    type: string
+  - description: |-
+      记录玩家玩具配置列表，逗号分割
+
+      e.g., 2097152169,2113929538...
+    name: toy_list
+    title: 玩具配置列表
+    type: string
+  - description: |-
+      记录玩家恶作具配置列表，逗号分割，未装配记为-1
+
+      e.g., 775,778...
+    name: joker_list
+    title: 恶作具配置列表
+    type: string
+  - description: |-
+      记录玩家载具皮肤配置列表，逗号分割
+
+      e.g., 369098928,369098965...
+    name: vehicle_list
+    title: 载具配置列表
+    type: string
+  - description: |-
+      记录玩家坐骑道具配置列表(花纹、颜色、饰品)，逗号分割
+
+      e.g., 369098928,369098965...
+    name: mount_list
+    title: 坐骑道具配置列表
+    type: string
+  - description: |-
+      记录玩家大厅背景、大厅背景音乐配置列表，逗号分割
+
+      e.g., 369098928,369098965...
+    name: hall_list
+    title: 大厅背景音乐配置列表
+    type: string
+  name: storehouse_item_equip
+  source: client
+  title: 仓库道具装备

@@ -1,0 +1,64 @@
+kind: Event
+metadata:
+  name: client_bag_appearance
+spec:
+  description: |-
+    背包皮肤触发日志
+
+    玩家有装备过的背包皮肤，单局上报一次，用于分析玩家背包皮肤触发情况
+
+    S23/2019-11-14加入
+  dont_save_to_table: true
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g. 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: 玩家战场内各背包触发次数记录集合
+    items:
+      fields:
+      - description: e.g., BackpackLeve1_1...
+        name: item_name
+        title: 背包皮肤名称
+        type: string
+      - description: |-
+          不计算出生岛的触发次数
+
+          e.g., 111
+        name: count
+        title: 战场内总共触发次数
+        type: long
+      - description: e.g., 111
+        name: start_count
+        title: 出生岛上总共触发次数
+        type: long
+      type: struct
+    name: triggers
+    title: 玩家战场内各背包触发次数记录集合
+    type: array
+  - description: |-
+      S26/2020-04-20加入
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  name: bag_appearance
+  source: client
+  title: unet背包皮肤触发日志(客户端上报)

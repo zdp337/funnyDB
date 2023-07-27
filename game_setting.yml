@@ -1,0 +1,159 @@
+kind: Event
+metadata:
+  name: client_game_setting
+spec:
+  description: |-
+    客户端登录成功之后进行记录
+
+    需要考虑功能的开放情况，如果功能未开放，上传的值需要是关闭状态下的值
+
+    S27/2020-05-29加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: e.g., 0-总是关闭，1-总是开启，2-开镜开启
+    name: is_gyroscope
+    title: 陀螺仪开关状态
+    type: long
+  - description: |-
+      S28/2020-06-16加入
+
+      e.g., 0-否，1-是
+    name: is_auto_fire
+    title: 自动射击开关状态
+    type: long
+  - description: |-
+      S28/2020-06-16加入
+
+      e.g., 0-否，1-是
+    name: is_aim_assist
+    title: 辅助瞄准开关状态
+    type: long
+  - description: |-
+      S29/2020-07-23加入
+
+      e.g., 0-否，1-是
+    name: left_sight_and_fire
+    title: 左开镜开火开关状态
+    type: long
+  - description: |-
+      S29/2020-07-23加入
+
+      e.g., 0-否，1-是
+    name: right_sight_and_fire
+    title: 右开镜开火开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_upper_left_fire
+    title: 左上方开火开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_left_fire
+    title: 左边开火开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_left_aim
+    title: 左边瞄准开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_left_hold_breath
+    title: 左边屏息开关状态
+    type: long
+  - description: e.g. 0-按下开火，1-松手开火
+    name: pull_bolt_fire_mod
+    title: 拉栓狙开火模式开关状态
+    type: long
+  - description: e.g. 0-按下开火，1-松手开火
+    name: shotgun_fire_mod
+    title: 散弹枪开火模式开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_stoop_and_fire
+    title: 弯腰射击开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_stoop_and_sight
+    title: 弯腰自动开镜开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_faith_fire
+    title: 信仰射击开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_auto_open_door
+    title: 自动开门开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_sight_hold_breath
+    title: 开镜自动屏息开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_prompt_task
+    title: 战场任务提示开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_show_durability
+    title: 防具耐久显示开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_not_show_armor_and_bag
+    title: 不显示自身防具和背包开关状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_not_show_back_gun
+    title: 不显示背挂枪械开关状态
+    type: long
+  - description: e.g., 0 - 关闭，1 - 全开，2 - 左开镜按钮，3 - 右开镜按钮
+    name: is_sight_and_fire
+    title: 一键开镜开火状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_not_disturb
+    title: 玩家开启免打扰的状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_voice_from
+    title: 生源提示开启状态
+    type: long
+  - description: e.g. 0-关闭，1-开启
+    name: is_war_voice
+    title: 战场语音播报开启状态
+    type: long
+  - description: e.g. 5,10
+    name: bgm_vol
+    title: 背景音乐音量设置值
+    type: long
+  - description: e.g. 5,10
+    name: hall_vol
+    title: 大厅音效音量设置值
+    type: long
+  - description: e.g. 5,10
+    name: war_vol
+    title: 战场音效音量设置值
+    type: long
+  - description: e.g. 5,10
+    name: mic_vol
+    title: 麦克风音量设置值
+    type: long
+  - description: e.g. 5,10
+    name: listen_vol
+    title: 喇叭音量设置值
+    type: long
+  - description: e.g. 印尼语
+    name: voice_choice
+    title: 语音选择
+    type: string
+  - description: e.g. 0-关闭，1-开启
+    name: is_ui
+    title: 无UI模式开启状态
+    type: long
+  - description: e.g. 中文、日文、韩文
+    name: language_choice
+    title: 语言选择
+    type: string
+  name: game_setting
+  source: client
+  title: 玩家游戏设置记录
