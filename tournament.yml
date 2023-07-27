@@ -1,0 +1,42 @@
+kind: Event
+metadata:
+  name: gameserver_tournament
+spec:
+  description: V47加入 在每个赛程结算时上报
+  dont_save_to_table: false
+  fields:
+  - description: eg. 1
+    name: activity_id
+    title: 活动id
+    type: long
+  - description: eg. 团队激斗争霸赛
+    name: activity_name
+    title: 活动名称
+    type: string
+  - description: eg. 1234567
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: eg. 1234
+    name: create_time
+    title: 玩家创建时间（时间戳）
+    type: long
+  - description: eg. 预选赛
+    name: stage
+    title: 赛程
+    type: string
+  - description: eg. 1
+    name: rank
+    title: 榜单排名
+    type: long
+  - description: eg. 10
+    name: points
+    title: 赛程总积分
+    type: long
+  - description: eg. 7
+    name: mmod
+    title: 模式
+    type: long
+  name: tournament
+  source: gameserver
+  title: 街机争霸赛结算结果

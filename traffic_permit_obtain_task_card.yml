@@ -1,0 +1,82 @@
+kind: Event
+metadata:
+  name: gameserver_traffic_permit_obtain_task_card
+spec:
+  description: |
+    玩家获得“立即完成任务卡”
+
+    当玩家在获得“立即完成任务卡”时记录
+
+    S19/2019-06-10
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 1
+    name: level
+    title: 玩家等级
+    type: long
+  - description: e.g., 1559275002
+    name: create_time
+    title: 玩家创建时间(时间戳)
+    type: long
+  - description: |-
+      比如说，比如说马戏团派对是第一期，记1
+
+      e.g., 1
+    name: period
+    title: 赛季第几期
+    type: long
+  - description: |-
+      玩家当前的通行证等级
+
+      e.g., 1
+    name: pass_level
+    title: 通行证等级
+    type: long
+  - description: 与 items 表的 op_id 一致
+    name: op_id
+    title: 获取方式ID
+    type: long
+  - description: 与 items 表的 op_name 一致
+    name: op_name
+    title: 获取方式
+    type: string
+  - description: 获得的数量
+    name: count
+    title: 获得的数量
+    type: long
+  - description: e.g., 0-否，1-是
+    name: ispay
+    title: 是否付费玩家
+    type: long
+  - description: |-
+      单位为秒
+
+      S21/2019-09-16后置0
+
+      e.g., 100
+    name: total_time
+    title: 玩家战斗累计时长
+    type: long
+  - description: |-
+      单位为秒
+
+      S21/2019-09-16加入
+
+      e.g., 100
+    name: season_total_time
+    title: 当前赛季玩家战斗累计时长
+    type: long
+  - description: |-
+      S22/2019-10-15加入
+
+      e.g., 1-免费，2-黄金季票，3-黄金季票豪华包
+    name: permit_type
+    title: 玩家当前拥有的季票类型
+    type: long
+  name: traffic_permit_obtain_task_card
+  source: gameserver
+  title: 服务端季票任务卡获得日志
