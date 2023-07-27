@@ -1,0 +1,26 @@
+kind: Event
+metadata:
+  name: gameserver_title
+spec:
+  description: V47加入 在玩家获得、装配、卸下称号时上报（不包含排行榜称号）
+  dont_save_to_table: false
+  fields:
+  - description: eg. 123456
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: eg. 123456
+    name: title_id
+    title: 称号id
+    type: long
+  - description: eg. 巅峰战神
+    name: title_name
+    title: 称号名称
+    type: string
+  - description: 1-获得 2-装配 3-卸下
+    name: action_type
+    title: 上报类型
+    type: long
+  name: title
+  source: gameserver
+  title: 称号获得与装配

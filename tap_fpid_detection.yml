@@ -1,0 +1,74 @@
+kind: Event
+metadata:
+  name: gameserver_tap_fpid_detection
+spec:
+  description: V33/2021-01-20加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 2020122709040267ea013db4c59780936dc58b8c2d862e0145da622abac1b8
+    name: fpid
+    title: 心动风控设备id
+    type: string
+  - description: e.g., 0-否，1-是
+    name: b_altered
+    title: 是否篡改设备
+    type: long
+  - description: e.g., 0
+    name: b_altered_last_ts
+    title: 篡改设备最后标记时间戳
+    type: long
+  - description: e.g., 0-否，1-是
+    name: b_cloud_device
+    title: 是否手机云设备
+    type: long
+  - description: e.g., 0
+    name: b_cloud_device_last_ts
+    title: 手机云设备最后标记时间戳
+    type: long
+  - description: e.g., 0-否，1-是
+    name: b_faker
+    title: 是否伪造设备
+    type: long
+  - description: e.g., 0
+    name: b_faker_last_ts
+    title: 伪造设备最后标记时间戳
+    type: long
+  - description: e.g., 0-否，1-是
+    name: b_farmer
+    title: 是否农场设备
+    type: long
+  - description: e.g., 0
+    name: b_farmer_last_ts
+    title: 农场设备最后标记时间戳
+    type: long
+  - description: e.g., 0-否，1-是
+    name: b_offerwall
+    title: 是否积分墙设备
+    type: long
+  - description: e.g., 0
+    name: b_offerwall_last_ts
+    title: 积分墙设备最后标记时间戳
+    type: long
+  - description: e.g., 0-否，1-是
+    name: b_pc_emulator
+    title: 是否PC模拟器
+    type: long
+  - description: e.g., 0
+    name: b_pc_emulator_last_ts
+    title: PC模拟器最后标记时间戳
+    type: long
+  - description: e.g., 0-否，1-是
+    name: b_mismatch
+    title: 是否虚假设备
+    type: long
+  - description: e.g., 0
+    name: b_mismatch_last_ts
+    title: 虚假设备最后标记时间戳
+    type: long
+  - description: e.g., 2020-11-04
+    name: date
+    title: 日期
+    type: string
+  name: tap_fpid_detection
+  source: gameserver
+  title: 心动设备风控检测结果

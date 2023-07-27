@@ -1,0 +1,37 @@
+kind: Event
+metadata:
+  name: gameserver_shop_discount_purchase
+spec:
+  description: |-
+    限时折扣活动购买事件
+
+    V41/2022-03-09加入
+  dont_save_to_table: false
+  fields:
+  - description: ""
+    name: item_id
+    title: 物品id
+    type: long
+  - description: ""
+    name: item_name
+    title: 物品名称
+    type: string
+  - description: e.g., 70-70%折扣
+    name: discount_id
+    title: 对应的折扣id
+    type: long
+  - description: e.g., 285
+    name: original_price
+    title: 商品原价格
+    type: long
+  - description: e.g., 1
+    name: rid
+    title: 关联id 用来关联整个购买过程
+    type: long
+  - description: ""
+    name: pid
+    title: 玩家pid
+    type: long
+  name: shop_discount_purchase
+  source: gameserver
+  title: 折扣活动购买事件

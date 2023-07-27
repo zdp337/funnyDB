@@ -1,0 +1,39 @@
+kind: Event
+metadata:
+  name: gameserver_shop_limit
+spec:
+  description: |
+    限时礼包触发记录
+
+    记录玩家触发每种限时礼包的任务内容和礼包名称
+
+    V41/2022-03-24加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g. 421
+    name: event_id
+    title: 事件触发任务id
+    type: long
+  - description: e.g. m416击杀
+    name: event_name
+    title: 事件触发任务名称
+    type: string
+  - description: e.g. 1，2，3
+    name: event_num
+    title: 任务为第几次触发
+    type: long
+  - description: e.g. 421
+    name: gift_id
+    title: '礼包id  '
+    type: long
+  - description: e.g. m416
+    name: gift_name
+    title: '礼包名称  '
+    type: string
+  - description: e.g. 421
+    name: pid
+    title: 玩家pid
+    type: long
+  name: shop_limit
+  source: gameserver
+  title: 限时礼包触发事件

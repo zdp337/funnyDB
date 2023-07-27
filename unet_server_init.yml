@@ -1,0 +1,137 @@
+kind: Event
+metadata:
+  name: gameserver_unet_server_init
+spec:
+  description: V31/2020-10-26加入
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      服务端的MatchMode
+
+      e.g., 1-战斗岛，2-快速派对，3-彩虹岛
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: |-
+      服务端的GameMode
+
+      e.g., 1-经典模式，2-街机模式
+    name: gmod
+    title: 游戏类别
+    type: long
+  - description: |-
+      服务端的ShowMode
+
+      e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场
+    name: show_gmod
+    title: 游戏入口显示模式
+    type: long
+  - description: |-
+      服务端的GroupMode
+
+      e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 100
+    name: max_connect_count
+    title: 最大连接数
+    type: long
+  - description: e.g., 80
+    name: real_player_count
+    title: 实际玩家数
+    type: long
+  - description: e.g., 7
+    name: match_time
+    title: unet出生岛等待时间
+    type: long
+  - description: e.g., 1
+    name: season
+    title: 赛季
+    type: long
+  - description: |-
+      服务端的RoomLvOfGradeScore
+
+      e.g., 1, 2, 3, 4, 5
+    name: score_room_level
+    title: 段位竞技场等级
+    type: long
+  - description: |-
+      服务端的RoomLvOfHideScore
+
+      e.g., 1, 2, 3, 4, 5
+    name: room_level
+    title: 房间等级
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: |-
+      0 表示不是 game server
+
+      e.g., 1
+    name: sid
+    title: 区唯一id
+    type: long
+  - description: e.g., abc
+    name: room_key
+    title: 房间密钥
+    type: string
+  - description: e.g., abc
+    name: room_type
+    title: 房间类型
+    type: string
+  - description: e.g., abc
+    name: custom_room_name
+    title: 自定义房间名称
+    type: string
+  - description: eg., 1002003
+    name: custom_room_master_pid
+    title: 自定义房间的房主pid
+    type: long
+  - description: |-
+      标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+      eg., 1002003
+    name: custom_room_id
+    title: 自定义房间的房间号
+    type: long
+  - description: eg., abc
+    name: custom_room_config
+    title: 自定义房间配置
+    type: string
+  - description: eg., 0-否，1-是
+    name: have_ai
+    title: 是否包含ai
+    type: long
+  - description: eg., 1
+    name: ai_lv
+    title: ai等级
+    type: long
+  - description: eg., 1559275002
+    name: server_timestamp
+    title: 服务器时间戳
+    type: long
+  - description: e.g., 0-手机，1-模拟器
+    name: client_type
+    title: 房间类型
+    type: long
+  - description: e.g., SZ
+    name: area
+    title: unet服务器机房地区
+    type: string
+  - description: |-
+      v35/2021-04-23加入
+
+      e.g., ms1
+    name: msid
+    title: match server 唯一 id
+    type: string
+  - description: v35/2021-04-26加入
+    name: server_type
+    title: 服务端类型
+    type: string
+  name: unet_server_init
+  source: gameserver
+  title: unet server参数初始化
