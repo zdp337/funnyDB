@@ -1,0 +1,108 @@
+kind: Event
+metadata:
+  name: gameserver_chat_log
+spec:
+  description: 玩家文字聊天日志
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      该字段目前已没用，渠道信息使用chan字段
+
+      e.g., 1-taptap
+    name: cid
+    title: 渠道id
+    type: long
+  - description: e.g., abc
+    name: content
+    title: 聊天内容
+    type: string
+  - description: e.g., 0a3fab47ed5bd1b495b3942de35f6afb
+    name: from_account
+    title: 发送者心动ID
+    type: string
+  - description: e.g., 御风者骷髅
+    name: from_name
+    title: 发送者昵称
+    type: string
+  - description: e.g., 9871361
+    name: from_pid
+    title: 发送者pid
+    type: long
+  - description: e.g., 6BL
+    name: from_uid
+    title: 发送者uid
+    type: string
+  - description: e.g., 0-否，1-是
+    name: ispay
+    title: 是否付费玩家
+    type: long
+  - description: e.g., 1
+    name: level
+    title: 玩家等级
+    type: long
+  - description: e.g., 1559666020-9420803
+    name: logid
+    title: 日志排重id
+    type: string
+  - description: e.g., 1
+    name: sid
+    title: 区唯一ID
+    type: long
+  - description: e.g., 0a3fab47ed5bd1b495b3942de35f6afb
+    name: to_account
+    title: 接收者心动ID
+    type: string
+  - description: e.g., 御风者骷髅
+    name: to_name
+    title: 接收者昵称
+    type: string
+  - description: e.g., 9871361
+    name: to_pid
+    title: 接收者pid
+    type: long
+  - description: e.g., 0-好友聊天，1-队伍聊天，2-群聊
+    name: type
+    title: 类型
+    type: long
+  - description: e.g., 0-否，1-是
+    name: vip
+    title: 是否vip
+    type: long
+  - description: e.g., taptap
+    name: chan
+    title: 渠道标识
+    type: string
+  - description: |-
+      区分是不是赠礼消息，防止被误禁言
+
+      0-不是赠礼消息，1-赠礼消息
+
+      V43/2022-07-05加入
+    name: is_gift_msg
+    title: 是否是赠礼消息
+    type: long
+  - description: |-
+      e.g. 47892
+
+      服务端类型修改，本字段弃用
+    name: msg_id
+    title: 消息 ID
+    type: long
+  - description: e.g. 47892
+    name: msgid
+    title: 消息 ID
+    type: string
+  - description: 该字段已弃用，聊天标签记录使用label字段
+    name: tags
+    title: 玩家聊天内容类型
+    type: long
+  - description: |-
+      记录玩家当前聊天内容标签列表，逗号分割
+
+      e.g., 3-赠送礼物，4-网页链接，5陌生人打招呼
+    name: label
+    title: 玩家聊天内容标签
+    type: string
+  name: chat_log
+  source: gameserver
+  title: 玩家文字聊天日志

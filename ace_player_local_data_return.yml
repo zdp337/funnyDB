@@ -1,0 +1,191 @@
+kind: Event
+metadata:
+  name: gameserver_ace_player_local_data_return
+spec:
+  description: |-
+    服务端实时上报
+    玩家每次登录上报一次，登录周期内不会再次上报
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      应用包名，通过 JNI 反射 Java 层应用信息获取；
+      eg: com.sofunny.Sausage
+    name: apk_name
+    title: 应用包名
+    type: string
+  - description: 1 为是模拟器，0 为非模拟器；
+    name: is_emu
+    title: 设备是否为模拟器；
+    type: long
+  - description: 检测到非模拟器时为空字符串""；
+    name: emu_name
+    title: 模拟器名
+    type: string
+  - description: 1 为是虚拟机，0 为非虚拟机；
+    name: is_vap
+    title: 是否运行在虚拟机中；
+    type: long
+  - description: 检测到非虚拟机时为空字符串""；
+    name: vap_name
+    title: 虚拟机包名
+    type: string
+  - description: 1 为被篡改，0 为未篡改；
+    name: opcode_patched
+    title: 反外挂 SDK 的代码段是否被篡改，期望的代码段 crc 和实际内存中的代码段 crc 对比后的结果；
+    type: long
+  - description: |-
+      若与实际内存中的 crc 不同则为被篡改；
+      eg: 115d
+    name: expect_opcode
+    title: 期望的反外挂 SDK 代码段 crc；
+    type: string
+  - description: 'eg: 115d'
+    name: real_opcode
+    title: 实际内存中的反外挂 SDK 代码段 crc；
+    type: string
+  - description: |-
+      1 为支持；0 为不支持；
+      当该值为 1 时，可通过 IsDevTrust 字段判断设备
+      是否可信(是否存在刷机行为)；
+    name: is_support_dev_trust_verify
+    title: 表明设备是否支持检测刷机情况；
+    type: long
+  - description: |-
+      1 为设备可信；0 为设备不可信，存在非官方刷机
+      情况；
+    name: is_dev_trust
+    title: Android 可信计算结果，表明设备是否可信；
+    type: long
+  - description: 1 为可以使用，0 为不可使用；
+    name: is_cert_valid
+    title: Android可信计算结果，表明是否可使用证书hash 判断破解版；
+    type: long
+  - description: 1 为在虚拟环境中，0 为不在虚拟环境中；玩家设备原生不支持可信计算时为 0；
+    name: may_in_vap
+    title: Android 可信计算结果，表明游戏是否运行在疑似 虚拟机环境中；
+    type: long
+  - description: 该结果可能存在多个包名，表示多个应用共享同一个 uid，包名之间使用";"隔开，此时通常为破解版； 当 MayInVap 为 1
+      时，该结果通常为虚拟机包名；
+    name: pkg_names
+    title: Android 可信计算结果，应用包名；
+    type: string
+  - description: 对应 PkgNames 中包含的包名数；
+    name: pkg_names_cnt
+    title: Android 可信计算结果，获取的应用包名数；
+    type: long
+  - description: |-
+      在 is_cert_valid 为 1 时可用来判断破解版；
+      玩家设备原生不支持可信计算时为空或 NULL，属正常情况；
+    name: cert_hash
+    title: Android 可信计算结果，应用证书 hash
+    type: string
+  - description: |-
+      未获取到设备机型时为空字符串""，属正常情况；
+      eg: SA10
+    name: model
+    title: 设备机型；
+    type: string
+  - description: 1 为需要；0 为不需要；
+    name: is_need_req_apk_list
+    title: 是否需要向当前用户申请应用列表权限；
+    type: long
+  - description: 1 为同意授权；0 为不同意授权；
+    name: is_allow_apk_list
+    title: 用户是否同意了应用列表采集授权；
+    type: long
+  - description: 无法获取时该字段为空，属正常情况；
+    name: bundle_id
+    title: iOS 应用包名，可用来判断破解版；
+    type: string
+  - description: |-
+      证书 TeamID 与官方应用不一致时为非官方客户端，此时可能是游戏开发阶段证书、testflight 证书或破解版证书等；
+      无法获取时该字段为空，属正常情况；
+    name: team_id
+    title: iOS 应用证书 TeamID，可用来判断破解版；
+    type: string
+  - description: 证书 MD5 与官方证书不一致时为非官方客户端，此时可能是游戏开发阶段证书、testflight 证书或破解版证书等；
+    name: cert_md5
+    title: iOS 反外挂 SDK 证书自解析结果，证书 MD5；
+    type: string
+  - description: 证书作者与官方证书不一致时为非官方客户端，此时可能是游戏开发阶段证书、testflight 证书或破解版证书等；
+    name: cert_author
+    title: iOS 反外挂 SDK 证书自解析结果，证书作者；
+    type: string
+  - description: |-
+      "Suc"为可信计算校验成功；
+      "CrcErr"为可信计算数据被篡改； "AttFail "与"AssFail "为可信计算校验出现内部错误，为校验时内存开辟失败等内部错误；
+      "AttErr"与"AssErr "为可信计算校验失败，通常为破解版；
+      "Unsupport"为不支持，在 iOS14 以下等不支持可信计算方案的设备上运行时属正常情况；
+    name: trust_cert_verify
+    title: iOS 可信计算方案校验结果;
+    type: string
+  - description: |-
+      "VersionErr"为数据版本错误，通常为客户端 SDK 数据与服务端 SDK 数据解析接口支持的数据版本不对齐，通常为服务端 SDK 和客户端 SDK 未同步更新；
+      "MD5Err"为数据签名校验错误，通常为外挂伪造；
+      "CrcErr"为数据内容被篡改，通常为外挂篡改；
+    name: data_err
+    title: 对局准入接口正确接入时，正常玩家数据中通常不会包含该字段；
+    type: string
+  - description: |-
+      在使用对局准入数据时必须首先判断版本号是否与客户端接入的一致；
+      eg: 9.0
+    name: version
+    title: 客户端反外挂 SDK 对局准入数据版本号
+    type: string
+  - description: 'eg: 6.6.5.63033'
+    name: sdk_ver
+    title: 客户端反外挂 SDK 版本号；
+    type: string
+  - description: 'eg: 15.70'
+    name: app_ver
+    title: 游戏版本号；
+    type: string
+  - description: 1 为 root/越狱，0 为非 root/非越狱；
+    name: is_root
+    title: 设备是否 root/越狱；
+    type: long
+  - description: 非 root/非越狱时为空字符串""；
+    name: root_reason
+    title: 检测到 root/越狱的原因；
+    type: string
+  - description: 未获取到系统版本时为空字符串""，属正常情况；
+    name: sys_ver
+    title: 设备系统版本；
+    type: string
+  - description: 共四种值：arm32、arm64、x86、x86_64；
+    name: arch
+    title: 运行架构
+    type: string
+  - description: 1 为下载成功，0 为下载失败；
+    name: cdn
+    title: 反外挂 SDK 特征是否下载成功；
+    type: long
+  - description: 'eg: 1015022792'
+    name: open_id
+    title: 用户 OpenID
+    type: string
+  - description: 1 为 Android，2 为 iOS
+    name: plat
+    title: 用户平台
+    type: long
+  - description: |
+      e.g., 9871361
+    name: pid
+    title: 玩家id
+    type: long
+  - description: |-
+      1 为开启，0 为关闭；
+      接口关闭时对局准入数据中无任何检测数据，根据数据制作策略时需首先判断接口是否开启
+    name: is_enabled
+    title: 客户端反外挂 SDK 对局准入接口是否开启
+    type: long
+  - description: |-
+      用于排查问题使用，平时不会上传这个字段
+
+      2023-07-25加入
+    name: raw
+    title: 原始数据
+    type: string
+  name: ace_player_local_data_return
+  source: gameserver
+  title: ACE 数据回传

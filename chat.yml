@@ -1,0 +1,83 @@
+kind: Event
+metadata:
+  name: gameserver_chat
+spec:
+  description: 玩家语音敏感词检测反馈记录
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      该字段目前已没用，渠道信息使用chan字段
+
+      e.g., 1-taptap
+    name: cid
+    title: 渠道id
+    type: long
+  - description: e.g., 1-色情 5-政治违规 -其他
+    name: code
+    title: 鉴黄结果
+    type: long
+  - description: |-
+      当前只有 '' 的值
+
+      e.g., abc
+    name: content
+    title: 内容
+    type: string
+  - description: e.g., 0a3fab47ed5bd1b495b3942de35f6afb
+    name: from_account
+    title: 发送者心动ID
+    type: string
+  - description: e.g., 御风者骷髅
+    name: from_name
+    title: 发送者昵称
+    type: string
+  - description: e.g., 9871361
+    name: from_pid
+    title: 发送者pid
+    type: long
+  - description: e.g., 6BL
+    name: from_uid
+    title: 发送者uid
+    type: string
+  - description: e.g., 1559666020-9420803
+    name: logid
+    title: 日志排重id
+    type: string
+  - description: e.g., taptap_66aaa53d7c48fe124297d9efc563bb3f_5
+    name: room_id
+    title: 房间id
+    type: string
+  - description: e.g., 1
+    name: sid
+    title: 区唯一ID
+    type: long
+  - description: e.g., 0a3fab47ed5bd1b495b3942de35f6afb
+    name: to_account
+    title: 接收者心动ID
+    type: string
+  - description: e.g., 御风者骷髅
+    name: to_name
+    title: 接收者昵称
+    type: string
+  - description: e.g., 9871361
+    name: to_pid
+    title: 接收者pid
+    type: long
+  - description: |-
+      当前只有 1 的值
+
+      e.g., 1
+    name: type
+    title: 类型
+    type: long
+  - description: e.g., http://gz-check-illegal-content-1256845520.cosgz.myqcloud.com/audio_store/232884668_1633703801_1400125313_1129324962_3.mp3
+    name: url
+    title: 语音片段下载地址
+    type: string
+  - description: e.g., taptap
+    name: chan
+    title: 渠道标识
+    type: string
+  name: chat
+  source: gameserver
+  title: 玩家语音敏感词检测反馈记录

@@ -1,0 +1,32 @@
+kind: Event
+metadata:
+  name: gameserver_ranking_notify
+spec:
+  description: S26/2020-03-27加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-段位榜，2-美味榜，3-粉丝榜，4-淘汰榜，5-暴击榜，6-夺冠榜
+    name: type
+    title: 榜单类型
+    type: long
+  - description: |-
+      地区->对应地区编码 全服->-1
+
+      e.g., 130000
+    name: area
+    title: 榜单地区编码
+    type: string
+  - description: |-
+      周榜->周数 赛季榜->-赛季数 历史榜->0
+
+      e.g., 1
+    name: period
+    title: 榜单周期类型
+    type: long
+  - description: e.g., abc
+    name: content
+    title: 通告内容
+    type: string
+  name: ranking_notify
+  source: gameserver
+  title: 排行榜通告日志

@@ -1,0 +1,37 @@
+kind: Event
+metadata:
+  name: gameserver_new_device_steps
+spec:
+  description: |-
+    新增设备节点，每次新增设备对应 N 条记录
+
+    V39/2021-09-23加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., CreateLoadUI
+    name: e
+    title: 节点事件
+    type: string
+  - description: e.g., 3643b8aa363de16b
+    name: device_id
+    title: 设备 id
+    type: string
+  - description: e.g., xiaomi xiaomi 8、iPhone8,4
+    name: m
+    title: 机型
+    type: string
+  - description: e.g., Android OS 9 / API-28 (HUAWEITNY-AL00/172C00R1)、iOS 12.2
+    name: os
+    title: 操作系统
+    type: string
+  - description: 0-未知，1-Android，2-iOS
+    name: device_type
+    title: 设备类型
+    type: long
+  - description: android_id/advertising_id/ios_idfa/deviceid
+    name: from_field
+    title: device_id 来源字段
+    type: string
+  name: new_device_steps
+  source: gameserver
+  title: 新增设备节点

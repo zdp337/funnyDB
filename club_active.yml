@@ -1,0 +1,30 @@
+kind: Event
+metadata:
+  name: gameserver_club_active
+spec:
+  description: |-
+    战队活跃度日志
+
+
+    V33/2021-03-31加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: club_id
+    title: 战队id
+    type: long
+  - description: e.g., 1
+    name: active_week
+    title: 周活跃度
+    type: long
+  - description: e.g., 1
+    name: active_season
+    title: 赛季活跃度
+    type: long
+  - description: e.g., 1
+    name: active_history
+    title: 历史活跃度
+    type: long
+  name: club_active
+  source: gameserver
+  title: 战队活跃度日志

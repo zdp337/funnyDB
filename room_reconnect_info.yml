@@ -1,0 +1,48 @@
+kind: Event
+metadata:
+  name: gameserver_room_reconnect_info
+spec:
+  description: |-
+    客户端重连下发房间信息
+
+    目前只针对经典模式和街机模式
+
+    S22/2019-10-10加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 9871361
+    name: pid
+    title: 玩家pid
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., dev-game-info.biubiubiu.io:20001
+    name: unet_addr
+    title: unet服务器地址
+    type: string
+  - description: e.g., SZ
+    name: unet_area
+    title: unet服务器机房地区
+    type: string
+  - description: e.g., 0-手机，1-模拟器
+    name: client_type
+    title: 房间类型
+    type: long
+  name: room_reconnect_info
+  source: gameserver
+  title: 服务端下发客户端重连房间信息

@@ -1,0 +1,56 @@
+kind: Event
+metadata:
+  name: gameserver_match_process
+spec:
+  description: |-
+    玩家点击匹配状态打点日志
+
+    每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+    2022-11-09加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g. pid1,pid2,pid3
+    name: pid_list
+    title: pid列表
+    type: string
+  - description: e.g., 1-单人，2-双人，4-四人
+    name: tmod
+    title: 组队模式
+    type: long
+  - description: e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式
+    name: gmod
+    title: 游戏模式
+    type: long
+  - description: e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道，
+      8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋
+    name: mmod
+    title: 匹配模式
+    type: long
+  - description: e.g., 5c63486fbd08f80062c13ed15829d049
+    name: war_id
+    title: 战场ID
+    type: string
+  - description: 0-移动端，1-PC端，2-模拟器
+    name: match_type
+    title: 匹配类型
+    type: long
+  - description: 时间戳
+    name: match_start_time
+    title: 匹配开始时间
+    type: long
+  - description: 未跨区为空，跨区匹配成功记为最后所跨区域
+    name: area
+    title: 本次所跨区域
+    type: string
+  - description: 0-匹配开始，1，跨区匹配，2，取消匹配，3匹配成功
+    name: stat
+    title: 匹配状态
+    type: long
+  - description: ""
+    name: match_id
+    title: 匹配操作id
+    type: long
+  name: match_process
+  source: gameserver
+  title: 匹配过程状态统计

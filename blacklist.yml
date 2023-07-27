@@ -1,0 +1,35 @@
+kind: Event
+metadata:
+  name: gameserver_blacklist
+spec:
+  description: |-
+    玩家永久封禁时记录
+
+    V42/2022-06-07加入
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      描述黑名单所属类型
+
+      0 - DevicesCheating，1 - IDCardCheating，2 - PhoneCheating
+    name: tag
+    title: 标签
+    type: long
+  - description: device_id/card_id/phone
+    name: key
+    title: 黑名单的键
+    type: string
+  - description: |-
+      累计的次数
+
+      e.g. 1
+    name: times
+    title: 次数
+    type: long
+  - description: 本次触发的玩家 ID
+    name: pid
+    title: 玩家 ID
+    type: long
+  name: blacklist
+  source: gameserver
+  title: 黑名单

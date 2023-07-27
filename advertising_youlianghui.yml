@@ -1,0 +1,104 @@
+kind: Event
+metadata:
+  name: gameserver_advertising_youlianghui
+spec:
+  description: V31/2020-11-12加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 501010807190
+    name: member_id
+    title: 开发者账号
+    type: long
+  - description: e.g., 香肠派对
+    name: medium_name
+    title: 媒体名称
+    type: string
+  - description: e.g., 1111028215
+    name: app_id
+    title: 媒体id
+    type: long
+  - description: e.g., 3001137810953754
+    name: placement_id
+    title: 广告位ID
+    type: long
+  - description: e.g., iOS先行服测试1
+    name: placement_name
+    title: 广告位名称
+    type: string
+  - description: e.g., 激励视频
+    name: placement_type
+    title: 广告位类型
+    type: string
+  - description: e.g., 2020-11-07
+    name: date
+    title: 报表日期，yyyy-MM-dd
+    type: string
+  - description: e.g., true, false
+    name: is_summary
+    title: 是否是summary
+    type: boolean
+  - description: e.g., 1767
+    name: request_count
+    title: 广告位请求量
+    type: long
+  - description: e.g., 1762
+    name: return_count
+    title: 广告位返回量
+    type: long
+  - description: e.g., 1767
+    name: ad_request_count
+    title: 广告请求量
+    type: long
+  - description: e.g., 1762
+    name: ad_return_count
+    title: 广告返回量
+    type: long
+  - description: e.g., 1170
+    name: pv
+    title: 曝光量
+    type: long
+  - description: e.g., 171
+    name: click
+    title: 点击量
+    type: long
+  - description: |-
+      return_count/request_count
+
+      e.g., 99.72
+    name: fill_rate
+    title: 广告位填充率(广告位返回量/广告位请求量)
+    type: float
+  - description: |-
+      pv/ad return_count
+
+      e.g., 66.40
+    name: exposure_rate
+    title: 广告曝光率 (曝光量/广告返回量)
+    type: float
+  - description: e.g., 14.62
+    name: click_rate
+    title: 点击率
+    type: float
+  - description: e.g., 357.67
+    name: revenue
+    title: 收入（单位：元）
+    type: float
+  - description: e.g., 305.70
+    name: ecpm
+    title: 收入/曝光量*1000 （单位：元）
+    type: float
+  - description: e.g., 2.98
+    name: cpc
+    title: 点击成本  (收入 / 点击量) (单位：元)
+    type: float
+  - description: e.g., 6.4736
+    name: usd_exchange_rate
+    title: 美元/人民币汇率中间价(天级别更新)
+    type: float
+  - description: 分层标签
+    name: price_level
+    title: 分层标签
+    type: string
+  name: advertising_youlianghui
+  source: gameserver
+  title: 优量汇广告元数据

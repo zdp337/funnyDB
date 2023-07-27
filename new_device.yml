@@ -1,0 +1,54 @@
+kind: Event
+metadata:
+  name: gameserver_new_device
+spec:
+  description: |-
+    新增设备
+
+    V37/2021-06-29 加入
+  dont_save_to_table: false
+  fields:
+  - description: |-
+      新增设备 ID
+
+      计算逻辑：android_id>advertising_id>ios_idfa
+
+      e.g., 3643b8aa363de16b
+    name: device_id
+    title: 设备 ID
+    type: string
+  - description: |-
+      设备类型
+
+      e.g., 0 - 未知，1 - Android, 2 - IOS, 3 - PC
+    name: device_type
+    title: 设备类型
+    type: long
+  - description: |-
+      标识 device_id 是从哪个字段得到的
+
+      e.g., android_id, advertising_id, ios_idfa
+    name: from_field
+    title: 来源字段
+    type: string
+  - description: |-
+      机型
+
+      e.g., xiaomi xiaomi 8、iPhone8,4
+
+      V37/2021-06-30 加入
+    name: m
+    title: 机型
+    type: string
+  - description: |-
+      操作系统
+
+      e.g., Android OS 9 / API-28 (HUAWEITNY-AL00/172C00R1)、iOS 12.2
+
+      V37/2021-06-30 加入
+    name: os
+    title: 操作系统
+    type: string
+  name: new_device
+  source: gameserver
+  title: 服务端 - 新增设备

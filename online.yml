@@ -1,0 +1,29 @@
+kind: Event
+metadata:
+  name: gameserver_online
+spec:
+  description: |
+    在线玩家数统计日志
+
+    S19/2019-06-03加入
+  dont_save_to_table: false
+  fields:
+  - description: e.g., 1-taptap
+    name: cid
+    title: 渠道id
+    type: long
+  - description: e.g., 1
+    name: sid
+    title: 区唯一id
+    type: long
+  - description: e.g., 1000
+    name: count_all
+    title: 在线玩家数
+    type: long
+  - description: e.g., 0-移动端，1-PC端，2-模拟器
+    name: platform_type
+    title: 登录平台类型
+    type: long
+  name: online
+  source: gameserver
+  title: 服务端在线玩家数统计
