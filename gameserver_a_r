@@ -1,0 +1,3701 @@
+,event,event_name,event_description,name,title,type,description
+0,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",cid,渠道ID,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+1,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",sid,区唯一ID,long,"e.g., 1"
+2,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",account,心动ID,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+3,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ip,玩家最后登录ip,string,"e.g., 192.168.2.249"
+4,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",adv,广告引⼊入商ID,string,未使用
+5,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ad,广告识别编号,string,未使用
+6,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",guest,是否游客,long,"e.g., 0-否，1-是"
+7,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",device,玩家最后登录设备,string,"e.g., iPad8,5"
+8,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",chan,渠道标识,string,"S25/2020-01-10加入
+
+e.g., taptap"
+9,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ip_city,ip对应的城市,string,这个属性由服务端自动收集，不需要上报
+10,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ip_city_geo_name_id,ip对应的城市地理名称ID,long,这个属性由服务端自动收集，不需要上报
+11,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ip_country,ip对应的国家,string,这个属性由服务端自动收集，不需要上报
+12,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ip_country_geo_name_id,ip对应的国家地理名称ID,long,这个属性由服务端自动收集，不需要上报
+13,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ip_country_iso,ip对应的国家标识码,string,这个属性由服务端自动收集，不需要上报
+14,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ip_subdivision,ip对应的省份,string,这个属性由服务端自动收集，不需要上报
+15,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ip_subdivision_geo_name_id,ip对应的省份地理名称ID,long,这个属性由服务端自动收集，不需要上报
+16,gameserver_account,服务端心动账号创建,"账号创建日志
+
+S19/2019-06-03加入
+",ip_isp,ip对应的网络运营商,string,这个属性由服务端自动收集，不需要上报
+17,gameserver_ace_export,ACE 数据取回,服务端定时从 ACE 提供的接口取回作弊数据,pid,玩家 ID,long,"e.g., 9871361"
+18,gameserver_ace_export,ACE 数据取回,服务端定时从 ACE 提供的接口取回作弊数据,log_time,检测/打击时间,long,"e.g., 1559275002"
+19,gameserver_ace_export,ACE 数据取回,服务端定时从 ACE 提供的接口取回作弊数据,protect_type,防御类型,long,"e.g., 1"
+20,gameserver_ace_export,ACE 数据取回,服务端定时从 ACE 提供的接口取回作弊数据,detail,详细信息,string,
+21,gameserver_ace_export,ACE 数据取回,服务端定时从 ACE 提供的接口取回作弊数据,protect_result,防御结果,long,"e.g., 1"
+22,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",apk_name,应用包名,string,"应用包名，通过 JNI 反射 Java 层应用信息获取；
+eg: com.sofunny.Sausage"
+23,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",is_emu,设备是否为模拟器；,long,1 为是模拟器，0 为非模拟器；
+24,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",emu_name,模拟器名,string,"检测到非模拟器时为空字符串""""；"
+25,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",is_vap,是否运行在虚拟机中；,long,1 为是虚拟机，0 为非虚拟机；
+26,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",vap_name,虚拟机包名,string,"检测到非虚拟机时为空字符串""""；"
+27,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",opcode_patched,反外挂 SDK 的代码段是否被篡改，期望的代码段 crc 和实际内存中的代码段 crc 对比后的结果；,long,1 为被篡改，0 为未篡改；
+28,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",expect_opcode,期望的反外挂 SDK 代码段 crc；,string,"若与实际内存中的 crc 不同则为被篡改；
+eg: 115d"
+29,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",real_opcode,实际内存中的反外挂 SDK 代码段 crc；,string,eg: 115d
+30,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",is_support_dev_trust_verify,表明设备是否支持检测刷机情况；,long,"1 为支持；0 为不支持；
+当该值为 1 时，可通过 IsDevTrust 字段判断设备
+是否可信(是否存在刷机行为)；"
+31,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",is_dev_trust,Android 可信计算结果，表明设备是否可信；,long,"1 为设备可信；0 为设备不可信，存在非官方刷机
+情况；"
+32,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",is_cert_valid,Android可信计算结果，表明是否可使用证书hash 判断破解版；,long,1 为可以使用，0 为不可使用；
+33,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",may_in_vap,Android 可信计算结果，表明游戏是否运行在疑似 虚拟机环境中；,long,1 为在虚拟环境中，0 为不在虚拟环境中；玩家设备原生不支持可信计算时为 0；
+34,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",pkg_names,Android 可信计算结果，应用包名；,string,"该结果可能存在多个包名，表示多个应用共享同一个 uid，包名之间使用"";""隔开，此时通常为破解版； 当 MayInVap 为 1 时，该结果通常为虚拟机包名；"
+35,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",pkg_names_cnt,Android 可信计算结果，获取的应用包名数；,long,对应 PkgNames 中包含的包名数；
+36,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",cert_hash,Android 可信计算结果，应用证书 hash,string,"在 is_cert_valid 为 1 时可用来判断破解版；
+玩家设备原生不支持可信计算时为空或 NULL，属正常情况；"
+37,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",model,设备机型；,string,"未获取到设备机型时为空字符串""""，属正常情况；
+eg: SA10"
+38,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",is_need_req_apk_list,是否需要向当前用户申请应用列表权限；,long,1 为需要；0 为不需要；
+39,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",is_allow_apk_list,用户是否同意了应用列表采集授权；,long,1 为同意授权；0 为不同意授权；
+40,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",bundle_id,iOS 应用包名，可用来判断破解版；,string,无法获取时该字段为空，属正常情况；
+41,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",team_id,iOS 应用证书 TeamID，可用来判断破解版；,string,"证书 TeamID 与官方应用不一致时为非官方客户端，此时可能是游戏开发阶段证书、testflight 证书或破解版证书等；
+无法获取时该字段为空，属正常情况；"
+42,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",cert_md5,iOS 反外挂 SDK 证书自解析结果，证书 MD5；,string,证书 MD5 与官方证书不一致时为非官方客户端，此时可能是游戏开发阶段证书、testflight 证书或破解版证书等；
+43,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",cert_author,iOS 反外挂 SDK 证书自解析结果，证书作者；,string,证书作者与官方证书不一致时为非官方客户端，此时可能是游戏开发阶段证书、testflight 证书或破解版证书等；
+44,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",trust_cert_verify,iOS 可信计算方案校验结果;,string,"""Suc""为可信计算校验成功；
+""CrcErr""为可信计算数据被篡改； ""AttFail ""与""AssFail ""为可信计算校验出现内部错误，为校验时内存开辟失败等内部错误；
+""AttErr""与""AssErr ""为可信计算校验失败，通常为破解版；
+""Unsupport""为不支持，在 iOS14 以下等不支持可信计算方案的设备上运行时属正常情况；"
+45,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",data_err,对局准入接口正确接入时，正常玩家数据中通常不会包含该字段；,string,"""VersionErr""为数据版本错误，通常为客户端 SDK 数据与服务端 SDK 数据解析接口支持的数据版本不对齐，通常为服务端 SDK 和客户端 SDK 未同步更新；
+""MD5Err""为数据签名校验错误，通常为外挂伪造；
+""CrcErr""为数据内容被篡改，通常为外挂篡改；"
+46,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",version,客户端反外挂 SDK 对局准入数据版本号,string,"在使用对局准入数据时必须首先判断版本号是否与客户端接入的一致；
+eg: 9.0"
+47,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",sdk_ver,客户端反外挂 SDK 版本号；,string,eg: 6.6.5.63033
+48,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",app_ver,游戏版本号；,string,eg: 15.70
+49,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",is_root,设备是否 root/越狱；,long,1 为 root/越狱，0 为非 root/非越狱；
+50,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",root_reason,检测到 root/越狱的原因；,string,"非 root/非越狱时为空字符串""""；"
+51,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",sys_ver,设备系统版本；,string,"未获取到系统版本时为空字符串""""，属正常情况；"
+52,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",arch,运行架构,string,共四种值：arm32、arm64、x86、x86_64；
+53,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",cdn,反外挂 SDK 特征是否下载成功；,long,1 为下载成功，0 为下载失败；
+54,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",open_id,用户 OpenID,string,eg: 1015022792
+55,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",plat,用户平台,long,1 为 Android，2 为 iOS
+56,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",pid,玩家id,long,"e.g., 9871361
+"
+57,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",is_enabled,客户端反外挂 SDK 对局准入接口是否开启,long,"1 为开启，0 为关闭；
+接口关闭时对局准入数据中无任何检测数据，根据数据制作策略时需首先判断接口是否开启"
+58,gameserver_ace_player_local_data_return,ACE 数据回传,"服务端实时上报
+玩家每次登录上报一次，登录周期内不会再次上报",raw,原始数据,string,"用于排查问题使用，平时不会上传这个字段
+
+2023-07-25加入"
+59,gameserver_achievement_finish,服务端达成成就,"成就达成日志
+
+S19/2019-06-03加入
+",achievement_id,成就id,long,"e.g., 33554449"
+60,gameserver_achievement_finish,服务端达成成就,"成就达成日志
+
+S19/2019-06-03加入
+",achievement_name,成就名称,string,"e.g., 荣耀之路"
+61,gameserver_achievement_finish,服务端达成成就,"成就达成日志
+
+S19/2019-06-03加入
+",achievement_star,成就星数,long,"e.g., 1"
+62,gameserver_achievement_finish,服务端达成成就,"成就达成日志
+
+S19/2019-06-03加入
+",pid,玩家pid,long,"e.g., 9871361"
+63,gameserver_achievement_finish,服务端达成成就,"成就达成日志
+
+S19/2019-06-03加入
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+64,gameserver_achievement_finish,服务端达成成就,"成就达成日志
+
+S19/2019-06-03加入
+",total_star,目前总成就阶数,long,"e.g., 30
+
+V40/2022-01-06加入"
+65,gameserver_achievement_finish,服务端达成成就,"成就达成日志
+
+S19/2019-06-03加入
+",total_score,目前总成就积分,long,"e.g., 1500
+
+V40/2022-01-06加入"
+66,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",achievement_id,成就id,long,"e.g., 33554449"
+67,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",achievement_name,成就名称,string,"e.g., 荣耀之路"
+68,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",achievement_star,成就阶数,long,"e.g., 1"
+69,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",old_progress,原成就进度,long,"e.g., 5"
+70,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",add_progress,成就进度变化值,long,"e.g., 5"
+71,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",new_progress,新成就进度,long,"e.g., 10"
+72,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",gmod,游戏模式,long,"e.g., 1-经典模式，2-街机模式"
+73,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",mmod,模式地图,long,"e.g., 19-街机派对-12v12团队战-彩虹岛"
+74,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+75,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",pid,玩家pid,long,"e.g., 9871361"
+76,gameserver_achievement_progress,玩家成就进度,"玩家成就进度统计
+
+玩家的成就在有进度变化的时候进行上报
+
+V40/2021-12-03加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+77,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,ad_slot_id,代码位 ID，在头条联盟媒体平台创建代码位，审核通,long,过后可获取
+78,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,ad_slot_type,代码位类型,string,代码位类型
+79,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,appid,在头条联盟媒体平台创建应用后获取的 appid,long,在头条联盟媒体平台创建应用后获取的 appid
+80,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,click,点击量,long,点击量
+81,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,click_rate,点击率,float,点击率
+82,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,code_name,代码位名称,string,代码位名称
+83,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,cost,预估总收入,float,预估总收入
+84,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,currency,货币类型,string,货币类型
+85,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,ecpm,前次展现收入,float,前次展现收入
+86,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,media_name,账号名称,string,账号名称
+87,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,region,国家或地区代码，同 ISO 3166-1 标准，使用两位字母,string,编码。目前只有中国，请填写 CN
+88,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,show,展现量,long,展现量
+89,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,site_name,应用名称,string,应用名称
+90,gameserver_advertising_chuanshanjia,穿山甲广告元数据,穿山甲广告元数据,stat_datetime,本条数据的时间维度,string,本条数据的时间维度
+91,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,app_id,应用ID,string,"e.g., 1780E88013948B90AA5DBFBF934BCE53"
+92,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,package_name,包名,string,"e.g., com.sofunny.chickendinnerfirst"
+93,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,placement_id,广告位ID,string,"e.g., 24554E98174ECEC3F6193F4487270F7A"
+94,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,placement_name,广告位名字,string,"e.g., 先行服广告位_Android"
+95,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,ad_format,广告位类型,long,"e.g., 5"
+96,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,ad_format_name,广告位类型名字,string,"e.g., 激励视频"
+97,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,area,国家编码,string,"e.g., CN"
+98,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,network,广告网络ID,long,"e.g., 17"
+99,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,network_placement_id,广告网络的广告位ID信息,string,"e.g., 945597818"
+100,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,network_placement_name,广告网络的广告源名称,string,"e.g., Pangle(cn)_90"
+101,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,network_placement_info,广告网络的广告位详细信息,string,"e.g., {\""appId\"":\""5036489\"",\""placementId\"":\""945597818\""}"
+102,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,dau,日活跃用户数量(app级别),long,"e.g.,"
+103,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,deu,每日观看广告的用户数,long,"e.g., 46459"
+104,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,arpu,每用户平均收入,float,"e.g., 0.0004710143646875429"
+105,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,request_api,三方广告平台的请求数,long,"e.g., 1000"
+106,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,fillrate_api,三方广告平台的填充率,float,"e.g., 50.0"
+107,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,impression_api,三方广告平台的展示数,long,"e.g.,"
+108,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,click_api,三方广告平台的点击数,long,"e.g., 277"
+109,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,ctr_api,三方广告平台的点击率,float,"e.g., 16.275"
+110,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,ecpm_api,三方广告平台的eCPM,float,"e.g., 12.857142402478587"
+111,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,revenue,收益,float,"e.g., 21.882856369018555"
+112,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,date,日期,string,"e.g., 2020-11-04"
+113,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,date_time_stamp,时间戳,long,"e.g., 1606003200"
+114,gameserver_advertising_tradplus,聚合广告元数据,V32/2020-11-24加入,network_name,广告网络名字,string,"e.g., Pangle(cn)"
+115,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",app_id,应用ID,string,"e.g., 1780E88013948B90AA5DBFBF934BCE53"
+116,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",package_name,包名,string,"e.g., com.sofunny.chickendinnerfirst"
+117,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",placement_id,广告位ID,string,"e.g., 24554E98174ECEC3F6193F4487270F7A"
+118,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",placement_name,广告位名字,string,"e.g., 先行服广告位_Android"
+119,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",ad_format,广告位类型,long,"e.g., 5"
+120,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",ad_format_name,广告位类型名字,string,"e.g., 激励视频"
+121,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",area,国家编码,string,"e.g., CN"
+122,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",network,广告网络ID,long,"e.g., 17"
+123,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",network_name,广告网络名字,string,"e.g., Pangle(cn)"
+124,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",network_placement_id,广告网络的广告位ID信息,string,"e.g., 945597818"
+125,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",network_placement_name,广告网络的广告源名称,string,"e.g., Pangle(cn)_90"
+126,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",network_placement_info,广告网络的广告位详细信息,string,"e.g., {\""appId\"":\""5036489\"",\""placementId\"":\""945597818\""}"
+127,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",dau,日活跃用户数量(app级别),long,"e.g.,"
+128,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",deu,每日观看广告的用户数,long,"e.g., 46459"
+129,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",arpu,每用户平均收入,float,"e.g., 0.0004710143646875429"
+130,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",request_api,三方广告平台的请求数,long,"e.g., 1000"
+131,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",fillrate_api,三方广告平台的填充率,float,"e.g., 50.0"
+132,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",impression_api,三方广告平台的展示数,long,"e.g.,"
+133,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",click_api,三方广告平台的点击数,long,"e.g., 277"
+134,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",ctr_api,三方广告平台的点击率,float,"e.g., 16.275"
+135,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",ecpm_api,三方广告平台的eCPM,float,"e.g., 12.857142402478587"
+136,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",revenue,收益,float,"e.g., 21.882856369018555"
+137,gameserver_advertising_tradplus_v2,聚合广告元数据V2,"v2版本使用了最新的api接口以及增加了数据检查机制，之后优先使用v2版本
+
+V33/2021-01-20加入",date,日期,string,"e.g., 2020-11-04"
+138,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,member_id,开发者账号,long,"e.g., 501010807190"
+139,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,medium_name,媒体名称,string,"e.g., 香肠派对"
+140,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,app_id,媒体id,long,"e.g., 1111028215"
+141,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,placement_id,广告位ID,long,"e.g., 3001137810953754"
+142,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,placement_name,广告位名称,string,"e.g., iOS先行服测试1"
+143,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,placement_type,广告位类型,string,"e.g., 激励视频"
+144,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,date,报表日期，yyyy-MM-dd,string,"e.g., 2020-11-07"
+145,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,is_summary,是否是summary,boolean,"e.g., true, false"
+146,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,request_count,广告位请求量,long,"e.g., 1767"
+147,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,return_count,广告位返回量,long,"e.g., 1762"
+148,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,ad_request_count,广告请求量,long,"e.g., 1767"
+149,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,ad_return_count,广告返回量,long,"e.g., 1762"
+150,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,pv,曝光量,long,"e.g., 1170"
+151,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,click,点击量,long,"e.g., 171"
+152,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,fill_rate,广告位填充率(广告位返回量/广告位请求量),float,"return_count/request_count
+
+e.g., 99.72"
+153,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,exposure_rate,广告曝光率 (曝光量/广告返回量),float,"pv/ad return_count
+
+e.g., 66.40"
+154,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,click_rate,点击率,float,"e.g., 14.62"
+155,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,revenue,收入（单位：元）,float,"e.g., 357.67"
+156,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,ecpm,收入/曝光量*1000 （单位：元）,float,"e.g., 305.70"
+157,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,cpc,点击成本  (收入 / 点击量) (单位：元),float,"e.g., 2.98"
+158,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,usd_exchange_rate,美元/人民币汇率中间价(天级别更新),float,"e.g., 6.4736"
+159,gameserver_advertising_youlianghui,优量汇广告元数据,V31/2020-11-12加入,price_level,分层标签,string,分层标签
+160,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",pid,玩家pid,long,"e.g., 9871361"
+161,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+162,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",season_type,赛季类型,long,"e.g., 1"
+163,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",pool_type,卡池类型,long,"e.g., 1, 2, 3, 4, 5, 6, 7"
+164,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",item_id,物品id,long,"e.g., 234881104"
+165,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",item_name,物品名称,string,"e.g., 季票勋章"
+166,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",item_num,物品数量,long,"e.g., 5"
+167,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",period,第几轮分配,long,"e.g., 1"
+168,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",count,抽卡次数,long,"e.g., 1"
+169,gameserver_ad_crate_daily_progress_reward,玩家每日广告宝箱进度奖励分配记录,"目前的设计有一个隐藏问题，假设当前序列数是10，玩家过了2轮，现在到达9了，突然增大序列号到15，那么10以上的轮次也会被当成2，已跟策划同步该种情况
+
+S26/2020-03-25加入",permit_type,玩家当前拥有的季票类型,long,"V32/2020-11-20加入
+
+e.g., 1-免费，2-黄金季票，3-黄金季票豪华包"
+170,gameserver_ad_crate_daily_super_reward,玩家每日广告宝箱超级奖励分配记录,S26/2020-03-25加入,pid,玩家pid,long,"e.g., 9871361"
+171,gameserver_ad_crate_daily_super_reward,玩家每日广告宝箱超级奖励分配记录,S26/2020-03-25加入,create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+172,gameserver_ad_crate_daily_super_reward,玩家每日广告宝箱超级奖励分配记录,S26/2020-03-25加入,item_id,物品id,long,"e.g., 234881104"
+173,gameserver_ad_crate_daily_super_reward,玩家每日广告宝箱超级奖励分配记录,S26/2020-03-25加入,item_name,物品名称,string,"e.g., 季票勋章"
+174,gameserver_ad_crate_daily_super_reward,玩家每日广告宝箱超级奖励分配记录,S26/2020-03-25加入,item_num,物品数量,long,"e.g., 5"
+175,gameserver_ad_crate_daily_super_reward,玩家每日广告宝箱超级奖励分配记录,S26/2020-03-25加入,permit_type,玩家当前拥有的季票类型,long,"V32/2020-11-20加入
+
+e.g., 1-免费，2-黄金季票，3-黄金季票豪华包"
+176,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",pid,玩家pid,long,"e.g., 9871361"
+177,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+178,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",type,广告宝箱类型,long,"超级大奖作为一个单独的类型
+
+ 
+
+e.g., 0-正常奖励，1-超级大奖，2-累计开箱奖励"
+179,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",item_id,物品id,long,"e.g., 234881104"
+180,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",item_name,物品名称,string,"e.g., 季票勋章"
+181,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",item_num,物品数量,long,"e.g., 5"
+182,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",multiple,暴击倍数,long,"默认值为1
+
+e.g., 1, 2"
+183,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",rid,关联id,long,"用来关联整个购买过程
+
+e.g., 1"
+184,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",period,第几轮分配,long,"如果不是进度奖励，传默认值0
+
+e.g., 1"
+185,gameserver_ad_crate_items,广告宝箱物品获得日志,"由于广告奖励存在套装的物品，保存到items表中会有多条物品日志，
+
+且重复物品会自动转成coins，且不支持多个物品奖励的配置，所以单独事件进行记录
+
+S26/2020-03-25加入",count,进度奖励刷新次数,long,"如果不是进度奖励，传默认值0
+
+e.g., 1"
+186,gameserver_anti_cheat,包的的hash值验证记录,包的的hash值验证记录,pid,玩家id,long,"e.g., 9871361"
+187,gameserver_anti_cheat,包的的hash值验证记录,包的的hash值验证记录,version,客户端版本号,string,"e.g., 0.18.4-r2-763"
+188,gameserver_anti_cheat,包的的hash值验证记录,包的的hash值验证记录,hash,客户端包的hash值,string,"e.g., 1F8AD53F93BF487DC77B9638B4887F4F375393FF"
+189,gameserver_anti_cheat,包的的hash值验证记录,包的的hash值验证记录,msg,验证结果,string,"e.g., timeout, fail, ok"
+190,gameserver_anti_cheat,包的的hash值验证记录,包的的hash值验证记录,login_time,玩家登录时间,long,"e.g., 1559618296"
+191,gameserver_anti_cheat,包的的hash值验证记录,包的的hash值验证记录,device,玩家最后登录设备,string,"e.g., iPad8,5"
+192,gameserver_appeal_operate,申诉处理,观测玩家申诉情况,pid,玩家 pid,long,"e.g., 9871361"
+193,gameserver_appeal_operate,申诉处理,观测玩家申诉情况,uid,玩家 uid,string,"e.g., n9vsd"
+194,gameserver_appeal_operate,申诉处理,观测玩家申诉情况,nick,玩家昵称,string,"e.g., 小肠人"
+195,gameserver_appeal_operate,申诉处理,观测玩家申诉情况,operator,处理人,string,"e.g., 林颖"
+196,gameserver_appeal_operate,申诉处理,观测玩家申诉情况,result,处理结果：0、不解封，1：解封,long,处理结果：0、不解封，1：解封
+197,gameserver_appeal_operate,申诉处理,观测玩家申诉情况,remark,备注,string,备注
+198,gameserver_appeal_operate,申诉处理,观测玩家申诉情况,count_num,该玩家被申述处理次数,long,该玩家被申述处理次数
+199,gameserver_appeal_operate,申诉处理,观测玩家申诉情况,operator_id,处理人id,long,"e.g., 1"
+200,gameserver_attention,玩家关注行为,"当玩家关注另外一个玩家或者取消关注时，会触发这个事件
+
+v40/2021-11-22加入",pid,玩家 id,long,"玩家 id
+
+e.g., 9871361"
+201,gameserver_attention,玩家关注行为,"当玩家关注另外一个玩家或者取消关注时，会触发这个事件
+
+v40/2021-11-22加入",attention_num,关注数量,long,"关注/取关后的数量
+
+e.g., 2000"
+202,gameserver_attention,玩家关注行为,"当玩家关注另外一个玩家或者取消关注时，会触发这个事件
+
+v40/2021-11-22加入",attention,关注行为,long,"1 -> 关注，-1 -> 取关
+
+e.g., 1"
+203,gameserver_attention,玩家关注行为,"当玩家关注另外一个玩家或者取消关注时，会触发这个事件
+
+v40/2021-11-22加入",nick,玩家昵称,string,"玩家昵称
+
+e.g., 御风者骷髅"
+204,gameserver_attention,玩家关注行为,"当玩家关注另外一个玩家或者取消关注时，会触发这个事件
+
+v40/2021-11-22加入",signature,玩家签名,string,"玩家签名
+
+e.g., 扣Q 173749"
+205,gameserver_blacklist,黑名单,"玩家永久封禁时记录
+
+V42/2022-06-07加入",tag,标签,long,"描述黑名单所属类型
+
+0 - DevicesCheating，1 - IDCardCheating，2 - PhoneCheating"
+206,gameserver_blacklist,黑名单,"玩家永久封禁时记录
+
+V42/2022-06-07加入",key,黑名单的键,string,device_id/card_id/phone
+207,gameserver_blacklist,黑名单,"玩家永久封禁时记录
+
+V42/2022-06-07加入",times,次数,long,"累计的次数
+
+e.g. 1"
+208,gameserver_blacklist,黑名单,"玩家永久封禁时记录
+
+V42/2022-06-07加入",pid,玩家 ID,long,本次触发的玩家 ID
+209,gameserver_changeflag,服务端玩家属性值变化,"玩家属性值变化日志
+
+S19/2019-06-03加入
+",cid,渠道id,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+210,gameserver_changeflag,服务端玩家属性值变化,"玩家属性值变化日志
+
+S19/2019-06-03加入
+",sid,区唯一id,long,"e.g., 1"
+211,gameserver_changeflag,服务端玩家属性值变化,"玩家属性值变化日志
+
+S19/2019-06-03加入
+",pid,玩家pid,long,"e.g., 9871361"
+212,gameserver_changeflag,服务端玩家属性值变化,"玩家属性值变化日志
+
+S19/2019-06-03加入
+",flag,变化属性字段名,string,"e.g., name"
+213,gameserver_changeflag,服务端玩家属性值变化,"玩家属性值变化日志
+
+S19/2019-06-03加入
+",from,变化前数据,string,"e.g., 神采的乔"
+214,gameserver_changeflag,服务端玩家属性值变化,"玩家属性值变化日志
+
+S19/2019-06-03加入
+",to,变化后数据,string,"e.g., 神采的乔伊"
+215,gameserver_changeflag,服务端玩家属性值变化,"玩家属性值变化日志
+
+S19/2019-06-03加入
+",chan,渠道标识,string,"S25/2020-01-10加入
+
+e.g., taptap"
+216,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",logid,日志排重id,string,"e.g., 625-59474545"
+217,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",cid,渠道id,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+218,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",sid,区唯一id,long,"e.g., 1"
+219,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",account,心动id,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+220,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",pps_account,passport server 账号id,long,"e.g., 53355441"
+221,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",pid,玩家pid,long,"e.g., 9871361"
+222,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ip,玩家最后登录ip,string,"e.g., 192.168.2.249"
+223,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",payman_id,payman订单id,long,"e.g., 829358"
+224,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",platform_oid,充值平台订单id,string,"e.g., 35222509"
+225,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",oid,游戏服内部订单id,long,"e.g., 73220454"
+226,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",payment,充值渠道,string,"e.g., pingpp, alipay, appstore"
+227,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",level,玩家等级,long,"e.g., 1"
+228,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",amount,充值金额,long,"e.g., 10"
+229,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",currency,货币类型,string,"默认""rmb""
+
+e.g., rmb"
+230,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",product,商品id,string,"e.g., com.xd.sausage.price.6"
+231,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",coins,充值货币数量,long,"e.g., 60"
+232,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ctime,玩家创建时间(时间戳),long,"e.g., 1559275002"
+233,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",device,玩家最后登录设备,string,"e.g., iPad8,5"
+234,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",nick,玩家昵称,string,"e.g., 御风者骷髅"
+235,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",o_ctime,订单创建时间,long,"e.g., 1559579816"
+236,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",p_amount,商品数量,long,"e.g., 1"
+237,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+238,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",remark,备注，订单信息,string,备注，订单信息
+239,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",name,玩家昵称,string,"e.g., 御风者骷髅"
+240,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",chan,渠道标识,string,"S25/2020-01-10加入
+
+e.g., taptap"
+241,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ip_city,ip对应的城市,string,这个属性由服务端自动收集，不需要上报
+242,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ip_city_geo_name_id,ip对应的城市地理名称ID,long,这个属性由服务端自动收集，不需要上报
+243,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ip_country,ip对应的国家,string,这个属性由服务端自动收集，不需要上报
+244,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ip_country_geo_name_id,ip对应的国家地理名称ID,long,这个属性由服务端自动收集，不需要上报
+245,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ip_country_iso,ip对应的国家标识码,string,这个属性由服务端自动收集，不需要上报
+246,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ip_subdivision,ip对应的省份,string,这个属性由服务端自动收集，不需要上报
+247,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ip_subdivision_geo_name_id,ip对应的省份地理名称ID,long,这个属性由服务端自动收集，不需要上报
+248,gameserver_charge,服务端充值,"充值日志
+
+S19/2019-06-03加入
+",ip_isp,ip对应的网络运营商,string,这个属性由服务端自动收集，不需要上报
+249,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,cid,渠道id,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+250,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,code,鉴黄结果,long,"e.g., 1-色情 5-政治违规 -其他"
+251,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,content,内容,string,"当前只有 '' 的值
+
+e.g., abc"
+252,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,from_account,发送者心动ID,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+253,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,from_name,发送者昵称,string,"e.g., 御风者骷髅"
+254,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,from_pid,发送者pid,long,"e.g., 9871361"
+255,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,from_uid,发送者uid,string,"e.g., 6BL"
+256,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,logid,日志排重id,string,"e.g., 1559666020-9420803"
+257,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,room_id,房间id,string,"e.g., taptap_66aaa53d7c48fe124297d9efc563bb3f_5"
+258,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,sid,区唯一ID,long,"e.g., 1"
+259,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,to_account,接收者心动ID,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+260,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,to_name,接收者昵称,string,"e.g., 御风者骷髅"
+261,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,to_pid,接收者pid,long,"e.g., 9871361"
+262,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,type,类型,long,"当前只有 1 的值
+
+e.g., 1"
+263,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,url,语音片段下载地址,string,"e.g., http://gz-check-illegal-content-1256845520.cosgz.myqcloud.com/audio_store/232884668_1633703801_1400125313_1129324962_3.mp3"
+264,gameserver_chat,玩家语音敏感词检测反馈记录,玩家语音敏感词检测反馈记录,chan,渠道标识,string,"e.g., taptap"
+265,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,cid,渠道id,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+266,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,content,聊天内容,string,"e.g., abc"
+267,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,from_account,发送者心动ID,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+268,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,from_name,发送者昵称,string,"e.g., 御风者骷髅"
+269,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,from_pid,发送者pid,long,"e.g., 9871361"
+270,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,from_uid,发送者uid,string,"e.g., 6BL"
+271,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,ispay,是否付费玩家,long,"e.g., 0-否，1-是"
+272,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,level,玩家等级,long,"e.g., 1"
+273,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,logid,日志排重id,string,"e.g., 1559666020-9420803"
+274,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,sid,区唯一ID,long,"e.g., 1"
+275,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,to_account,接收者心动ID,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+276,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,to_name,接收者昵称,string,"e.g., 御风者骷髅"
+277,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,to_pid,接收者pid,long,"e.g., 9871361"
+278,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,type,类型,long,"e.g., 0-好友聊天，1-队伍聊天，2-群聊"
+279,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,vip,是否vip,long,"e.g., 0-否，1-是"
+280,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,chan,渠道标识,string,"e.g., taptap"
+281,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,is_gift_msg,是否是赠礼消息,long,"区分是不是赠礼消息，防止被误禁言
+
+0-不是赠礼消息，1-赠礼消息
+
+V43/2022-07-05加入"
+282,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,msg_id,消息 ID,long,"e.g. 47892
+
+服务端类型修改，本字段弃用"
+283,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,msgid,消息 ID,string,e.g. 47892
+284,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,tags,玩家聊天内容类型,long,该字段已弃用，聊天标签记录使用label字段
+285,gameserver_chat_log,玩家文字聊天日志,玩家文字聊天日志,label,玩家聊天内容标签,string,"记录玩家当前聊天内容标签列表，逗号分割
+
+e.g., 3-赠送礼物，4-网页链接，5陌生人打招呼"
+286,gameserver_club_active,战队活跃度日志,"战队活跃度日志
+
+
+V33/2021-03-31加入",club_id,战队id,long,"e.g., 9871361"
+287,gameserver_club_active,战队活跃度日志,"战队活跃度日志
+
+
+V33/2021-03-31加入",active_week,周活跃度,long,"e.g., 1"
+288,gameserver_club_active,战队活跃度日志,"战队活跃度日志
+
+
+V33/2021-03-31加入",active_season,赛季活跃度,long,"e.g., 1"
+289,gameserver_club_active,战队活跃度日志,"战队活跃度日志
+
+
+V33/2021-03-31加入",active_history,历史活跃度,long,"e.g., 1"
+290,gameserver_club_log,战队状态日志,"战队状态日志
+记录战队创建与变更状态
+
+V33/2021-03-29加入",create_pid,战队创建者玩家pid,long,"e.g., 9871361"
+291,gameserver_club_log,战队状态日志,"战队状态日志
+记录战队创建与变更状态
+
+V33/2021-03-29加入",club_id,战队ID,long,"e.g., 9871361"
+292,gameserver_club_log,战队状态日志,"战队状态日志
+记录战队创建与变更状态
+
+V33/2021-03-29加入",club_name,战队名称,string,"e.g., 御风者骷髅"
+293,gameserver_club_log,战队状态日志,"战队状态日志
+记录战队创建与变更状态
+
+V33/2021-03-29加入",club_create_time,战队创建时间(时间戳),long,"e.g., 1559275002"
+294,gameserver_club_log,战队状态日志,"战队状态日志
+记录战队创建与变更状态
+
+V33/2021-03-29加入",num,战队人数,long,"e.g., 1"
+295,gameserver_club_log,战队状态日志,"战队状态日志
+记录战队创建与变更状态
+
+V33/2021-03-29加入",is_review,审批条件选择,long,"e.g.,0-无限制，1-需要审批，2-拒绝加入"
+296,gameserver_club_log,战队状态日志,"战队状态日志
+记录战队创建与变更状态
+
+V33/2021-03-29加入",score_limit,默认设置青铜V，,long,"egg,0-青铜V，1100-青铜IV"
+297,gameserver_club_log,战队状态日志,"战队状态日志
+记录战队创建与变更状态
+
+V33/2021-03-29加入",club_notice,战队公告，每次编辑时上报,string,"egg,"
+298,gameserver_club_log,战队状态日志,"战队状态日志
+记录战队创建与变更状态
+
+V33/2021-03-29加入",logo,战队logo各部分组合,string,"egg,Logo_1,LogoColor_2,BottomFrame_1,BottomFrameColor_1"
+299,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",logid,日志排重id,string,"e.g., 1556162648400-3809281-493-2-6"
+300,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",cid,渠道id,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+301,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",sid,区唯一id,long,"e.g., 1"
+302,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",account,心动ID,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+303,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",pid,玩家pid,long,"e.g., 9871361"
+304,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+305,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",count,操作次数,long,"默认为1
+
+e.g., 1"
+306,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",eid,事件id,long,"e.g., 1556162648000"
+307,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",ispay,是否付费玩家,long,"e.g., 0-否，1-是"
+308,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",coin_type,货币类型,long,"e.g., 1-金币，2-点券，3-积分，4-糖果"
+309,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",type,类型id,long,"同运营事件id
+
+e.g., 21"
+310,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",kind,消费类型,long,"未使用, 默认值为0"
+311,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",from_pid,来自pid,long,"e.g., 9871361"
+312,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",op_id,同运营事件id,long,"e.g., 21"
+313,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",op_name,同运营事件名称,string,"e.g., 使用付费宝箱"
+314,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",ac_id,运营活动id,long,"e.g., 0"
+315,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",item_type_id,物品类型id,long,"e.g., 13"
+316,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",item_id,物品id,long,"e.g., 116"
+317,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",item_name,物品名称,string,"e.g., 点券"
+318,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",item_quality_id,物品品质id,long,"e.g., 1-白，2-绿，3-蓝，4-紫，5-橙，6-红"
+319,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",item_quality_name,物品品质名称,string,"e.g., 白，绿，蓝，紫，橙，红"
+320,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",value,变化值,long,"e.g., 1"
+321,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",after,变化后数值,long,"e.g., 10"
+322,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",rid,关联id,long,"用来关联整个购买过程
+
+S21/2019-09-17加入
+
+e.g., 1"
+323,gameserver_coins,服务端货币变更,"资源货币日志
+
+S19/2019-06-03加入
+",chan,渠道标识,string,"S25/2020-01-10加入
+
+e.g., taptap"
+324,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",cid,渠道id,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+325,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",sid,区唯一id,long,"e.g., 1"
+326,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",account,心动id,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+327,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",pps_account,passport server 账号id,long,"e.g., 53355441"
+328,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",pid,玩家pid,long,"e.g., 9871361"
+329,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ip,玩家最后登录ip,string,"e.g., 192.168.2.249"
+330,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",name,玩家昵称,string,"e.g., 御风者骷髅"
+331,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",adv,广告引⼊入商ID,string,未使用
+332,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ad,广告识别编号,string,未使用
+333,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",guest,是否游客,long,"e.g., 0-否，1-是"
+334,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",device,玩家最后登录设备,string,"e.g., iPad8,5"
+335,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",chan,渠道标识,string,"S25/2020-01-10加入
+
+e.g., taptap"
+336,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ip_city,ip对应的城市,string,这个属性由服务端自动收集，不需要上报
+337,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ip_city_geo_name_id,ip对应的城市地理名称ID,long,这个属性由服务端自动收集，不需要上报
+338,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ip_country,ip对应的国家,string,这个属性由服务端自动收集，不需要上报
+339,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ip_country_geo_name_id,ip对应的国家地理名称ID,long,这个属性由服务端自动收集，不需要上报
+340,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ip_country_iso,ip对应的国家标识码,string,这个属性由服务端自动收集，不需要上报
+341,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ip_subdivision,ip对应的省份,string,这个属性由服务端自动收集，不需要上报
+342,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ip_subdivision_geo_name_id,ip对应的省份地理名称ID,long,这个属性由服务端自动收集，不需要上报
+343,gameserver_create,服务端玩家创建,"玩家创建日志
+
+S19/2019-06-03加入
+",ip_isp,ip对应的网络运营商,string,这个属性由服务端自动收集，不需要上报
+344,gameserver_credit,信誉积分,"记录信誉积分的变化情况
+
+V31/2020-10-12加入",pid,玩家pid,long,"e.g., 9871361"
+345,gameserver_credit,信誉积分,"记录信誉积分的变化情况
+
+V31/2020-10-12加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+346,gameserver_credit,信誉积分,"记录信誉积分的变化情况
+
+V31/2020-10-12加入",value,变化值,long,"e.g., 5"
+347,gameserver_credit,信誉积分,"记录信誉积分的变化情况
+
+V31/2020-10-12加入",after,变化后数值,long,"e.g., 95"
+348,gameserver_credit,信誉积分,"记录信誉积分的变化情况
+
+V31/2020-10-12加入",war_id,战场ID,string,"e.g., 5c63486fbd08f80062c13ed15829d049"
+349,gameserver_credit,信誉积分,"记录信誉积分的变化情况
+
+V31/2020-10-12加入",season,赛季id,long,"e.g., 1"
+350,gameserver_credit,信誉积分,"记录信誉积分的变化情况
+
+V31/2020-10-12加入",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+351,gameserver_crystal_call,水晶召唤购买,"水晶召唤购买日志
+
+购买水晶召唤时上报
+
+V48/2023-06-07加入",pid,玩家pid,long,"e.g., 9871361"
+352,gameserver_crystal_call,水晶召唤购买,"水晶召唤购买日志
+
+购买水晶召唤时上报
+
+V48/2023-06-07加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+353,gameserver_crystal_call,水晶召唤购买,"水晶召唤购买日志
+
+购买水晶召唤时上报
+
+V48/2023-06-07加入",period,期数id,long,"e.g., 1"
+354,gameserver_crystal_call,水晶召唤购买,"水晶召唤购买日志
+
+购买水晶召唤时上报
+
+V48/2023-06-07加入",period_name,期数名称,string,"e.g., 斗罗大陆"
+355,gameserver_crystal_call,水晶召唤购买,"水晶召唤购买日志
+
+购买水晶召唤时上报
+
+V48/2023-06-07加入",rid,关联id,long,"关联购买过程，e.g., 1"
+356,gameserver_crystal_call,水晶召唤购买,"水晶召唤购买日志
+
+购买水晶召唤时上报
+
+V48/2023-06-07加入",is_free,是否免费次数,long,"e.g., 0-否，1-是"
+357,gameserver_crystal_call,水晶召唤购买,"水晶召唤购买日志
+
+购买水晶召唤时上报
+
+V48/2023-06-07加入",is_get,是否抽到水晶,long,"e.g., 0-否，1-是"
+358,gameserver_crystal_call,水晶召唤购买,"水晶召唤购买日志
+
+购买水晶召唤时上报
+
+V48/2023-06-07加入",stat,是否保底抽到,long,"e.g., 0-否，1-是"
+359,gameserver_crystal_call,水晶召唤购买,"水晶召唤购买日志
+
+购买水晶召唤时上报
+
+V48/2023-06-07加入",call_count,抽取次数,long,"e.g., 1，5"
+360,gameserver_custom_room_card,服务端房间卡变动,"房间卡变动
+
+当房主房间卡发生变动是触发
+
+V33/2020-12-30",pid,玩家ID,long,"e.g., 9871361"
+361,gameserver_custom_room_card,服务端房间卡变动,"房间卡变动
+
+当房主房间卡发生变动是触发
+
+V33/2020-12-30",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+362,gameserver_custom_room_card,服务端房间卡变动,"房间卡变动
+
+当房主房间卡发生变动是触发
+
+V33/2020-12-30",war_id,战场ID,string,"e.g., 5c63486fbd08f80062c13ed15829d049"
+363,gameserver_custom_room_card,服务端房间卡变动,"房间卡变动
+
+当房主房间卡发生变动是触发
+
+V33/2020-12-30",room_id,房间号,long,"eg., 1002003"
+364,gameserver_custom_room_card,服务端房间卡变动,"房间卡变动
+
+当房主房间卡发生变动是触发
+
+V33/2020-12-30",room_name,房间名称,string,房间名称
+365,gameserver_custom_room_card,服务端房间卡变动,"房间卡变动
+
+当房主房间卡发生变动是触发
+
+V33/2020-12-30",stat,变动状态,long,"e.g., -1-扣除， 1-返还"
+366,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",pid,玩家ID,long,"e.g., 9871361"
+367,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+368,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",room_id,房间号,long,"eg., 1002003"
+369,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",room_name,房间名称,string,房间名称
+370,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",gmod,游戏模式,long,"e.g., 1-经典模式，2-街机模式"
+371,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",mmod,地图,long,"0值表示随机地图，S25版本及之前该字段记录的是map_mode的值，不符合预期，已修正
+
+e.g., 1-战斗岛，3-彩虹岛"
+372,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+373,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",has_password,是否有密码,long,0-否，1-是
+374,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",max_participants,参与玩家人数上限,long,参与玩家人数上限
+375,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",non_owner_invite,非房主可邀请好友,long,0-否，1-是
+376,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",retain_time,保留时间,long,单位秒，比如说 3600（1小时）
+377,gameserver_custom_room_create,服务端创建自定义房间,"创建自定义房间
+
+玩家创建自定义房间时触发
+
+S19/2019-06-11
+",game_selection_id,游戏选项ID,long,"S27/2020-05-28加入
+
+e.g., 704643072-随机地图，704643073-战斗岛, ..."
+378,gameserver_custom_room_join,服务端加入自定义房间,"加入自定义房间
+
+玩家加入自定义房间时触发
+
+S19/2019-06-11
+",pid,玩家ID,long,"e.g., 9871361"
+379,gameserver_custom_room_join,服务端加入自定义房间,"加入自定义房间
+
+玩家加入自定义房间时触发
+
+S19/2019-06-11
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+380,gameserver_custom_room_join,服务端加入自定义房间,"加入自定义房间
+
+玩家加入自定义房间时触发
+
+S19/2019-06-11
+",room_id,房间号,long,"eg., 1002003"
+381,gameserver_custom_room_join,服务端加入自定义房间,"加入自定义房间
+
+玩家加入自定义房间时触发
+
+S19/2019-06-11
+",type,进入房间方式,long,"S26/2020-03-24加入
+
+eg., 0-路人，1-邀请，2-招募，3-组队进房间"
+382,gameserver_custom_room_leave,退出自定义房间,"玩家退出自定义房间时触发
+
+S28/2020-06-16加入",pid,玩家ID,long,"e.g., 9871361"
+383,gameserver_custom_room_leave,退出自定义房间,"玩家退出自定义房间时触发
+
+S28/2020-06-16加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+384,gameserver_custom_room_leave,退出自定义房间,"玩家退出自定义房间时触发
+
+S28/2020-06-16加入",room_id,房间号,long,"eg., 1002003"
+385,gameserver_custom_room_leave,退出自定义房间,"玩家退出自定义房间时触发
+
+S28/2020-06-16加入",type,退出类型,long,"eg., 1-主动退出，2-房主踢出，3-房间解散退出"
+386,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",pid,玩家ID,long,"e.g., 9871361"
+387,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+388,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",room_id,房间号,long,"eg., 1002003"
+389,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",room_name,房间名称,string,房间名称
+390,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",gmod,游戏模式,long,"e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式"
+391,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",mmod,地图,long,"e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道， 8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋"
+392,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+393,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",has_password,是否有密码,long,0-否，1-是
+394,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",max_participants,参与玩家人数,long,参与玩家人数
+395,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",non_owner_invite,非房主可邀请好友,long,0-否，1-是
+396,gameserver_custom_room_modify,服务端修改自定义房间,"修改自定义房间参数
+
+房主修改自定义房间参数时触发
+该事件的属性是修改后的房间属性
+
+S19/2019-06-11
+",game_selection_id,游戏选项ID,long,"S27/2020-05-28加入
+
+e.g., 704643072-随机地图，704643073-战斗岛, ..."
+397,gameserver_custom_room_shutdown,服务端关闭自定义房间,"关闭自定义房间
+
+在自定义房间被关闭是触发，房间可以因为房主主动退出、保留时间到期、后台操作而关闭
+
+S19/2019-06-11
+",pid,玩家ID,long,"e.g., 9871361"
+398,gameserver_custom_room_shutdown,服务端关闭自定义房间,"关闭自定义房间
+
+在自定义房间被关闭是触发，房间可以因为房主主动退出、保留时间到期、后台操作而关闭
+
+S19/2019-06-11
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+399,gameserver_custom_room_shutdown,服务端关闭自定义房间,"关闭自定义房间
+
+在自定义房间被关闭是触发，房间可以因为房主主动退出、保留时间到期、后台操作而关闭
+
+S19/2019-06-11
+",room_id,房间号,long,"eg., 1002003"
+400,gameserver_custom_room_shutdown,服务端关闭自定义房间,"关闭自定义房间
+
+在自定义房间被关闭是触发，房间可以因为房主主动退出、保留时间到期、后台操作而关闭
+
+S19/2019-06-11
+",room_name,房间名称,string,房间名称
+401,gameserver_custom_room_shutdown,服务端关闭自定义房间,"关闭自定义房间
+
+在自定义房间被关闭是触发，房间可以因为房主主动退出、保留时间到期、后台操作而关闭
+
+S19/2019-06-11
+",reason,关闭原因,string,可选值：房主退出、保留时间到期、后台关闭
+402,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",pid,玩家ID,long,"e.g., 9871361"
+403,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+404,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",room_id,房间号,long,"eg., 1002003"
+405,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",room_name,房间名称,string,房间名称
+406,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",gmod,游戏模式,long,"e.g., 1-经典模式，2-街机模式"
+407,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",mmod,地图,long,"e.g., 1-战斗岛，3-彩虹岛"
+408,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+409,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",has_password,是否有密码,long,0-否，1-是
+410,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",max_participants,参与玩家人数,long,参与玩家人数
+411,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",non_owner_invite,非房主可邀请好友,long,0-否，1-是
+412,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",participant_count,实际参与的玩家数,long,实际参与的玩家数
+413,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",watcher_count,实际观战数,long,实际观战数
+414,gameserver_custom_room_start,服务端自定义房间开始游戏,"开始游戏
+
+当房主点击开始游戏是触发
+
+S19/2019-06-11
+",game_selection_id,游戏选项ID,long,"S27/2020-05-28加入
+
+e.g., 704643072-随机地图，704643073-战斗岛, ..."
+415,gameserver_delicious,服务端美味值变化日志,"美味值变化日志
+
+S24/2019-12-31加入",pid,玩家pid,long,"e.g., 9871361"
+416,gameserver_delicious,服务端美味值变化日志,"美味值变化日志
+
+S24/2019-12-31加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+417,gameserver_delicious,服务端美味值变化日志,"美味值变化日志
+
+S24/2019-12-31加入",item_id,物品id,long,"e.g., 421"
+418,gameserver_delicious,服务端美味值变化日志,"美味值变化日志
+
+S24/2019-12-31加入",item_name,物品名称,string,"e.g., 等级徽章"
+419,gameserver_delicious,服务端美味值变化日志,"美味值变化日志
+
+S24/2019-12-31加入",op_id,同运营事件id,long,"e.g., 31"
+420,gameserver_delicious,服务端美味值变化日志,"美味值变化日志
+
+S24/2019-12-31加入",op_name,同运营事件名称,string,"e.g., 徽章"
+421,gameserver_delicious,服务端美味值变化日志,"美味值变化日志
+
+S24/2019-12-31加入",value,变化值,long,"e.g., 1"
+422,gameserver_delicious,服务端美味值变化日志,"美味值变化日志
+
+S24/2019-12-31加入",after,变化后数值,long,"e.g., 1"
+423,gameserver_discount,满减购物车购买,"满减购物车购买日志
+
+在每次购买满减购物车时上报
+
+V48/2023-06-07加入",pid,玩家pid,long,"e.g., 9871361"
+424,gameserver_discount,满减购物车购买,"满减购物车购买日志
+
+在每次购买满减购物车时上报
+
+V48/2023-06-07加入",create_time, 玩家创建时间(时间戳),long,"e.g., 1559275002"
+425,gameserver_discount,满减购物车购买,"满减购物车购买日志
+
+在每次购买满减购物车时上报
+
+V48/2023-06-07加入",period, 期数id,long,"e.g., 1"
+426,gameserver_discount,满减购物车购买,"满减购物车购买日志
+
+在每次购买满减购物车时上报
+
+V48/2023-06-07加入",period_name,期数名称,string,"e.g., 房东的猫"
+427,gameserver_discount,满减购物车购买,"满减购物车购买日志
+
+在每次购买满减购物车时上报
+
+V48/2023-06-07加入",rid,关联id,long,"关联购买过程，e.g., 1"
+428,gameserver_discount,满减购物车购买,"满减购物车购买日志
+
+在每次购买满减购物车时上报
+
+V48/2023-06-07加入",is_new,是否当前上新,long,"区分是否返场，e.g., 0-否，1-是"
+429,gameserver_discount,满减购物车购买,"满减购物车购买日志
+
+在每次购买满减购物车时上报
+
+V48/2023-06-07加入",price,商品折扣价格,long,"e.g., 200"
+430,gameserver_discount,满减购物车购买,"满减购物车购买日志
+
+在每次购买满减购物车时上报
+
+V48/2023-06-07加入",orgin_price,商品原价格,long,"e.g., 400"
+431,gameserver_discount,满减购物车购买,"满减购物车购买日志
+
+在每次购买满减购物车时上报
+
+V48/2023-06-07加入",product_num,商品数量,long,"购买的商品数量，假设购物车购买了3件物品，则记3
+
+默认值为1
+
+e.g., 1"
+432,gameserver_douluo_choose,斗罗大陆武魂日志,"斗罗大陆联动武魂活动，武魂解锁，等级变化日志
+
+2023/7/17加入",pid,玩家pid,long,"玩家pid
+"
+433,gameserver_douluo_choose,斗罗大陆武魂日志,"斗罗大陆联动武魂活动，武魂解锁，等级变化日志
+
+2023/7/17加入",create_time,创建时间，时间戳,long,
+434,gameserver_douluo_choose,斗罗大陆武魂日志,"斗罗大陆联动武魂活动，武魂解锁，等级变化日志
+
+2023/7/17加入",level,魂环等级,long,e.g. 1-第一魂环
+435,gameserver_douluo_choose,斗罗大陆武魂日志,"斗罗大陆联动武魂活动，武魂解锁，等级变化日志
+
+2023/7/17加入",level_quality,魂环等级对应档位,long,e.g. 1-十年魂环
+436,gameserver_douluo_choose,斗罗大陆武魂日志,"斗罗大陆联动武魂活动，武魂解锁，等级变化日志
+
+2023/7/17加入",stat,变动状态,long,e.g. 0-解锁武魂，1-升级魂环档位，2升级魂环等级，3-更换武魂
+437,gameserver_douluo_choose,斗罗大陆武魂日志,"斗罗大陆联动武魂活动，武魂解锁，等级变化日志
+
+2023/7/17加入",name_id,武魂id,long,e.g. 1-昊天锤，2-蓝银草，3-六翼天使，4-七宝琉璃塔，5-柔骨兔，6-香肠，7-邪火凤凰，8-邪眸白虎，9-幽冥灵猫
+438,gameserver_douluo_choose,斗罗大陆武魂日志,"斗罗大陆联动武魂活动，武魂解锁，等级变化日志
+
+2023/7/17加入",task_id,任务id,long,
+439,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",room_key,房间密钥,string,"e.g., abc"
+440,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",gmod,游戏模式,long,"e.g., 1-经典模式，2-街机模式"
+441,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",mmod,匹配模式,long,"e.g., 1-战斗岛，2-快速派对，3-彩虹岛"
+442,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+443,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",score_room_level,段位竞技场等级,long,"e.g., 1, 2, 3, 4, 5"
+444,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",room_level,房间等级,long,"e.g., 1, 2, 3, 4, 5"
+445,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",client_type,房间类型,long,"e.g., 0-手机，1-模拟器"
+446,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",estimate_match_time,预计等待时长,long,"e.g., 10"
+447,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",real_match_time,实际匹配时长,long,"e.g., 10"
+448,gameserver_dynamic_match_log,动态匹配验证,"验证动态匹配机制所需数据
+
+V34/2021-01-29加入",match_num,匹配人次（前1分钟）,long,"e.g., 100"
+449,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",pid,玩家 id,long,"对应回传字段 roleId
+
+e.g., 9871361"
+450,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",os,操作系统,string,"对应回传字段 osVer
+
+e.g., Android OS 9 / API-28 (HUAWEITNY-AL00/172C00R1)、iOS 12.2"
+451,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",m,机型,string,"对应回传字段 model
+
+e.g., xiaomi xiaomi 8、iPhone8,4"
+452,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",ip,IP 地址,string,"对应回传字段 ip
+
+e.g. 127.0.0.1"
+453,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",nick,昵称,string,"对应回传字段 roleName
+
+e.g., 御风者骷髅"
+454,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",account_id,真有趣 ID,long,"对应回传字段 roleAccount
+
+e.g., 9871361"
+455,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",device_id,设备 ID,string,"对应回传字段 devID
+
+e.g., 3643b8aa363de16b__fgp
+
+其中 3643b8aa363de16b 由香肠 SDK 生成"
+456,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",package_name,游戏包名,string,"对应回传字段 packName
+
+e.g., com.sofunny.chickendinnerfirst"
+457,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",server_name,服务器名称,string,"对应回传字段 srvName
+
+e.g., Sausage1"
+458,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",game_json,游戏传入的字符串,string,对应回传字段  gameJson
+459,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",cv,客户端版本,string,"对应回传字段 gameVer
+
+e.g. 7.62"
+460,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",create_time,数据上报时间,long,"对应回传字段 createTime
+
+e.g. 1559275002"
+461,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",risk_env,风险环境,long,"对应回传字段 riskEnv
+
+0 - 设备环境正常，1 - 无 SIM 卡，2 - 越狱"
+462,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",cheat_res,检测结果,long,"对应回传字段 cheatRes
+
+0-无结果，1-调试，2-安装了修改器外挂，4-设备黑名单，8-加速，16-隐藏越狱，32-Hook 游戏逻辑，64-模块注入，128-内存修改，256-破解版/盗版
+
+最终的值可能同时包含上述情况，如果同时包含 2 种以上的情况，则把上述 值取或的结果。
+
+比如，安装了外挂(1)，同时存在模块注入(64) 则最终结果为 1|64 =65，检测结果值为 65"
+463,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",defense_ret,防御结果,long,"对应回传字段 defenseRet
+
+0 - 检测，1-闪退"
+464,gameserver_fair_guard_report,FairGuard 风险数据抄送,"iOS 接入 FairGuard 反外挂加固
+
+风险数据会由 FairGuard 定时 post 到服务端，再由服务端上报到数据平台
+
+V42 / 2022-06-24 加入",risk_rank,风险等级,long,"对应回传字段 riskRank
+
+0-无风险,1-无 SIM 卡,2-安装了模拟点击类外挂,3-越狱,4-安装了修改器外挂,5-隐藏越狱或者安装包,6-Hook,7-设备黑名单,9-智能识别外挂或恶意行为,10-认定为外挂或恶意行为"
+465,gameserver_first_charge,首充奖励选择,"首充，累计充值奖励领取日志
+
+v40/2021-12-09加入",pid,玩家pid,long,"e.g., 9871361"
+466,gameserver_first_charge,首充奖励选择,"首充，累计充值奖励领取日志
+
+v40/2021-12-09加入",item_id,物品id,long,"e.g., 421"
+467,gameserver_first_charge,首充奖励选择,"首充，累计充值奖励领取日志
+
+v40/2021-12-09加入",item_name,物品名称,string,"e.g., 等级徽章"
+468,gameserver_first_charge,首充奖励选择,"首充，累计充值奖励领取日志
+
+v40/2021-12-09加入",activity_id,活动id,long,活动id
+469,gameserver_first_charge,首充奖励选择,"首充，累计充值奖励领取日志
+
+v40/2021-12-09加入",pay_task_id,活动任务id,long,活动任务id
+470,gameserver_fragment_lock,碎片商城锁定,V48加入；玩家锁定碎片商城商品时上报,pid,玩家pid,long,"e.g., 9871361"
+471,gameserver_fragment_lock,碎片商城锁定,V48加入；玩家锁定碎片商城商品时上报,create_time,"e.g., 9871361",long,"e.g., 1559275002"
+472,gameserver_fragment_lock,碎片商城锁定,V48加入；玩家锁定碎片商城商品时上报,period,期数id,long,"e.g., 1"
+473,gameserver_fragment_lock,碎片商城锁定,V48加入；玩家锁定碎片商城商品时上报,item_id,锁定商品id,long,"玩家锁定的商品item_id
+e.g., 1977492073
+"
+474,gameserver_fragment_lock,碎片商城锁定,V48加入；玩家锁定碎片商城商品时上报,item_name,锁定商品名称,string,"玩家锁定的商品item_name
+e.g., 我是鲨瓜
+"
+475,gameserver_fragment_lock,碎片商城锁定,V48加入；玩家锁定碎片商城商品时上报,item_quality_id,物品品质id,long,"e.g., 1-白，2-绿，3-蓝，4-紫，5-橙，6-红"
+476,gameserver_fragment_shop,碎片商城玩家商品列表,V48加入；玩家碎片商城列表刷新时上报,pid,玩家pid,long,"e.g., 9871361"
+477,gameserver_fragment_shop,碎片商城玩家商品列表,V48加入；玩家碎片商城列表刷新时上报,create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+478,gameserver_fragment_shop,碎片商城玩家商品列表,V48加入；玩家碎片商城列表刷新时上报,period,期数id,long,"e.g., 1"
+479,gameserver_fragment_shop,碎片商城玩家商品列表,V48加入；玩家碎片商城列表刷新时上报,product_list,商品列表,string,"玩家刷新到的商品item_id列表，逗号分隔
+e.g., 2113929609,2097152149..."
+480,gameserver_fragment_shop,碎片商城玩家商品列表,V48加入；玩家碎片商城列表刷新时上报,lock_id,玩家锁定的商品id,long,"玩家锁定的商品item_id，若无则记0
+e.g., 1234567"
+481,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",pid,赠送者玩家pid,long,"e.g., 9871361"
+482,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",create_time,赠送者玩家创建时间(时间戳),long,"e.g., 1559275002"
+483,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",score_lv,赠送者玩家的段位,long,"e.g., 1, 2, 3, 4 ..."
+484,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",to_pid,被赠送者玩家pid,long,"e.g., 9871361"
+485,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",item_id,物品id,long,"e.g., 234881104"
+486,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",product_id,商品id,string,"e.g., 4000"
+487,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",product_name,商品名称,string,"e.g., 鬼忍套装"
+488,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",product_num,商品数量,long,"购买的商品数量，假设购买了20级通行证等级，则记20
+
+默认值为1
+
+e.g., 1"
+489,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",shop_type_id,商品类型id,long,"e.g., 10-赠礼通行证，11-赠礼缤纷补给箱，12-赠礼彩虹补给箱"
+490,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",currency_id,货币物品id,long,"e.g., 133-糖果，768-钻石糖，891-RMB"
+491,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",price,商品折扣价格,long,"e.g., 285"
+492,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",original_price,商品原价格,long,"e.g., 285"
+493,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",rid,关联id,long,"用来关联整个购买过程
+
+e.g., 1"
+494,gameserver_gift,服务端赠送记录,"商城赠送记录
+
+S24/2019-12-12加入",stat,赠送状态,long,"e.g., 0-发起赠送，1-赠送成功，2-赠送失败"
+495,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",mmod,匹配类型,long,"e.g., 0-不限制，1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道， 8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋"
+496,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+497,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",player_num,队伍玩家数量,long,"e.g., 2"
+498,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",ai_level,AI等级,long,"e.g., 1, 2, 3, 4"
+499,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",use_time,匹配用时,long,"e.g., 0"
+500,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",src_room_lv,原始房间等级（降级匹配之前的房间等级）,long,"e.g., 1, 2, 3, 4, 5"
+501,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",room_level,房间等级,long,"e.g., 1, 2, 3, 4, 5"
+502,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",score_room_level,段位竞技场等级,long,"S20/2019-08-05加入
+
+e.g., 1, 2, 3, 4, 5"
+503,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",client_type,房间类型,long,"S20/2019-08-27加入
+
+e.g., 0-手机，1-模拟器"
+504,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",is_random,是否随机地图,long,"S23/2019-11-12
+
+e.g., 0-否，1-是"
+505,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",pid_list,玩家pid列表，以逗号分隔,string,"组队匹配的时候记录不到war_id，玩家每有一次组队匹配，就是进行了一场战斗，
+
+用于统计玩家不同选择方式的场次
+
+S23/2019-11-12
+
+e.g., 123,456,789..."
+506,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",show_gmod,游戏入口显示模式,long,"S26/2020-04-20加入
+
+e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场"
+507,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",game_selection_id,游戏选项ID,long,"S27/2020-05-28加入
+
+e.g., 704643072-随机地图，704643073-战斗岛, ..."
+508,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",is_auto_match,(队员)自动匹配是否开启,long,"e.g., 0-否，1-是"
+509,gameserver_group_match_log,服务端组队匹配日志,"组队匹配日志
+
+S19/2019-06-03加入
+",hide_score,隐藏分,long,"V41/2022-02-17加入
+
+e.g., 1,2"
+510,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",pid,玩家pid,long,"e.g., 9871361"
+511,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",mmod,匹配类型,long,"e.g., 0-不限制，1-战斗岛，2-快速派对，3-彩虹岛"
+512,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+513,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",player_num,队伍玩家数量,long,"e.g., 2"
+514,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",ai_level,AI等级,long,"e.g., 1, 2, 3, 4"
+515,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",room_level,房间等级,long,"e.g., 1, 2, 3, 4, 5"
+516,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",score_room_level,段位竞技场等级,long,"e.g., 1, 2, 3, 4, 5"
+517,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",client_type,房间类型,long,"e.g., 0-手机，1-模拟器"
+518,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",deviceid,设备id,string,"S26/2020-03-27加入
+
+e.g., a0730302f02da0e4b01f97568a74e8e4"
+519,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",war_id,战场ID,string,"V30/2020-09-01加入
+
+e.g., 5c63486fbd08f80062c13ed15829d049"
+520,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",matching_team_id,主动匹配队伍ID,string,"这个值实际上是一个整数，如果玩家一个人进入游戏，那么这个值会是一个负数，如果玩家组队进入游戏，那么这个值是一个正数，表示玩家所在的队伍的ID。
+
+V30/2020-09-01加入
+
+e.g., 729089, -9216003"
+521,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",src_score_room_level,原段位竞技场等级,long,"V30/2020-09-01加入
+
+e.g., 1, 2, 3, 4, 5"
+522,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",src_room_level,原竞技场等级,long,"V30/2020-09-01加入
+
+e.g., 1, 2, 3, 4, 5"
+523,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",s123,s123分数,long,"V31/2020-10-26加入
+
+e.g., 1000"
+524,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",s23,s23分数,long,"V31/2020-10-26加入
+
+e.g., 1000"
+525,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",hide_score,隐藏分,long,"V41/2022-02-17加入
+
+e.g., 1,2"
+526,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",war_team_id,战场队伍ID,long,"战场中统一队伍的玩家共用的id
+，e.g. 1000"
+527,gameserver_group_match_over,服务端组队匹配回调日志,"组队匹配回调日志
+
+组队匹配成功后，缓存完房间信息后记录，用来验证匹配流程
+
+S23/2019-11-06加入",friend_list,本局队伍好友pid列表,string,"v44加入
+e.g. [pid1,pid2,pid3]，本局队伍无好友为空"
+528,gameserver_intimacy_change,服务端亲密关系,"成功创建或解除关系，确认删除或拉黑好友时记录
+
+V31/2020-09-25 加入",pid_1,玩家pid,long,"好友双方 pid 较小的那个
+
+e.g., 9871361"
+529,gameserver_intimacy_change,服务端亲密关系,"成功创建或解除关系，确认删除或拉黑好友时记录
+
+V31/2020-09-25 加入",pid_2,玩家pid,long,"好友双方 pid 较大的那个
+
+e.g., 9871361"
+530,gameserver_intimacy_change,服务端亲密关系,"成功创建或解除关系，确认删除或拉黑好友时记录
+
+V31/2020-09-25 加入",close_type,亲密关系类型,long,0-CP，1-拍档，2-基友，3-闺蜜
+531,gameserver_intimacy_change,服务端亲密关系,"成功创建或解除关系，确认删除或拉黑好友时记录
+
+V31/2020-09-25 加入",op,亲密关系操作,long,"0-创建，1-解除（没有删除好友/拉黑），2-删除好友，3-拉黑
+
+删除或拉黑好友也会解除亲密关系"
+532,gameserver_intimacy_value_change,服务端亲密度变化,"亲密度发生变化时记录
+
+V31 2020-09-25 加入",pid_1,玩家pid,long,"好友双方 pid 较小的那个
+
+e.g., 9871361"
+533,gameserver_intimacy_value_change,服务端亲密度变化,"亲密度发生变化时记录
+
+V31 2020-09-25 加入",pid_2,玩家pid,long,"好友双方 pid 较大的那个
+
+e.g., 9871361"
+534,gameserver_intimacy_value_change,服务端亲密度变化,"亲密度发生变化时记录
+
+V31 2020-09-25 加入",value,变化值，拉黑时，变化值为负数,long,"e.g., 100"
+535,gameserver_intimacy_value_change,服务端亲密度变化,"亲密度发生变化时记录
+
+V31 2020-09-25 加入",intimacy,变化后的值,long,"e.g., 100"
+536,gameserver_intimacy_value_change,服务端亲密度变化,"亲密度发生变化时记录
+
+V31 2020-09-25 加入",value_level,等级变化值 ,long,e.g. 2
+537,gameserver_intimacy_value_change,服务端亲密度变化,"亲密度发生变化时记录
+
+V31 2020-09-25 加入",intimacy_level,变化后的等级数值,long, e.g. 3
+538,gameserver_intimacy_value_change,服务端亲密度变化,"亲密度发生变化时记录
+
+V31 2020-09-25 加入",intimacy_days,与其他玩家建立亲密关系的历史累计天数，解除关系后重置为0 ,long, e.g.100
+539,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",logid,日志排重id,string,"e.g., 1556162648400-3809281-493-2-6"
+540,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",cid,渠道id,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+541,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",sid,区唯一id,long,"e.g., 1"
+542,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",account,心动ID,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+543,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",pid,玩家pid,long,"e.g., 9871361"
+544,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+545,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",count,操作次数,long,"默认为1
+
+e.g., 1"
+546,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",eid,事件id,long,"e.g., 1556162648000"
+547,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",ispay,是否付费玩家,long,"e.g., 0-否，1-是"
+548,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",coin_type,货币类型,long,"e.g., 1-金币，2-点券，3-积分，4-糖果"
+549,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",type,类型id,long,"同运营事件id
+
+e.g., 31"
+550,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",kind,消费类型,long,"未使用, 默认值为0"
+551,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",from_pid,来自pid,long,"e.g., 9871361"
+552,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",op_id,同运营事件id,long,"e.g., 31"
+553,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",op_name,同运营事件名称,string,"e.g., 徽章"
+554,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",ac_id,运营活动id,long,"e.g., 0"
+555,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",item_type_id,物品类型id,long,"e.g., 90"
+556,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",item_id,物品id,long,"e.g., 421"
+557,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",item_name,物品名称,string,"e.g., 等级徽章"
+558,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",item_quality_id,物品品质id,long,"e.g., 1-白，2-绿，3-蓝，4-紫，5-橙，6-红"
+559,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",item_quality_name,物品品质名称,string,"e.g., 白，绿，蓝，紫，橙，红"
+560,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",value,变化值,long,"e.g., 1"
+561,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",after,变化后数值,long,"e.g., 1"
+562,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",rid,关联id,long,"用来关联整个购买过程
+
+S21/2019-09-17加入
+
+e.g., 1"
+563,gameserver_items,服务端物品变更日志,"物品日志
+
+S19/2019-06-03加入
+",chan,渠道标识,string,"S25/2020-01-10加入
+
+e.g., taptap"
+564,gameserver_kick_offline,玩家被踢下线记录,S26/2020-04-22加入,pid,玩家ID,long,"e.g., 9871361"
+565,gameserver_kick_offline,玩家被踢下线记录,S26/2020-04-22加入,create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+566,gameserver_kick_offline,玩家被踢下线记录,S26/2020-04-22加入,uid,玩家uid,string,"e.g., 6BL"
+567,gameserver_kick_offline,玩家被踢下线记录,S26/2020-04-22加入,nick,玩家昵称,string,"e.g., 御风者骷髅"
+568,gameserver_kick_offline,玩家被踢下线记录,S26/2020-04-22加入,reason,被踢下线原因类型,string,"e.g., 设备封禁反馈"
+569,gameserver_kick_offline,玩家被踢下线记录,S26/2020-04-22加入,card_id,加密后身份证号,string,"e.g., 4f589f4867dbd57e"
+570,gameserver_kick_offline,玩家被踢下线记录,S26/2020-04-22加入,deviceid,设备id,string,"目前和客户端事件中的deviceid公共字段一致，不过S26版本未进行md5加密
+
+e.g., a0730302f02da0e4b01f97568a74e8e4"
+571,gameserver_koi,锦鲤活动购买,"锦鲤活动购买日志
+
+购买锦鲤活动时上报
+
+V48/2023-06-07加入",pid,玩家pid,long,"e.g., 9871361"
+572,gameserver_koi,锦鲤活动购买,"锦鲤活动购买日志
+
+购买锦鲤活动时上报
+
+V48/2023-06-07加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+573,gameserver_koi,锦鲤活动购买,"锦鲤活动购买日志
+
+购买锦鲤活动时上报
+
+V48/2023-06-07加入",rid,关联id,long,"关联购买过程，e.g., 1"
+574,gameserver_koi,锦鲤活动购买,"锦鲤活动购买日志
+
+购买锦鲤活动时上报
+
+V48/2023-06-07加入",shop_grade,商品档位,long,"e.g., 1，2，3"
+575,gameserver_koi,锦鲤活动购买,"锦鲤活动购买日志
+
+购买锦鲤活动时上报
+
+V48/2023-06-07加入",period,期数id,long,"e.g., 1"
+576,gameserver_koi,锦鲤活动购买,"锦鲤活动购买日志
+
+购买锦鲤活动时上报
+
+V48/2023-06-07加入",period_name,期数名称,string,"e.g., 第一期"
+577,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",logid,日志排重id,string,"e.g., 1559666020-9420803"
+578,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",cid,渠道id,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+579,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",sid,区唯一id,long,"e.g., 1"
+580,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",account,心动ID,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+581,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",pid,玩家pid,long,"e.g., 9871361"
+582,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+583,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ip,玩家最后登录ip,string,"e.g., 192.168.2.249"
+584,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",type,登录类型,long,"e.g., 0-登陆，1-登出"
+585,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ispay,是否付费玩家,long,"e.g., 0-否，1-是"
+586,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",level,玩家等级,long,"e.g., 1"
+587,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",vip,玩家vip等级,long,"e.g., 0, 1"
+588,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",score1,单排积分,long,"e.g., 1100
+
+S18-r2/2019-05-15废弃"
+589,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",score2,双排积分,long,"e.g., 1100
+
+S18-r2/2019-05-15废弃"
+590,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",score4,四排积分,long,"e.g., 1100
+
+S18-r2/2019-05-15废弃"
+591,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",device,玩家最后登陆设备,string,"e.g., iPad8,5"
+592,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",guest,是否游客,long,"e.g., 0-否，1-是"
+593,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",mac,玩家最后登录设备mac地址,string,"e.g., a8:60:b6:24:5f:6d"
+594,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",nick,玩家昵称,string,"e.g., 御风者骷髅"
+595,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",online_time,本次登陆在线时长,long,"单位为秒
+
+e.g., 10"
+596,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",score,综合积分,long,"e.g., 1100"
+597,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",is_fcm,是否防沉迷,long,"e.g., 0-否，1-是"
+598,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",permit_type,玩家当前拥有的季票类型,long,"S23/2019-11-12加入
+
+e.g., 1-免费，2-黄金季票，3-黄金季票豪华包"
+599,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",adult_type,玩家实名状态,long,"e.g., 0-未实名，1-已实名，8岁以下，2-已实名，8岁-15岁，3-已实名，16-17岁，4-已实名，已成年"
+600,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",pay_sum,累计充值金额,float,"S24/2019-12-26加入
+
+e.g., 100.0"
+601,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",candy,付费糖果数量,long,"当前玩家身上的付费糖果数量
+
+S24/2019-12-26加入
+
+e.g., 100"
+602,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",send_candy,免费糖果数量,long,"当前玩家身上的免费糖果数量
+
+S24/2019-12-26加入
+
+e.g., 100"
+603,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ticket,付费点券数量,long,"当前玩家身上的付费点券数量
+
+S24/2019-12-26加入
+
+e.g., 100"
+604,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",send_ticket,免费点券数量,long,"当前玩家身上的免费点券数量
+
+S24/2019-12-26加入
+
+e.g., 100"
+605,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",delicious_value,美味值,long,"S24/2019-12-26加入
+
+e.g., 100"
+606,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",total_time,玩家战斗累计时长,long,"单位为秒
+
+S24/2020-01-14加入
+
+e.g., 100"
+607,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",chan,渠道标识,string,"S25/2020-01-10加入
+
+e.g., taptap"
+608,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",achievement_count,成就星数,long,"同一个成就，如果玩家最高完成了三星，就只算三星，而不是六星
+
+S27/2020-05-25加入
+
+e.g., 10"
+609,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",fan_count,关注数量,long,"S28/2020-06-23加入
+
+e.g., 1"
+610,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",friend_count,好友数量,long,"S28/2020-06-23加入
+
+e.g., 1"
+611,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",last_offline_time,最后一次离线时间,long,"S28/2020-06-23加入
+
+e.g., 1592515800"
+612,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",big_crate_open_count,初级彩虹补给箱累计开箱次数,long,"S29/2020-07-27加入
+
+e.g., 1"
+613,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",high_big_crate_open_count,高级彩虹补给箱累计开箱次数,long,"S29/2020-07-27加入
+
+e.g., 1"
+614,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",deviceid,设备id,string,"目前和客户端事件中的deviceid公共字段一致
+
+S29/2020-07-29加入
+
+e.g., a0730302f02da0e4b01f97568a74e8e4"
+615,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",uid,玩家UID,string,"S29/2020-07-29加入
+
+e.g., abc"
+616,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",action_id,展示的动作ID,long,"V31/2020-10-15加入
+
+e.g., 1"
+617,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",action_name,展示动作名称,string,"V31/2020-10-15加入
+
+e.g., 拍手"
+618,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",is_show_action,是否展示双人动作,long,"V31/2020-10-15加入
+
+e.g., 0-否，1-是"
+619,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",max_score,玩家历史最高段位积分,long,"V31/2020-09-21加入
+
+e.g.,1100"
+620,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",credit,玩家当前信誉值,long,"V31/2020-10-12加入
+
+e.g., 100"
+621,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",tap_fpid,心动风控检测设备id,string,"V33/2020-12-31加入
+
+e.g., 2020122709040267ea013db4c59780936dc58b8c2d862e0145da622abac1b8"
+622,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",pps_account,passport server 账号id,long,"V34/2021-04-08加入
+
+e.g., 53355441"
+623,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",club_id,"战队id,没有加入战队或退出战队后记为0",long,"e.g., 9871361"
+624,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",arena_score,竞技派对积分,long,"e.g.,0,1,2"
+625,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",pay_sum_recent,近30登录日累计充值金额,long,"v40/2022-03-02加入
+
+e.g., 100.0"
+626,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",pay_sum_recent_30,近30登录日累计充值金额,float,"v40/2022-03-16加入
+
+e.g., 100.0"
+627,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",phone,手机号码,string,"md5 加密，可能为空
+
+e.g. f1s23f13s213s1f"
+628,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",sex,玩家性别,long,"v43/2022-05-23加入
+
+e.g., 0-女，1-男"
+629,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",card_id,身份证号码,string,"v42/2022-06-24加入
+
+md5 加密，可能为空
+
+e.g. f1s23f13s213s1f"
+630,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",popular_value,人气值,long,V42.5/2022-7-21加入
+631,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ip_city,ip对应的城市,string,这个属性由服务端自动收集，不需要上报
+632,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ip_city_geo_name_id,ip对应的城市地理名称ID,long,这个属性由服务端自动收集，不需要上报
+633,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ip_country,ip对应的国家,string,这个属性由服务端自动收集，不需要上报
+634,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ip_country_geo_name_id,ip对应的国家地理名称ID,long,这个属性由服务端自动收集，不需要上报
+635,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ip_country_iso,ip对应的国家标识码,string,这个属性由服务端自动收集，不需要上报
+636,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ip_subdivision,ip对应的省份,string,这个属性由服务端自动收集，不需要上报
+637,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ip_subdivision_geo_name_id,ip对应的省份地理名称ID,long,这个属性由服务端自动收集，不需要上报
+638,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",ip_isp,ip对应的网络运营商,string,这个属性由服务端自动收集，不需要上报
+639,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",account_chan,账号绑定渠道,string,e.g. google，taptap，游客记为未绑定
+640,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",is_tap,玩家是否绑定Tap账号,long,e.g. 0-未绑定，1-已绑定
+641,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",primecrate_key,付费缤纷钥匙数量,long,"V46/2023-01-31加入
+
+e.g., 50"
+642,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",send_primecrate_key,免费缤纷钥匙数量,long,"V46/2023-01-31加入
+
+e.g., 50"
+643,gameserver_login,服务端登录,"登录日志
+
+S19/2019-06-03加入
+",rainbow_key,彩虹钥匙数量,long,"V46/2023-01-31加入
+
+e.g., 50"
+644,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",pid_list,pid列表,string,"e.g. pid1,pid2,pid3"
+645,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+646,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",gmod,游戏模式,long,"e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式"
+647,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",mmod,匹配模式,long,"e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道， 8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋"
+648,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",war_id,战场ID,string,"e.g., 5c63486fbd08f80062c13ed15829d049"
+649,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",match_type,匹配类型,long,0-移动端，1-PC端，2-模拟器
+650,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",match_start_time,匹配开始时间,long,时间戳
+651,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",area,本次所跨区域,string,未跨区为空，跨区匹配成功记为最后所跨区域
+652,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",stat,匹配状态,long,0-匹配开始，1，跨区匹配，2，取消匹配，3匹配成功
+653,gameserver_match_process,匹配过程状态统计,"玩家点击匹配状态打点日志
+
+每次匹配过程均记录，中途结束匹配同样上报，统计每次匹配过程的耗时，跨区与匹配过程结果
+
+2022-11-09加入",match_id,匹配操作id,long,
+654,gameserver_new_device,服务端 - 新增设备,"新增设备
+
+V37/2021-06-29 加入",device_id,设备 ID,string,"新增设备 ID
+
+计算逻辑：android_id>advertising_id>ios_idfa
+
+e.g., 3643b8aa363de16b"
+655,gameserver_new_device,服务端 - 新增设备,"新增设备
+
+V37/2021-06-29 加入",device_type,设备类型,long,"设备类型
+
+e.g., 0 - 未知，1 - Android, 2 - IOS, 3 - PC"
+656,gameserver_new_device,服务端 - 新增设备,"新增设备
+
+V37/2021-06-29 加入",from_field,来源字段,string,"标识 device_id 是从哪个字段得到的
+
+e.g., android_id, advertising_id, ios_idfa"
+657,gameserver_new_device,服务端 - 新增设备,"新增设备
+
+V37/2021-06-29 加入",m,机型,string,"机型
+
+e.g., xiaomi xiaomi 8、iPhone8,4
+
+V37/2021-06-30 加入"
+658,gameserver_new_device,服务端 - 新增设备,"新增设备
+
+V37/2021-06-29 加入",os,操作系统,string,"操作系统
+
+e.g., Android OS 9 / API-28 (HUAWEITNY-AL00/172C00R1)、iOS 12.2
+
+V37/2021-06-30 加入"
+659,gameserver_new_device_steps,新增设备节点,"新增设备节点，每次新增设备对应 N 条记录
+
+V39/2021-09-23加入",e,节点事件,string,"e.g., CreateLoadUI"
+660,gameserver_new_device_steps,新增设备节点,"新增设备节点，每次新增设备对应 N 条记录
+
+V39/2021-09-23加入",device_id,设备 id,string,"e.g., 3643b8aa363de16b"
+661,gameserver_new_device_steps,新增设备节点,"新增设备节点，每次新增设备对应 N 条记录
+
+V39/2021-09-23加入",m,机型,string,"e.g., xiaomi xiaomi 8、iPhone8,4"
+662,gameserver_new_device_steps,新增设备节点,"新增设备节点，每次新增设备对应 N 条记录
+
+V39/2021-09-23加入",os,操作系统,string,"e.g., Android OS 9 / API-28 (HUAWEITNY-AL00/172C00R1)、iOS 12.2"
+663,gameserver_new_device_steps,新增设备节点,"新增设备节点，每次新增设备对应 N 条记录
+
+V39/2021-09-23加入",device_type,设备类型,long,0-未知，1-Android，2-iOS
+664,gameserver_new_device_steps,新增设备节点,"新增设备节点，每次新增设备对应 N 条记录
+
+V39/2021-09-23加入",from_field,device_id 来源字段,string,android_id/advertising_id/ios_idfa/deviceid
+665,gameserver_online,服务端在线玩家数统计,"在线玩家数统计日志
+
+S19/2019-06-03加入
+",cid,渠道id,long,"e.g., 1-taptap"
+666,gameserver_online,服务端在线玩家数统计,"在线玩家数统计日志
+
+S19/2019-06-03加入
+",sid,区唯一id,long,"e.g., 1"
+667,gameserver_online,服务端在线玩家数统计,"在线玩家数统计日志
+
+S19/2019-06-03加入
+",count_all,在线玩家数,long,"e.g., 1000"
+668,gameserver_online,服务端在线玩家数统计,"在线玩家数统计日志
+
+S19/2019-06-03加入
+",platform_type,登录平台类型,long,"e.g., 0-移动端，1-PC端，2-模拟器"
+669,gameserver_over_season_items,过期赛季奖励领取日志,"过期赛季奖励领取情况
+记录玩家领取的过期赛季奖励物与段位分结算奖励物
+v32/2020-11-18加入",pid,玩家pid,long,"e.g., 9871361"
+670,gameserver_over_season_items,过期赛季奖励领取日志,"过期赛季奖励领取情况
+记录玩家领取的过期赛季奖励物与段位分结算奖励物
+v32/2020-11-18加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+671,gameserver_over_season_items,过期赛季奖励领取日志,"过期赛季奖励领取情况
+记录玩家领取的过期赛季奖励物与段位分结算奖励物
+v32/2020-11-18加入",season,奖励物属于第几个赛季,long,"e.g., 1,2"
+672,gameserver_over_season_items,过期赛季奖励领取日志,"过期赛季奖励领取情况
+记录玩家领取的过期赛季奖励物与段位分结算奖励物
+v32/2020-11-18加入",type,奖励物类型,long,"e.g., 0-正常物品，1-积分结算物品"
+673,gameserver_over_season_items,过期赛季奖励领取日志,"过期赛季奖励领取情况
+记录玩家领取的过期赛季奖励物与段位分结算奖励物
+v32/2020-11-18加入",item_id,奖励物品id,long,"e.g., 421"
+674,gameserver_over_season_items,过期赛季奖励领取日志,"过期赛季奖励领取情况
+记录玩家领取的过期赛季奖励物与段位分结算奖励物
+v32/2020-11-18加入",item_num,物品数量,long,"e.g., 1"
+675,gameserver_over_season_items,过期赛季奖励领取日志,"过期赛季奖励领取情况
+记录玩家领取的过期赛季奖励物与段位分结算奖励物
+v32/2020-11-18加入",item_name,物品名称,string,"e.g., 等级徽章"
+676,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",devece_id,设备 ID,string,"uuid:cpuid:diskid 的 MD5 值
+
+e.g. eda274811ddd0c8cce96921fd08145d
+
+字段名错误，弃用"
+677,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",conn_time,会话连接的时间戳,long,"连上独立心跳服务器的会话时间戳
+
+e.g. 1656641140"
+678,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",pid,玩家 ID,long,e.g. 916809489
+679,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",uid,玩家 UID,string,e.g. fsueg9
+680,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",nick,玩家昵称,string,e.g. 香肠派对测试
+681,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",source,上报来源,long,"0-client，1-server
+
+client:客户端 发送由 服务端 转发，server: 服务端 发送
+
+e.g. 0"
+682,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",cheat_type,作弊类型,string,e.g. cecheck
+683,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",cheat_sub_type,作弊子类型,string,e.g. cestart
+684,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",cheat_info,作弊信息,string,e.g. \?\C:\Windows\test.sys
+685,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",cheat_value,作弊值,string,e.g. c4ca4238a0b923820dcc509a6f75849b
+686,gameserver_pc_cheat_log,PC 作弊信息,"在检测到有作弊信息时进行上报
+
+V42.5/2022-07-06 加入",device_id,设备 ID,string,"uuid:cpuid:diskid 的 MD5 值
+
+e.g. eda274811ddd0c8cce96921fd08145d"
+687,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",path,文件路径,string,e.g. \??\C:\Driver.sys
+688,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",file_name,文件名称,string,e.g. DriverName
+689,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",type,文件类型,long,0 - 驱动，1 - 模块
+690,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",md5,文件 md5,string,e.g. baae7b4547925a24940e6b8194d06f2f
+691,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",size,文件大小,long,"单位：byte
+
+e.g. 200"
+692,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",check_sum,文件校验和,long,e.g. 80991
+693,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",device_id,设备 ID,string,e.g. eda274811ddd0c8cce969217fd08145d
+694,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",conn_time,会话连接的时间戳,long,e.g. 1656641140
+695,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",pid,玩家 id,long,e.g. 916809489
+696,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",uid,玩家 uid,string,e.g. fSueg9
+697,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",dos_h,IMAGE_DOS_HEADER MD5特征,string,e.g. 01271f05b7e401bcef53378fb38a60d3
+698,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",file_h,IMAGE_FILE_HEADER MD5特征,string,e.g. 9c46fed13da55c94f177048ed0d7834d
+699,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",sign_info,数字签名信息,string,e.g. Sangfor Technologies Inc.
+700,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",sign_ts_info,数字签名时间戳信息,string,e.g. Microsoft Corporation
+701,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",sign_result,签名结果,long,"e.g. 2148204800
+
+弃用，字段类型错误
+
+v45/2023-01-16加入"
+702,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",sign_hr,签名结果,string,"e.g. 0
+
+v45/2023-01-16加入"
+703,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",p_name,产品名称,string,"e.g. Microsoft
+
+v45/2023-01-16加入"
+704,gameserver_pc_collect_file,PC 收集文件特征,"启动游戏的时候会扫描一遍系统运行的所有驱动，并匹配服务端的黑白名单库，不在白名单里才上报。
+
+客户端数据经由服务端上报
+
+V43/2022-08-02加入",p_copyright,版权,string,"e.g. Microsoft
+
+v45/2023-01-16加入"
+705,gameserver_pc_collect_log,PC 信息收集,"在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+V42.5/2022-07-06 加入",devece_id,设备 ID,string,"uuid:cpuid:diskid 的 MD5 值
+
+e.g. eda274811ddd0c8cce96921fd08145d
+
+字段名错误，弃用"
+706,gameserver_pc_collect_log,PC 信息收集,"在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+V42.5/2022-07-06 加入",conn_time,会话连接的时间戳,long,"连上独立心跳服务器的会话时间戳
+
+e.g. 1656641140"
+707,gameserver_pc_collect_log,PC 信息收集,"在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+V42.5/2022-07-06 加入",pid,玩家 ID,long,e.g. 916809489
+708,gameserver_pc_collect_log,PC 信息收集,"在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+V42.5/2022-07-06 加入",uid,玩家 UID,string,e.g. fsueg9
+709,gameserver_pc_collect_log,PC 信息收集,"在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+V42.5/2022-07-06 加入",collect_type,收集类型,long,"0-driver，1-module
+
+e.g. 0"
+710,gameserver_pc_collect_log,PC 信息收集,"在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+V42.5/2022-07-06 加入",collect_info,收集信息,string,e.g. C:\\Windows\\test.sys
+711,gameserver_pc_collect_log,PC 信息收集,"在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+V42.5/2022-07-06 加入",collect_value,收集值,string,e.g. c4ca4238a0b923820dcc509a6f75849b
+712,gameserver_pc_collect_log,PC 信息收集,"在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+V42.5/2022-07-06 加入",device_id,设备 ID,string,"uuid:cpuid:diskid 的 MD5 值
+
+e.g. eda274811ddd0c8cce96921fd08145d"
+713,gameserver_pc_collect_log,PC 信息收集,"在pid发生变动时会进行上报，以一次连接为例：刚开始建立完连接但玩家还没登陆时上报一次，登陆后再上报一次，玩家玩一半注销切换账号会再报一次
+
+V42.5/2022-07-06 加入",t,产生数据时间戳,long,
+714,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",devece_id,设备 ID,string,"uuid:cpuid:diskid 的 MD5 值
+
+e.g. eda274811ddd0c8cce96921fd08145d
+
+字段名错误，弃用"
+715,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",conn_time,会话连接的时间戳,long,"连上独立心跳服务器的会话时间戳
+
+e.g. 1656641140"
+716,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",pid,玩家 ID,long,e.g. 916809489
+717,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",uid,玩家 UID,string,e.g. fsueg9
+718,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",uuid,UUID,string,e.g. E9BF4D56-47FA-66AA-BDA0-85BEEB4895CD
+719,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",cpu_id,cpu 编号,string,e.g. 1F8BFBFF000A0655
+720,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",disk_id,硬盘序列号,string,e.g. VT_NULL
+721,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",os,操作系统,string,e.g. Win10
+722,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",os_version,操作系统具体版本号,string,e.g. 10.0.19041.1288
+723,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",os_type,操作系统类型,string,e.g. 64
+724,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",cip,客户端 IP,string,e.g. 10.30.20.74
+725,gameserver_pc_env_log,PC 环境信息,"每次 PC 客户端和服务端建立 session 连接时记录
+
+V42.5/2022-07-06 加入",device_id,设备 ID,string,"uuid:cpuid:diskid 的 MD5 值
+
+e.g. eda274811ddd0c8cce96921fd08145d"
+726,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",pid,玩家ID,long,"e.g., 9871361"
+727,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+728,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",pps_account,passport server 账号id,long,"e.g., 53355441"
+729,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",report_type,举报类型,string,"e.g., FlyJumpSpeed"
+730,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",enable_freeze,系统是否开启封号,long,"e.g., 0-否，1-是"
+731,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",uid,玩家uid,string,"S21/2019-08-29加入
+
+e.g., 6BL"
+732,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",nick,玩家昵称,string,"S21/2019-08-29加入
+
+e.g., 御风者骷髅"
+733,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",score_lv,玩家的段位,long,"S21/2019-08-29加入
+
+e.g., 1, 2, 3, 4 ..."
+734,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",ispay,是否付费玩家,long,"S21/2019-08-29加入
+
+e.g., 0-否，1-是"
+735,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",punish_level,处罚等级,long,"8级为封禁处罚
+
+S21/2019-08-29加入
+
+e.g., 1, 2, 3, 4, 5..."
+736,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",punish_result,处罚结果,string,"S21/2019-08-29加入
+
+e.g., 禁言1天，永久禁言"
+737,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",card_id,加密后身份证号,string,"玩家受到8级处罚的情况下需要记录身份证号信息
+
+S25/2020-02-19加入
+
+e.g.,  4f589f4867dbd57e"
+738,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",deviceid,设备id,string,"目前和客户端事件中的deviceid公共字段一致，不过S26版本未进行md5加密
+
+S26/2020-03-27加入
+
+e.g.,  a0730302f02da0e4b01f97568a74e8e4"
+739,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",is_punished,玩家是否受到处罚,long,"V31/2020-10-09加入
+
+e.g.,  0-未实施处罚，1-实施处罚"
+740,gameserver_player_auto_freeze,服务端系统封号记录,"系统自动封号记录
+
+系统未开启自动封号时也要记录
+
+S20/2019-08-02加入
+",enable_condition,封禁前置开关状态,long,"V31/2020-10-09加入
+
+e.g.,  0-关闭，1-开启"
+741,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",mmod,匹配模式,long,"e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道， 8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋"
+742,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",gmod,游戏模式,long,"e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式"
+743,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+744,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",war_id,战场ID,string,"e.g., 5c63486fbd08f80062c13ed15829d049"
+745,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",be_pid,玩家pid（临时）,long,"e.g., 9871361
+
+服务端字段上报错误，临时兼容使用，V42 后切换到 pid"
+746,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",be_nick,玩家昵称（临时）,string,"e.g., 御风者骷髅
+
+服务端字段上报错误，临时兼容使用，V42 后切换到 nick"
+747,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",device_platform,设备平台,string,"e.g., ios,android..."
+748,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",cheat_type,外挂类型,string,"e.g., FlyJumpSpeed"
+749,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",cheat_sub_type,外挂子类型,string,"e.g., FlyJumpSpeed1"
+750,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",cheat_info,外挂具体信息,string,"e.g., check MTP State value error或者自定义code"
+751,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",cheat_value,异常数值,string,"e.g., errorBomb: 338.8972"
+752,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",show_gmod,游戏入口显示模式,long,"e.g., 1-经典模式，2-街机模式，3-团队激斗，4-狙击对决，5-限时派对，6-靶场"
+753,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",pid,玩家pid,long,"e.g., 9871361"
+754,gameserver_player_cheat_log,gameserver外挂检测日志,"外挂主动检测日志
+
+V41/2022-03-23加入",nick,玩家昵称,string,"e.g., 御风者骷髅"
+755,gameserver_player_club_active,玩家战队活跃度日志,"玩家战队活跃度日志
+
+V33/2021-03-31加入
+",pid,玩家pid,long,"e.g., 9871361"
+756,gameserver_player_club_active,玩家战队活跃度日志,"玩家战队活跃度日志
+
+V33/2021-03-31加入
+",active_week,周活跃度,long,"e.g., 1"
+757,gameserver_player_club_active,玩家战队活跃度日志,"玩家战队活跃度日志
+
+V33/2021-03-31加入
+",active_season,赛季活跃度,long,"e.g., 1"
+758,gameserver_player_club_active,玩家战队活跃度日志,"玩家战队活跃度日志
+
+V33/2021-03-31加入
+",club_id,战队id,long,"e.g., 9871361"
+759,gameserver_player_club_log,玩家战队日志,"玩家个人战队日志
+
+V33/2021-03-29加入",pid,玩家pid,long,"e.g., 9871361"
+760,gameserver_player_club_log,玩家战队日志,"玩家个人战队日志
+
+V33/2021-03-29加入",club_id,战队id,long,"e.g., 9871361"
+761,gameserver_player_club_log,玩家战队日志,"玩家个人战队日志
+
+V33/2021-03-29加入",join_time,加入战队时间（时间戳）,long,"e.g., 9871361"
+762,gameserver_player_club_log,玩家战队日志,"玩家个人战队日志
+
+V33/2021-03-29加入",job,战队职务,long,"e.g.,3-队长，2-副队长，1-精英，0-成员"
+763,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",pid,玩家pid,long,"e.g., 9871361"
+764,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+765,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",topic_id,直购主题id,long,"e.g., 335544448"
+766,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",topic_name,直购主题名称,string,"e.g., 缤纷补给箱_元气摇滚"
+767,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",product_id,商品id,string,"购买对象是商品的情况需要填入该字段
+
+e.g., 4000"
+768,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",product_name,商品名称,string,"e.g., 鬼忍套装"
+769,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",rid,关联id,long,"用来关联整个购买过程
+
+e.g., 1"
+770,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",is_new,是否是当前上新直购，区分直购与直购返场,long,"e.g., 0-否，1-是"
+771,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",item_id,物品id,long,物品id
+772,gameserver_player_direct_purchase,直购返场购买记录,"玩家直购返场购买记录
+
+
+v35加入 2021/05/25",item_name,物品名称,string,物品名称
+773,gameserver_player_direct_purchase_promotion,玩家直购返场选择记录,"玩家直购返场选择记录
+
+V33/2021-03-31加入",pid,玩家pid,long,"e.g., 9871361"
+774,gameserver_player_direct_purchase_promotion,玩家直购返场选择记录,"玩家直购返场选择记录
+
+V33/2021-03-31加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+775,gameserver_player_direct_purchase_promotion,玩家直购返场选择记录,"玩家直购返场选择记录
+
+V33/2021-03-31加入",topic_id,直购主题id,long,"e.g., 335544448"
+776,gameserver_player_direct_purchase_promotion,玩家直购返场选择记录,"玩家直购返场选择记录
+
+V33/2021-03-31加入",topic_name,直购主题名称,string,"e.g., 缤纷补给箱_元气摇滚"
+777,gameserver_player_direct_purchase_promotion,玩家直购返场选择记录,"玩家直购返场选择记录
+
+V33/2021-03-31加入",period,期数,long,"e.g., 1"
+778,gameserver_player_direct_purchase_promotion,玩家直购返场选择记录,"玩家直购返场选择记录
+
+V33/2021-03-31加入",start_time,每期开始时间(时间戳),long,"e.g., 1559275002"
+779,gameserver_player_direct_purchase_promotion,玩家直购返场选择记录,"玩家直购返场选择记录
+
+V33/2021-03-31加入",end_time,每期结束时间(时间戳),long,"e.g., 1559275002"
+780,gameserver_player_game_difficulty,玩家注册后游戏难度级别选择,"新进玩家实力选择、区分，给予不同强度级别的新进玩家不同竞技场等级体验
+
+S20/2019-07-22加入",pid,玩家ID,long,"e.g., 9871361"
+781,gameserver_player_game_difficulty,玩家注册后游戏难度级别选择,"新进玩家实力选择、区分，给予不同强度级别的新进玩家不同竞技场等级体验
+
+S20/2019-07-22加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+782,gameserver_player_game_difficulty,玩家注册后游戏难度级别选择,"新进玩家实力选择、区分，给予不同强度级别的新进玩家不同竞技场等级体验
+
+S20/2019-07-22加入",difficulty,游戏难度,long,"e.g., 1-完全新手，2-玩过此类游戏"
+783,gameserver_player_label,玩家标签,S28/2020-06-24加入,pid,玩家pid,long,"e.g., 9871361"
+784,gameserver_player_label,玩家标签,S28/2020-06-24加入,create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+785,gameserver_player_label,玩家标签,S28/2020-06-24加入,label_id,标签id,long,"e.g., 637534208"
+786,gameserver_player_label,玩家标签,S28/2020-06-24加入,label_name,标签名称,string,"e.g., 苹果推荐回归玩家"
+787,gameserver_player_label,玩家标签,S28/2020-06-24加入,label_type,标签类型,long,"e.g., 3"
+788,gameserver_player_label,玩家标签,S28/2020-06-24加入,type,类型,long,"e.g., 0-添加标签，1-移除标签"
+789,gameserver_player_level_update,玩家等级经验日志,S19/2019-06-03加入,pid,玩家pid,long,"e.g., 9871361"
+790,gameserver_player_level_update,玩家等级经验日志,S19/2019-06-03加入,init_player_time,玩家初始化时间,long,"e.g., 1559275002"
+791,gameserver_player_level_update,玩家等级经验日志,S19/2019-06-03加入,old_level,变化前玩家等级,long,"e.g., 1"
+792,gameserver_player_level_update,玩家等级经验日志,S19/2019-06-03加入,new_level,变化后玩家等级,long,"e.g., 2"
+793,gameserver_player_level_update,玩家等级经验日志,S19/2019-06-03加入,old_exp,变化前玩家经验值,long,"e.g., 1000"
+794,gameserver_player_level_update,玩家等级经验日志,S19/2019-06-03加入,new_exp,变化后玩家经验值,long,"e.g., 1050"
+795,gameserver_player_level_update,玩家等级经验日志,S19/2019-06-03加入,value,经验值变化量,long,"e.g., 50"
+796,gameserver_player_level_update,玩家等级经验日志,S19/2019-06-03加入,total_time,总游戏生存时长（单位s）,long,"e.g., 200"
+797,gameserver_player_level_update,玩家等级经验日志,S19/2019-06-03加入,create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+798,gameserver_player_prime_crate_promotion,玩家返场缤纷补给箱选择记录,S27/2020-05-13加入,pid,玩家pid,long,"e.g., 9871361"
+799,gameserver_player_prime_crate_promotion,玩家返场缤纷补给箱选择记录,S27/2020-05-13加入,create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+800,gameserver_player_prime_crate_promotion,玩家返场缤纷补给箱选择记录,S27/2020-05-13加入,crate_id,宝箱物品id,long,"e.g., 335544448"
+801,gameserver_player_prime_crate_promotion,玩家返场缤纷补给箱选择记录,S27/2020-05-13加入,crate_name,宝箱物品id,string,"e.g., 缤纷补给箱_元气摇滚"
+802,gameserver_player_prime_crate_promotion,玩家返场缤纷补给箱选择记录,S27/2020-05-13加入,period,期数,long,"e.g., 1"
+803,gameserver_player_prime_crate_promotion,玩家返场缤纷补给箱选择记录,S27/2020-05-13加入,start_time,每期开始时间(时间戳),long,"e.g., 1559275002"
+804,gameserver_player_prime_crate_promotion,玩家返场缤纷补给箱选择记录,S27/2020-05-13加入,end_time,每期结束时间(时间戳),long,"e.g., 1559275002"
+805,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",pid,玩家 id,long,"e.g., 9871361"
+806,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",uid,玩家 uid,string,"e.g., n9vsd"
+807,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",nick,玩家昵称,string,"e.g., 小肠人"
+808,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",punish_type,处罚类型,long,"0-封号，1-禁言，2-隔离匹配，3-禁榜，4-隔离至模拟器环境，5-信息冻结，6-关注冷却，7-社交冷却，8-重置签名，9-重置昵称
+
+e.g., 0"
+809,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",state,处罚状态,long,"0-开始处罚，1-手动结束处罚
+
+e.g., 0"
+810,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",end_time,处罚结束时间,long,"没有处罚时长时，该值为 0
+
+e.g. 1641283636"
+811,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",cheat_type,外挂类型,string,e.g. 检测到存在恶意软件
+812,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",punish_time,处罚时长,long,"单位：秒
+
+e.g. 180"
+813,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",clean_score,清除段位分,long,"不清除段位分时为 0
+
+e.g. 0"
+814,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",from,来源,string,"日志来源
+
+系统, 手动封禁的人"
+815,gameserver_player_punish_state,玩家处罚状态,"当玩家处罚状态发生变更时记录，例如：玩家被禁言5分钟，则在被禁言时和禁言结束时都会记录
+
+v40/2021-12-15加入",message,违规信息,string,目前为手动封禁时的备注，系统自动封禁暂时不需要传
+816,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",pid,玩家pid,long,"e.g., 9871361"
+817,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+818,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",start_time,每日精选商品开始时间(时间戳),long,"e.g., 1559275002"
+819,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",end_time,每日精选商品结束时间(时间戳),long,"e.g., 1559275002"
+820,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",item_id,物品id,long,"e.g., 234881104"
+821,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",product_id,商品id,string,"用于人民币充值和宝箱等特惠商品
+
+e.g., com.xd.sausage.DiscountPrice.6"
+822,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",currency_id,货币物品id,long,"e.g., 133-糖果，768-钻石糖，891-RMB"
+823,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",show_order,物品展示位置,long,"e.g., 1"
+824,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",shop_id,每日精选商品id,long,"e.g., 111"
+825,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",shop_type,物品类型,long,"e.g., 1-恶作剧商品，2-普通商品，3-特殊商品，4-手动配置商品"
+826,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",label_id,玩家标签id,long,"469762048 - 新手非R
+
+469762049 - 老手非R
+
+469762050 - 新手小R
+
+469762051 - 新手中R
+
+469762052 - 新手大R
+
+469762053 - 老手小R
+
+469762054 - 老手中R
+
+469762055 - 老手大R
+
+469762056 - 新手第一天
+
+469762057 - 新手第二天
+
+469762058 - 新手第三天
+
+469762059 - 新手第四天
+
+469762060 - 备用
+
+e.g., 469762056"
+827,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",price,商品折扣价格,long,"S24/2019-12-19加入
+
+e.g., 285"
+828,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",original_price,商品原价格,long,"S24/2019-12-19加入
+
+e.g., 285"
+829,gameserver_player_shop_daily_product,服务端玩家每日精选商品列表,"玩家每日精选商品列表记录
+
+为不同标签的玩家展示不同的每日精选商品，只有玩家登录且进入商城才会刷新
+
+S23/2019-11-11加入",item_num,商品数量,long,"S24/2019-12-19加入
+
+e.g., 1"
+830,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",pid,玩家pid,long,"e.g., 9871361"
+831,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+832,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",period,期数,long,"e.g., 1"
+833,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",start_time,开始时间(时间戳),long,"e.g., 1559275002"
+834,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",end_time,结束时间(时间戳),long,"e.g., 1559275002"
+835,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",shop_id,惊喜特惠商品id,long,"e.g., 111"
+836,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",shop_name,惊喜特惠商品名称,string,"e.g., 限时1元特惠"
+837,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",shop_grade,商品档位,long,"e.g., 1，2，3"
+838,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",pay_label_id,付费标签id,long,"e.g., 503316481"
+839,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",is_free,是否免费,long,"e.g., 0-否，1-是"
+840,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",product_id,商品id,string,"用于人民币充值和宝箱等特惠商品
+
+e.g., com.xd.sausage.DiscountPrice.6"
+841,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",product_name,商品名称,string,"e.g., 6元人民币特惠"
+842,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",currency_id,货币物品id,long,"e.g., 116-点券，133-糖果，768-钻石糖，891-RMB"
+843,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",price,商品折扣价格,long,"e.g., 285"
+844,gameserver_player_shop_surprise_product,玩家惊喜特惠商品分配日志,"之后改名为 限时特惠
+
+玩家登录的时候会进行分配
+
+S27/2020-06-05加入",original_price,商品原价格,long,"e.g., 285"
+845,gameserver_player_type_online,模拟器和隔离匹配的实时在线玩家数统计日志,"每5分钟上报一次
+
+S27/2020-06-02加入",cid,渠道id,long,"e.g., 1-taptap"
+846,gameserver_player_type_online,模拟器和隔离匹配的实时在线玩家数统计日志,"每5分钟上报一次
+
+S27/2020-06-02加入",sid,区唯一id,long,"e.g., 1"
+847,gameserver_player_type_online,模拟器和隔离匹配的实时在线玩家数统计日志,"每5分钟上报一次
+
+S27/2020-06-02加入",count_all,在线玩家数,long,"e.g., 1000"
+848,gameserver_player_type_online,模拟器和隔离匹配的实时在线玩家数统计日志,"每5分钟上报一次
+
+S27/2020-06-02加入",type,用户类型,long,"e.g., 1-模拟器，2-隔离匹配， 3-作弊标记"
+849,gameserver_player_type_online,模拟器和隔离匹配的实时在线玩家数统计日志,"每5分钟上报一次
+
+S27/2020-06-02加入",score_lv,玩家的段位,long,"V30/2020-09-01加入
+
+e.g., 1, 2, 3, 4"
+850,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",pid,玩家pid,long,"e.g., 9871361"
+851,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+852,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",crate_id,宝箱物品id,long,"e.g., 335544448"
+853,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",crate_name,宝箱物品名称,string,"e.g., 缤纷补给箱_元气摇滚"
+854,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",item_id,物品id,long,"e.g., 421"
+855,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",item_name,物品名称,string,"e.g., 等级徽章"
+856,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",item_quality_id,物品品质id,long,"e.g., 1-白，2-绿，3-蓝，4-紫，5-橙，6-红"
+857,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",item_quality_name,物品品质名称,string,"e.g., 白，绿，蓝，紫，橙，红"
+858,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",item_num,抽到的物品数量,long,"e.g., 1"
+859,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",after,某期缤纷补给箱剩余高品质物品数量,long,"某期缤纷补给箱全部高品质物品都抽到的情况下记0，抽到重复的物品，也需要记录
+
+e.g., 1"
+860,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",is_new,是否是上新的补给箱,long,"判断玩家开箱的时候是否在补给箱的配置时间范围内，否的话代表返场
+
+e.g., 0-否，1-是"
+861,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",rid,关联id,long,"用来关联整个购买过程
+
+e.g., 1"
+862,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",bout,回合数,long,"e.g., 1,2,3"
+863,gameserver_prime_crate_items,缤纷补给箱高品质物品获取情况,"目前只需要在玩家抽取到紫色和橙色物品的时候记录
+
+S27/2020-05-13加入
+
+V33/2021-03-17修改。缤纷补给箱所有品质物品获取都记录",num_in_bout,回合内的次数,long,"e.g., 1,2,3"
+864,gameserver_rainbow_box,彩虹魔盒开启事件,,pid,玩家pid,long,
+865,gameserver_rainbow_box,彩虹魔盒开启事件,,box_id,魔盒id,long,
+866,gameserver_rainbow_box,彩虹魔盒开启事件,,box_name,魔盒名称,string,
+867,gameserver_rainbow_box,彩虹魔盒开启事件,,rid,关联rid,long,
+868,gameserver_ranking_notify,排行榜通告日志,S26/2020-03-27加入,type,榜单类型,long,"e.g., 1-段位榜，2-美味榜，3-粉丝榜，4-淘汰榜，5-暴击榜，6-夺冠榜"
+869,gameserver_ranking_notify,排行榜通告日志,S26/2020-03-27加入,area,榜单地区编码,string,"地区->对应地区编码 全服->-1
+
+e.g., 130000"
+870,gameserver_ranking_notify,排行榜通告日志,S26/2020-03-27加入,period,榜单周期类型,long,"周榜->周数 赛季榜->-赛季数 历史榜->0
+
+e.g., 1"
+871,gameserver_ranking_notify,排行榜通告日志,S26/2020-03-27加入,content,通告内容,string,"e.g., abc"
+872,gameserver_rank_score_award,段位积分奖励领取,"段位积分奖励物品领取情况
+
+记录玩家领取的段位积分奖励物
+
+V31/2020-09-21加入
+",pid,玩家pid,long,"e.g., 9871361"
+873,gameserver_rank_score_award,段位积分奖励领取,"段位积分奖励物品领取情况
+
+记录玩家领取的段位积分奖励物
+
+V31/2020-09-21加入
+",create_time,玩家创建时间(时间戳),long,"e.g., 1559275002"
+874,gameserver_rank_score_award,段位积分奖励领取,"段位积分奖励物品领取情况
+
+记录玩家领取的段位积分奖励物
+
+V31/2020-09-21加入
+",award_score,奖励领取积分,long,"e.g., 1100"
+875,gameserver_rank_score_award,段位积分奖励领取,"段位积分奖励物品领取情况
+
+记录玩家领取的段位积分奖励物
+
+V31/2020-09-21加入
+",item_id,奖励物品id,long,"e.g., 421"
+876,gameserver_rank_score_award,段位积分奖励领取,"段位积分奖励物品领取情况
+
+记录玩家领取的段位积分奖励物
+
+V31/2020-09-21加入
+",item_name,物品名称,string,"e.g., 等级徽章"
+877,gameserver_rank_score_award,段位积分奖励领取,"段位积分奖励物品领取情况
+
+记录玩家领取的段位积分奖励物
+
+V31/2020-09-21加入
+",item_num,物品数量,long,"e.g., 1"
+878,gameserver_rank_score_award,段位积分奖励领取,"段位积分奖励物品领取情况
+
+记录玩家领取的段位积分奖励物
+
+V31/2020-09-21加入
+",item_pool_id,奖励卡池id,long,"e.g., 3000"
+879,gameserver_rank_score_award,段位积分奖励领取,"段位积分奖励物品领取情况
+
+记录玩家领取的段位积分奖励物
+
+V31/2020-09-21加入
+",is_advanced,是否为高级奖励,long,"e.g., 0-否，1-是"
+880,gameserver_refund,玩家退款日志,"玩家退款日志
+
+V39/2021-08-11加入",pid,玩家pid,long,"e.g., 9871361"
+881,gameserver_refund,玩家退款日志,"玩家退款日志
+
+V39/2021-08-11加入",reason,原因,string,"e.g., 9871361"
+882,gameserver_refund,玩家退款日志,"玩家退款日志
+
+V39/2021-08-11加入",refund_oid,退款订单id,string,"e.g., abc"
+883,gameserver_refund,玩家退款日志,"玩家退款日志
+
+V39/2021-08-11加入",refond_amount,退款金额,float,"e.g., 10.0"
+884,gameserver_refund,玩家退款日志,"玩家退款日志
+
+V39/2021-08-11加入",remark,备注内容,string,"可用户记录退款订单原始oid（可能多个）、工单号等
+
+e.g., abc"
+885,gameserver_refund,玩家退款日志,"玩家退款日志
+
+V39/2021-08-11加入",product_id,商品id,string,"e.g., com.xd.sausage.price.6"
+886,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",cid,渠道id,long,"该字段目前已没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+887,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",sid,区唯一id,long,"e.g., 1"
+888,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",account,心动ID,string,"e.g., 0a3fab47ed5bd1b495b3942de35f6afb"
+889,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",report_type,举报类型,string,"e.g., 伤害异常"
+890,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",cheat_type,外挂类型,string,"e.g., FlyJumpSpeed"
+891,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",war_id,战场ID,string,"e.g., 5c63486fbd08f80062c13ed15829d049"
+892,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",pid,玩家pid,long,"e.g., 9871361"
+893,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",be_pid,被举报玩家pid,long,"e.g., 9871361"
+894,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",be_uid,被举报玩家uid,string,"e.g., 6BL"
+895,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",be_nick,被举报玩家昵称,string,"e.g., 御风者骷髅"
+896,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",report_channel,举报渠道,string,"e.g., 结算、观战"
+897,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",chan,渠道标识,string,"S25/2020-01-10加入
+
+e.g., taptap"
+898,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",gmod,游戏模式,long,"V34/2021-01-27加入
+
+e.g., 1-经典模式，2-街机模式"
+899,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",tmod,组队模式,long,"V34/2021-01-27加入
+
+e.g., 1-单人，2-双人，4-四人"
+900,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",custom_room_id,自定义房间的房间号,long,"V34/2021-01-27加入
+
+标识本次游戏是否是来自自定义房间以及来自哪个自定义房间
+
+eg., 1002003"
+901,gameserver_report_cheat,服务端举报外挂日志,"举报外挂日志
+
+S19/2019-06-03加入
+",mmod,匹配模式,long,"V40/2022-03-10加入
+
+e.g., 1-战斗岛，2-快速派对，3-彩虹岛"
+902,gameserver_room_info,服务端下发客户端请求的房间信息,"客户端获取房间信息
+
+组队匹配成功后，客户端会获取房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",pid,玩家pid,long,"e.g., 9871361"
+903,gameserver_room_info,服务端下发客户端请求的房间信息,"客户端获取房间信息
+
+组队匹配成功后，客户端会获取房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",war_id,战场ID,string,"e.g., 5c63486fbd08f80062c13ed15829d049"
+904,gameserver_room_info,服务端下发客户端请求的房间信息,"客户端获取房间信息
+
+组队匹配成功后，客户端会获取房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+905,gameserver_room_info,服务端下发客户端请求的房间信息,"客户端获取房间信息
+
+组队匹配成功后，客户端会获取房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",mmod,匹配模式,long,"e.g., 1-战斗岛，2-快速派对，3-彩虹岛"
+906,gameserver_room_info,服务端下发客户端请求的房间信息,"客户端获取房间信息
+
+组队匹配成功后，客户端会获取房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",gmod,游戏模式,long,"e.g., 1-经典模式，2-街机模式"
+907,gameserver_room_info,服务端下发客户端请求的房间信息,"客户端获取房间信息
+
+组队匹配成功后，客户端会获取房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",unet_addr,unet服务器地址,string,"e.g., dev-game-info.biubiubiu.io:20001"
+908,gameserver_room_info,服务端下发客户端请求的房间信息,"客户端获取房间信息
+
+组队匹配成功后，客户端会获取房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",unet_area,unet服务器机房地区,string,"e.g., SZ"
+909,gameserver_room_info,服务端下发客户端请求的房间信息,"客户端获取房间信息
+
+组队匹配成功后，客户端会获取房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",client_type,房间类型,long,"e.g., 0-手机，1-模拟器"
+910,gameserver_room_reconnect_info,服务端下发客户端重连房间信息,"客户端重连下发房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",pid,玩家pid,long,"e.g., 9871361"
+911,gameserver_room_reconnect_info,服务端下发客户端重连房间信息,"客户端重连下发房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",war_id,战场ID,string,"e.g., 5c63486fbd08f80062c13ed15829d049"
+912,gameserver_room_reconnect_info,服务端下发客户端重连房间信息,"客户端重连下发房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",tmod,组队模式,long,"e.g., 1-单人，2-双人，4-四人"
+913,gameserver_room_reconnect_info,服务端下发客户端重连房间信息,"客户端重连下发房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",mmod,匹配模式,long,"e.g., 1-经典模式-战斗岛，2-快速派对-战斗岛，3-经典模式-彩虹岛， 4-快速派对-彩虹岛，5-团队竞技-竞技中心，6-团队竞技-5号广场，7-团队竞技-风车街道， 8-狙击模式-停水泳池，9-狙击模式-停赛球场，10-狙击模式-停电工坊，11-团队竞技-温泉山庄，12-团队竞技-怒海争锋"
+914,gameserver_room_reconnect_info,服务端下发客户端重连房间信息,"客户端重连下发房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",gmod,游戏模式,long,"e.g., 1-经典模式，2-街机模式，3-团队竞技，4-狙击模式"
+915,gameserver_room_reconnect_info,服务端下发客户端重连房间信息,"客户端重连下发房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",unet_addr,unet服务器地址,string,"e.g., dev-game-info.biubiubiu.io:20001"
+916,gameserver_room_reconnect_info,服务端下发客户端重连房间信息,"客户端重连下发房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",unet_area,unet服务器机房地区,string,"e.g., SZ"
+917,gameserver_room_reconnect_info,服务端下发客户端重连房间信息,"客户端重连下发房间信息
+
+目前只针对经典模式和街机模式
+
+S22/2019-10-10加入",client_type,房间类型,long,"e.g., 0-手机，1-模拟器"
