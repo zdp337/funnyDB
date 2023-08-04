@@ -1,0 +1,28 @@
+name_new,title,type,description
+m,机型,string,"e.g., xiaomi xiaomi 8、iPhone8,4"
+os,操作系统,string,"e.g., Android OS 9 / API-28 (HUAWEITNY-AL00/172C00R1)、iOS 12.2"
+nw,网络类型,string,"e.g., wifi、4G"
+cv,客户端版本,string,"e.g., 7.63"
+pid,玩家pid,long,"如果玩家没有登录，则用 -1 代替
+
+e.g., 9871361"
+cip,客户端ip,string,这个属性由服务端自动收集，客户端不需要上报
+cid,渠道ID,long,"目前这个字段的值固定为 1(taptap)，这个字段已经没用，渠道信息使用chan字段
+
+e.g., 1-taptap"
+deviceid,设备ID,string,"设备ID在玩家安装完后会生成，用于唯一标识一台设备。但是，如果玩家卸载重装 App，那么这个ID可能会发生变化。
+
+e.g., F60645C34704BF5C9C4312BBBF7071E3"
+chan,渠道标识,string,"e.g., taptap"
+platform_id,玩家该次游戏或登录使用平台,long,e.g. 0-移动端，1-PC端、模拟器
+game_area,客户端所在地区,string,"e.g., CN, SG
+
+特殊情况: UNKNOWN-请求获取地区失败，NULL-请求返回地区为空值"
+cip_city,客户端ip对应的城市,string,这个属性由服务端自动收集，客户端不需要上报
+cip_city_geo_name_id,客户端ip对应的城市地理名称ID,long,这个属性由服务端自动收集，客户端不需要上报
+cip_country,客户端ip对应的国家,string,这个属性由服务端自动收集，客户端不需要上报
+cip_country_geo_name_id,客户端ip对应的国家地理名称ID,long,这个属性由服务端自动收集，客户端不需要上报
+cip_country_iso,客户端ip对应的国家标识码,string,这个属性由服务端自动收集，客户端不需要上报
+cip_subdivision,客户端ip对应的省份,string,这个属性由服务端自动收集，客户端不需要上报
+cip_subdivision_geo_name_id,客户端ip对应的省份地理名称ID,long,这个属性由服务端自动收集，客户端不需要上报
+cip_isp,客户端ip对应的网络运营商,string,这个属性由服务端自动收集，客户端不需要上报

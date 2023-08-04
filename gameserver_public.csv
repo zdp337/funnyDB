@@ -1,0 +1,7 @@
+name_new,title,type,description
+platform_id,玩家该次游戏或登录使用平台,long,e.g. 0-移动端，1-PC端、模拟器
+game_area,客户端所在地区,string,"e.g., CN, SG
+
+特殊情况: UNKNOWN-请求获取地区失败，NULL-请求返回地区为空值"
+"server_area
+",服务端所在地区,string,"e.g., CN, SG"
